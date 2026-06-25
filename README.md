@@ -448,60 +448,17 @@
             
             <!-- المشروع الأول: القرية البدوية -->
             <article class="card">
-                <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="مشروع القرية البدوية المستدامة">
+                <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="تم تنفيذ العديد من المشاريع">
                 <div class="card-content">
                     <span class="tag">تم التنفيذ</span>
-                    <h3 class="card-title">مشروع القرية البدوية المستدامة في الصحراء</h3>
-                    <p class="card-desc">مشروع متكامل يدمج التخطيط المعماري وتصميم اللاندسكيب مع استراتيجيات التصميم المستجيب للبيئة الصحراوية وتلبية احتياجات المجتمع المحلي.</p>
+                    <h3 class="card-title">تم تنفيذ العديد من المشاريع</h3>
+                    <p class="card-desc">تم التركيز بشكل تام في التصميم علي الوظيفه اولا ومن ثم الجمال والدمج بينهم بشكل دقيق وجميل.</p>
                     <div class="action-area">
                         <span class="price">10 - 30 $</span>
-                        <a href="https://wa.me/201021788838?text=أريد_الاستفسار_عن_مشروع_القرية_البدوية" target="_blank" class="btn btn-primary">طلب المخططات المعمارية</a>
+                        <a href="https://wa.me/201021788838?text=أريد_الاستفسار_عن_المشاريع" target="_blank" class="btn btn-primary">طلب المخططات المعمارية</a>
                     </div>
                 </div>
             </article>
-
-            <!-- المشروع الثاني: التصميم الحضري والطرق -->
-            <article class="card">
-                <img src="hgw1_8 - Photo.jpg" alt="مشروع تطوير البيئة الحضرية">
-                <div class="card-content">
-                    <span class="tag">تم التنفيذ</span>
-                    <h3 class="card-title">مشروع تطوير كفاءة البيئة الحضرية</h3>
-                    <p class="card-desc">دراسة وتصميم لتطوير شبكات الطرق والمباني السكنية، الإدارية، والتعليمية لرفع الكفاءة العمرانية وتحسين جودة الحياة داخل المدينة.</p>
-                    <div class="action-area">
-                        <span class="price">10 - 30 $</span>
-                        <button onclick="openPaymentModal('مشروع تطوير البيئة الحضرية', '10 - 30 $')" class="btn btn-cash">شراء المخططات عبر فودافون كاش</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- المشروع الثالث: النادي الرياضي والمنشآت الحضرية -->
-            <article class="card">
-                <img src="1_16 - Photo.jpg" alt="تصاميم النادي الرياضي والمنشآت الحضرية">
-                <div class="card-content">
-                    <span class="tag">تم التنفيذ</span>
-                    <h3 class="card-title">تصاميم النادي الرياضي والمنشآت الحضرية</h3>
-                    <p class="card-desc">مجموعة من التصاميم المعمارية المتنوعة التي تشمل نادياً رياضياً ترفيهياً متكاملاً، وتصميم بيئة عمرانية ومساحات مفتوحة مريحة وعصرية.</p>
-                    <div class="action-area">
-                        <span class="price">10 - 30 $</span>
-                        <button onclick="openPaymentModal('تصاميم النادي والمنشآت الحضرية', '10 - 30 $')" class="btn btn-cash">شراء الملفات الهندسية</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- الأيقونة والبطاقة المستقلة المخصصة للاستشارات والتنفيذ المعماري -->
-            <article class="card service-card">
-                <div class="circle-icon-large">
-                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A1.5 1.5 0 1019.5 18.75l-5.83-5.83M11.42 15.17l2.43-2.43m-2.43 2.43H3.75A1.5 1.5 0 012.25 13.67v-3.42A1.5 1.5 0 013.75 8.75h7.67a1.5 1.5 0 011.5 1.5v3.42a1.5 1.5 0 01-1.5 1.5zm6.83-11l3.58 3.58a1.5 1.5 0 010 2.12l-5.3 5.3a1.5 1.5 0 01-2.12 0L9.36 10.36a1.5 1.5 0 010-2.12l5.3-5.3a1.5 1.5 0 012.12 0z" /></svg>
-                </div>
-                <h3 class="card-title">طلب استشارة أو تنفيذ مشروع معماري</h3>
-                <p class="card-desc">متاح بالكامل لتقديم الاستشارات المعمارية المتخصصة، التخطيط العمراني، وتصميم وتجسيد المشاريع الهندسية المتكاملة بأسلوب حديث ومستدام بناءً على رغبتك.</p>
-                <div class="action-area" style="width: 100%;">
-                    <a href="https://wa.me/201021788838?text=مرحباً_مهندس_محمد،_أريد_طلب_استشارة_معمارية_/_تنفيذ_مشروع_جديد" target="_blank" class="btn btn-whatsapp-service">تواصل معي مباشرة عبر واتساب</a>
-                </div>
-            </article>
-
-        </main>
-    </div>
 
     <!-- قسم تواصل معنا الإضافي للفوتر -->
     <section class="contact-section">
