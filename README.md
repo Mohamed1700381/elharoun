@@ -1,23 +1,17 @@
-<!-- استيراد الخطوط لتظهر بشكل معماري حاد وأنيق -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
     :root {
-        --main-color: #0f172a; /* لون داكن فاخر للنصوص والخلفيات الأساسية */
-        --accent-color: #059669; /* لون أخضر زمردي يعبر عن الاستدامة المعمارية */
+        --main-color: #0f172a; 
+        --accent-color: #059669; 
         --accent-hover: #047857;
         --bg-color: #f8fafc;
         --text-color: #334155;
         --card-bg: #ffffff;
-        --vodafone-color: #e60000; /* لون فودافون الرسمي */
-        --grid-color: rgba(15, 23, 42, 0.03); /* لون الشبكة المعمارية */
+        --vodafone-color: #e60000; 
     }
     
     * {
         box-sizing: border-box;
-        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* حركة أنعم تليق بالـ 3D */
+        /* تم حذف الـ transition العشوائي من هنا لرفع أداء الصفحة */
     }
 
     body {
@@ -25,97 +19,73 @@
         margin: 0;
         padding: 0;
         background-color: var(--bg-color);
-        /* تأثير الخلفية الهندسية: شبكة رسم معماري متحركة */
-        background-image: 
-            linear-gradient(var(--grid-color) 1px, transparent 1px),
-            linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-        background-size: 30px 30px;
         color: var(--text-color);
         line-height: 1.7;
-        position: relative;
+        direction: rtl; /* دعم الاتجاه العربي بشكل صحيح */
     }
 
-    /* هيدر وبانر الترحيب بتأثير عمق وثلاثي الأبعاد */
+    /* الهيدر وبانر الترحيب */
     header {
         background: linear-gradient(135deg, var(--main-color) 0%, #1e293b 100%);
         color: white;
-        padding: 100px 20px;
+        padding: 80px 20px;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: inset 0 -10px 20px rgba(0,0,0,0.2);
     }
-    
-    /* شبكة منظور هندسي داخل الهيدر */
-    header::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-        background-size: 20px 20px;
-        transform: perspective(500px) rotateX(60deg) translateY(-50px);
-        opacity: 0.7;
-        pointer-events: none;
-    }
-
     header::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        height: 6px;
+        height: 8px;
         background: linear-gradient(90deg, var(--accent-color), var(--vodafone-color));
     }
-
     header h1 {
         margin: 0;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 700;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        letter-spacing: -0.5px;
     }
     header p {
         margin: 15px 0 0 0;
-        font-size: 1.3rem;
-        color: #34d399; /* تغيير اللون ليتماشى مع طابع الذكاء الاصطناعي والاستدامة */
+        font-size: 1.25rem;
+        color: #94a3b8;
         font-weight: 300;
     }
 
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
     
-    /* قسم السيرة الذاتية - تطفو بظل 3D ناعم */
+    /* قسم السيرة الذاتية */
     .about-section {
         background: var(--card-bg);
-        padding: 45px;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
-        margin-bottom: 60px;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        margin-bottom: 50px;
         border-right: 6px solid var(--accent-color);
-        transform: translateY(0);
     }
-    
     .about-section h2 {
         color: var(--main-color);
         margin-top: 0;
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
     }
     .about-section p {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         color: #475569;
     }
 
     /* قسم المهارات */
     .section-title {
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        font-size: 2.2rem;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 2rem;
         color: var(--main-color);
         position: relative;
         font-weight: 700;
@@ -123,81 +93,66 @@
     .section-title::after {
         content: '';
         display: block;
-        width: 60px;
+        width: 50px;
         height: 4px;
         background: var(--accent-color);
         border-radius: 2px;
-        margin: 14px auto 0 auto;
+        margin: 12px auto 0 auto;
     }
     
     .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        margin-bottom: 70px;
-        perspective: 1000px; /* تفعيل البيئة ثلاثية الأبعاد للكروت الداخلية */
+        gap: 20px;
+        margin-bottom: 60px;
     }
-    
     .skill-card {
         background: var(--card-bg);
         color: var(--main-color);
-        padding: 30px 20px;
-        border-radius: 16px;
+        padding: 25px 20px;
+        border-radius: 12px;
         text-align: center;
         font-weight: 600;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         border: 1px solid #e2e8f0;
-        transform-style: preserve-3d;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    
-    /* تأثير الـ 3D عند التمرير على المهارات */
     .skill-card:hover {
-        transform: translateY(-8px) rotateX(5deg) rotateY(-5deg);
+        transform: translateY(-5px);
         border-color: var(--accent-color);
-        box-shadow: 0 20px 30px rgba(5, 150, 105, 0.12);
+        box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.1);
     }
-    
     .skill-card.ai {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: #34d399;
         border: none;
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
-    }
-    .skill-card.ai:hover {
-        box-shadow: 0 25px 35px rgba(52, 211, 153, 0.2);
     }
 
     /* شبكة المشاريع */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
-        perspective: 1000px;
+        gap: 35px;
     }
-    
-    /* كارت المشروع بتصميم مجسم وثلاثي الأبعاد */
     .card {
         background: var(--card-bg);
-        border-radius: 20px;
+        border-radius: 16px;
         overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-        border: 1px solid #e2e8f0;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+        border: 1px solid #f1f5f9;
         display: flex;
         flex-direction: column;
         position: relative;
-        transform-style: preserve-3d;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
-    /* تأثير الارتفاع والميلان المعماري للكارت */
     .card:hover {
-        transform: translateY(-12px) scale(1.02) rotateX(3deg);
-        box-shadow: 0 30px 50px rgba(15, 23, 42, 0.1);
-        border-color: #cbd5e1;
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
     }
     
     .card img {
         width: 100%;
-        height: 250px;
+        height: 240px;
         object-fit: cover;
         background-color: #cbd5e1;
         border-bottom: 1px solid #f1f5f9;
@@ -213,20 +168,20 @@
         align-self: flex-start;
         background: #d1fae5;
         color: var(--accent-color);
-        padding: 6px 16px;
+        padding: 4px 14px;
         border-radius: 50px;
         font-size: 0.85rem;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
     .card-title {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
         margin: 0 0 12px 0;
         color: var(--main-color);
         font-weight: 700;
     }
     .card-desc {
-        font-size: 1rem;
+        font-size: 0.98rem;
         color: #64748b;
         margin-bottom: 25px;
         flex-grow: 1;
@@ -237,11 +192,11 @@
     .price {
         font-weight: 700;
         color: #d97706;
-        font-size: 1.35rem;
-        margin-bottom: 18px;
+        font-size: 1.25rem;
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 5px;
     }
     
     /* أزرار الاتصال والشراء */
@@ -249,14 +204,14 @@
         display: block;
         padding: 14px 20px;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 8px;
         text-align: center;
         font-weight: bold;
         font-size: 1rem;
         cursor: pointer;
         border: none;
         width: 100%;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .btn-primary {
         background-color: var(--main-color);
@@ -264,7 +219,6 @@
     }
     .btn-primary:hover {
         background-color: var(--accent-color);
-        transform: translateY(-2px);
     }
     .btn-cash {
         background-color: var(--vodafone-color);
@@ -272,41 +226,41 @@
     }
     .btn-cash:hover {
         background-color: #b30000;
-        transform: translateY(-2px);
     }
 
-    /* كارت الخدمات المستقل (مظهر زجاجي 3D غامق) */
+    /* كارت الخدمات المستقل */
     .service-card {
+        display: flex; /* تم إصلاحها بإضافة الـ flex */
+        flex-direction: column; /* ترتيب العناصر عمودياً */
         background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         color: white;
         border: none;
         text-align: center;
         justify-content: center;
         align-items: center;
-        padding: 45px 35px;
+        padding: 40px 30px;
     }
     .service-card .circle-icon-large {
-        width: 75px;
-        height: 75px;
-        background: rgba(255, 255, 255, 0.05);
+        width: 70px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         border: 2px solid #34d399;
-        box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
     }
     .service-card .circle-icon-large svg {
-        width: 38px;
-        height: 38px;
+        width: 35px;
+        height: 35px;
         fill: none;
         stroke: #34d399;
         stroke-width: 2;
     }
     .service-card .card-title {
         color: white;
-        font-size: 1.65rem;
+        font-size: 1.6rem;
     }
     .service-card .card-desc {
         color: #94a3b8;
@@ -317,64 +271,61 @@
     }
     .btn-whatsapp-service:hover {
         background-color: #20ba5a;
-        transform: scale(1.04);
-        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        transform: scale(1.02);
     }
 
-    /* قسم تواصل معنا المطور */
+    /* قسم تواصل معنا */
     .contact-section {
-        background: linear-gradient(135deg, var(--main-color) 0%, #0b111e 100%);
+        background: var(--main-color);
         color: white;
-        padding: 80px 20px;
+        padding: 60px 20px;
         text-align: center;
-        margin-top: 80px;
+        margin-top: 60px;
         border-top: 4px solid var(--accent-color);
-        position: relative;
     }
     .contact-container {
         max-width: 600px;
         margin: 0 auto;
     }
     .contact-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 15px;
     }
     .contact-desc {
         color: #94a3b8;
-        margin-bottom: 35px;
-        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
     .whatsapp-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
         background-color: #25d366;
         color: white;
-        padding: 16px 40px;
-        font-size: 1.25rem;
+        padding: 15px 35px;
+        font-size: 1.2rem;
         font-weight: bold;
         text-decoration: none;
         border-radius: 50px;
-        box-shadow: 0 12px 24px rgba(37, 211, 102, 0.25);
+        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        transition: transform 0.3s ease, background-color 0.3s ease;
     }
     .whatsapp-link:hover {
-        transform: translateY(-4px) scale(1.03);
+        transform: scale(1.05);
         background-color: #20ba5a;
-        box-shadow: 0 18px 30px rgba(37, 211, 102, 0.4);
     }
 
     footer {
         text-align: center;
-        padding: 35px;
-        background: #060b13;
+        padding: 30px;
+        background: #0b111e;
         color: #64748b;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         border-top: 1px solid #1e293b;
     }
 
-    /* النافذة المنبثقة المحسنة للدفع (Modal 3D Pop) */
+    /* النافذة المنبثقة للدفع (Modal) */
     .modal {
         display: none;
         position: fixed;
@@ -383,40 +334,38 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(15, 23, 42, 0.8);
+        background-color: rgba(15, 23, 42, 0.7);
         align-items: center;
         justify-content: center;
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(5px);
     }
     .modal-content {
         background-color: white;
-        padding: 40px;
-        border-radius: 24px;
+        padding: 35px;
+        border-radius: 16px;
         width: 90%;
-        max-width: 460px;
+        max-width: 450px;
         text-align: center;
-        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-        transform: scale(0.9);
-        animation: modal3D 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        animation: modalSlide 0.3s ease;
     }
-    
-    @keyframes modal3D {
-        to { transform: scale(1); opacity: 1; }
+    @keyframes modalSlide {
+        from { transform: translateY(-30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
-    
     .modal-header {
         color: var(--vodafone-color);
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
     }
     .modal-header .circle-icon-modal {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         background: #fee2e2;
         border-radius: 50%;
         display: flex;
@@ -424,39 +373,37 @@
         justify-content: center;
     }
     .modal-header .circle-icon-modal svg {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         stroke: var(--vodafone-color);
         fill: none;
         stroke-width: 2;
     }
     .wallet-number {
-        background: #f8fafc;
-        padding: 14px;
-        border-radius: 12px;
-        font-size: 1.5rem;
+        background: #f1f5f9;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 1.4rem;
         font-weight: 700;
         color: var(--main-color);
         letter-spacing: 2px;
-        margin: 25px 0;
+        margin: 20px 0;
         border: 2px dashed #cbd5e1;
         user-select: all;
     }
     .modal-steps {
         text-align: right;
-        padding-right: 15px;
-        margin-bottom: 30px;
-        font-size: 1rem;
-        color: #475569;
+        padding-right: 20px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
     }
     .modal-steps li {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
     .close-btn {
         background: #e2e8f0;
         color: #475569;
-        margin-top: 12px;
-        border-radius: 10px;
+        margin-top: 10px;
     }
     .close-btn:hover {
         background: #cbd5e1;
