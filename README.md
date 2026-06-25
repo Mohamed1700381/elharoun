@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض أعمال المهندس المعماري | احترافي</title>
+    <title>معرض أعمال المهندس محمد الحارون | احترافي</title>
     <!-- استدعاء خط Cairo المميز والتحديثي -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,12 +156,16 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
         }
+        
+        /* ضبط وعرض صور المشاريع بشكل احترافي */
         .card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
             background-color: #cbd5e1;
+            border-bottom: 1px solid #f1f5f9;
         }
+        
         .card-content {
             padding: 30px;
             display: flex;
@@ -231,7 +235,7 @@
             background-color: #b30000;
         }
 
-        /* قسم تواصل معنا الجديد */
+        /* قسم تواصل معنا */
         .contact-section {
             background: var(--main-color);
             color: white;
@@ -329,7 +333,7 @@
             letter-spacing: 2px;
             margin: 20px 0;
             border: 2px dashed #cbd5e1;
-            user-select: all; /* يسهل على العميل نسخ الرقم بمجرد الضغط عليه */
+            user-select: all;
         }
         .modal-steps {
             text-align: right;
@@ -353,7 +357,7 @@
 <body>
 
     <header>
-        <h1>المهندس المعماري / ضع اسمك هنا</h1>
+        <h1>المهندس المعماري / محمد الحارون</h1>
         <p>طالب عمارة | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية</p>
     </header>
 
@@ -384,7 +388,7 @@
             
             <!-- المشروع الأول: القرية البدوية -->
             <article class="card">
-                <img src="bedouin-village.jpg" alt="القرية البدوية المستدامة">
+                <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="مشروع القرية البدوية المستدامة">
                 <div class="card-content">
                     <span class="tag">تخطيط عمراني واستدامة</span>
                     <h3 class="card-title">مشروع القرية البدوية المستدامة في الصحراء</h3>
@@ -398,7 +402,7 @@
 
             <!-- المشروع الثاني: التصميم الحضري والطرق -->
             <article class="card">
-                <img src="urban-design.jpg" alt="مشروع تصميم حضري">
+                <img src="hgw1_8 - Photo.jpg" alt="مشروع تطوير البيئة الحضرية">
                 <div class="card-content">
                     <span class="tag">تصميم حضري وكفاءة عمرانية</span>
                     <h3 class="card-title">مشروع تطوير كفاءة البيئة الحضرية</h3>
@@ -410,44 +414,16 @@
                 </div>
             </article>
 
-            <!-- المشروع الثالث: المدرسة الابتدائية -->
+            <!-- المشروع الثالث: النادي الرياضي والمنشآت الحضرية -->
             <article class="card">
-                <img src="school-project.jpg" alt="تصميم مدرسة ابتدائية">
-                <div class="card-content">
-                    <span class="tag">مباني تعليمية</span>
-                    <h3 class="card-title">تصميم معماري لمدرسة ابتدائية حديثة</h3>
-                    <p class="card-desc">تصميم هندسي يراعي الفراغات التعليمية وحركة الطلاب مع توفير بيئة تفاعلية ومستدامة مخصصة للأطفال في المراحل الأولى.</p>
-                    <div class="action-area">
-                        <span class="price">120 دولار (أو ما يعادله بالمصري)</span>
-                        <button onclick="openPaymentModal('ملفات المدرسة الابتدائية CAD', '120$')" class="btn btn-cash">شراء ملف الـ CAD والمساقط</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- المشروع الرابع: النادي الرياضي والبيت السكني -->
-            <article class="card">
-                <img src="sports-club.jpg" alt="نادي رياضي ومنزل سكني">
+                <img src="1_16 - Photo.jpg" alt="تصاميم النادي الرياضي والمنشآت الحضرية">
                 <div class="card-content">
                     <span class="tag">مباني ترفيهية وسكنية</span>
-                    <h3 class="card-title">تصاميم النادي الرياضي والمنزل السكني</h3>
-                    <p class="card-desc">مجموعة من التصاميم المعمارية المتنوعة التي تشمل نادياً رياضياً ترفيهياً متكاملاً، بالإضافة إلى تصميم بيت سكني مريح وعصري.</p>
+                    <h3 class="card-title">تصاميم النادي الرياضي والمنشآت الحضرية</h3>
+                    <p class="card-desc">مجموعة من التصاميم المعمارية المتنوعة التي تشمل نادياً رياضياً ترفيهياً متكاملاً، وتصميم بيئة عمرانية ومساحات مفتوحة مريحة وعصرية.</p>
                     <div class="action-area">
                         <span class="price">طلب تعديل أو شراء</span>
-                        <a href="https://wa.me/201021788838?text=أريد_التواصل_بخصوص_تصاميم_النادي_أو_المنزل_السكني" target="_blank" class="btn btn-primary">تواصل الآن عبر الواتساب</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- المشروع الخامس: استخدام الذكاء الاصطناعي -->
-            <article class="card">
-                <img src="ai-architecture.jpg" alt="عمارة بالذكاء الاصطناعي">
-                <div class="card-content">
-                    <span class="tag">تقنيات حديثة وعصف ذهني</span>
-                    <h3 class="card-title">تطوير المفاهيم المعمارية بواسطة الـ AI</h3>
-                    <p class="card-desc">منشور يعرض قدراتي في توظيف أدوات الذكاء الاصطناعي لتسريع سير العمل (Workflow)، تحسين الإنتاجية وتوليد أفكار تصميمية مبتكرة وخارج الصندوق.</p>
-                    <div class="action-area">
-                        <span class="price">خدمة مميزة حسب الطلب</span>
-                        <a href="https://wa.me/201021788838?text=أريد_طلب_خدمة_تطوير_الأفكار_بواسطة_الذكاء_الاصطناعي" target="_blank" class="btn btn-primary">اطلب الخدمة الآن</a>
+                        <a href="https://wa.me/201021788838?text=أريد_التواصل_بخصوص_تصاميم_النادي_أو_المنشآت_الحضرية" target="_blank" class="btn btn-primary">تواصل الآن عبر الواتساب</a>
                     </div>
                 </div>
             </article>
@@ -455,7 +431,7 @@
         </main>
     </div>
 
-    <!-- قسم تواصل معنا الجديد -->
+    <!-- قسم تواصل معنا -->
     <section class="contact-section">
         <div class="contact-container">
             <div class="contact-title">للتواصل معنا</div>
@@ -467,7 +443,7 @@
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 | معرض أعمال المهندس المعماري</p>
+        <p>جميع الحقوق محفوظة © 2026 | معرض أعمال المهندس محمد الحارون</p>
     </footer>
 
     <!-- نافذة الدفع المنبثقة الذكية (Vodafone Cash Modal) -->
@@ -503,9 +479,8 @@
             projectNameText.innerText = projectName;
             projectPriceText.innerText = price;
             
-            // تخصيص رابط واتساب عند الضغط على زر التأكيد ليخبرك العميل بأي مشروع قام بشرائه
             confirmBtn.onclick = function() {
-                const message = encodeURIComponent(`مرحباً مهندس، لقد قمت بتحويل المبلغ عبر فودافون كاش لشراء: (${projectName}). أريد إرسال لقطة الشاشة لاستلام الملفات.`);
+                const message = encodeURIComponent(`مرحباً مهندس محمد، لقد قمت بتحويل المبلغ عبر فودافون كاش لشراء: (${projectName}). أريد إرسال لقطة الشاشة لاستلام الملفات.`);
                 window.open(`https://wa.me/201021788838?text=${message}`, '_blank');
                 closePaymentModal();
             };
@@ -517,7 +492,6 @@
             modal.style.display = 'none';
         }
 
-        // إغلاق النافذة إذا ضغط العميل في أي مكان خارج الصندوق الأبيض
         window.onclick = function(event) {
             if (event.target == modal) {
                 closePaymentModal();
