@@ -348,13 +348,13 @@
 
             <!-- صورة المشروع الثاني -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="file:///D:/design%203/design%203/%D8%A7%D9%84%D9%85%D9%81%D9%8A%D8%AF/me%20shots/hgw1_8%20-%20Photo.jpg" alt="مشروع معماري">
+                <img src="https://b.top4top.io/p_382845wxq1.jpg" alt="مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
 
             <!-- صورة المشروع الثالث -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="file:///D:/design%203/design%203/%D8%A7%D9%84%D9%85%D9%81%D9%8A%D8%AF/me%20shots/hgw1_10%20-%20Photo.jpg" alt="مشروع معماري">
+                <img src="https://i.top4top.io/p_3828m5rs31.jpg" alt="مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
 
