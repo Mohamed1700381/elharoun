@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معرض أعمال المهندس محمد الحارون | معماري تفاعلي</title>
-    <!-- استدعاء خط Cairo المودرن -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -193,16 +192,16 @@
         /* ثالثاً: معرض الصور العشوائية للمشاريع (دوائر نقية) */
         .photo-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 35px;
             justify-items: center;
             margin-bottom: 60px;
         }
         
         .circle-project {
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.08);
@@ -453,7 +452,6 @@
 </head>
 <body>
 
-    <!-- الهيدر والمكعب المعماري -->
     <header>
         <div class="cube-scene">
             <div class="cube">
@@ -471,7 +469,6 @@
 
     <div class="container">
         
-        <!-- أولاً: نبذة عني -->
         <section class="about-section">
             <h2>نبذة عني</h2>
             <p>
@@ -480,7 +477,6 @@
             </p>
         </section>
 
-        <!-- ثانياً: مهاراتي -->
         <h2 class="section-title">مهاراتي</h2>
         <p class="section-subtitle">القدرات والخبرات الهندسية والأكاديمية</p>
         <section class="skills-grid">
@@ -491,31 +487,61 @@
             <div class="skill-card">دمج أدوات الذكاء الاصطناعي (AI)</div>
         </section>
 
-        <!-- ثالثاً: صور عشوائية للمشاريع مع الوصف البسيط الموحد -->
         <h2 class="section-title">معرض المشاريع المنفذة</h2>
         <p class="section-subtitle">تم الدمج بين الوظيفه والجمال في التصميم</p>
         
         <main class="photo-gallery">
-            <!-- صورة المشروع الأول -->
-            <div class="circle-project" title="مشروع معماري">
-                <img src="https://f.top4top.io/p_38283kx9v1.jpg" alt="مشروع معماري">
-                <div class="circle-overlay">elharoun</div>
+            <div class="circle-project" title="مشروع معماري 1">
+                <img src="https://b.top4top.io/p_3828lnjav1.jpg" alt="مشروع معماري 1">
+                <div class="circle-overlay">تصفح العمل</div>
             </div>
 
-            <!-- صورة المشروع الثاني -->
-            <div class="circle-project" title="مشروع معماري">
-                <img src="https://b.top4top.io/p_382845wxq1.jpg" alt="مشروع معماري">
-                <div class="circle-overlay">elharoun</div>
+            <div class="circle-project" title="مشروع معماري 2">
+                <img src="https://k.top4top.io/p_3828jbw581.jpg" alt="مشروع معماري 2">
+                <div class="circle-overlay">تصفح العمل</div>
             </div>
 
-            <!-- صورة المشروع الثالث -->
-            <div class="circle-project" title="مشروع معماري">
-                <img src="https://i.top4top.io/p_3828m5rs31.jpg"مشروع معماري">
-                <div class="circle-overlay">elharoun</div>
+            <div class="circle-project" title="مشروع معماري 3">
+                <img src="https://d.top4top.io/p_38285y97w1.jpg" alt="مشروع معماري 3">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 4">
+                <img src="https://g.top4top.io/p_38288wnor1.jpg" alt="مشروع معماري 4">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 5">
+                <img src="https://g.top4top.io/p_3828f4bqz1.jpg" alt="مشروع معماري 5">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 6">
+                <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="مشروع معماري 6">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 7">
+                <img src="https://k.top4top.io/p_3828clele1.jpg" alt="مشروع معماري 7">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 8">
+                <img src="https://c.top4top.io/p_3828gvugl1.jpg" alt="مشروع معماري 8">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 9">
+                <img src="https://k.top4top.io/p_3828qrim11.jpg" alt="مشروع معماري 9">
+                <div class="circle-overlay">تصفح العمل</div>
+            </div>
+
+            <div class="circle-project" title="مشروع معماري 10">
+                <img src="https://b.top4top.io/p_3828lgvbq1.jpg" alt="مشروع معماري 10">
+                <div class="circle-overlay">تصفح العمل</div>
             </div>
         </main>
 
-        <!-- زر تفاعلي: عملية الدفع المتاحة فودافون كاش -->
         <div class="payment-status-container">
             <div class="payment-card" onclick="openPaymentModal()" title="اضغط لمعرفة تفاصيل الدفع">
                 <div class="wallet-icon-glow">
@@ -526,7 +552,6 @@
             </div>
         </div>
 
-        <!-- رابعاً: التواصل معي عبر واتساب -->
         <section class="contact-section">
             <div class="contact-container">
                 <div class="contact-title">تواصل معي</div>
@@ -539,7 +564,6 @@
 
     </div>
 
-    <!-- نافذة الدفع المنبثقة الذكية (Modal) -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -564,7 +588,6 @@
         <p>جميع الحقوق محفوظة © 2026 | معرض أعمال المهندس محمد الحارون</p>
     </footer>
 
-    <!-- كود تشغيل وإغلاق نافذة الدفع -->
     <script>
         const modal = document.getElementById('paymentModal');
 
@@ -585,5 +608,3 @@
 
 </body>
 </html>
-
-```
