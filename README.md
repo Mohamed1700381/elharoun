@@ -342,7 +342,7 @@
             
             <!-- صورة المشروع الأول -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="file:///D:/design%203/design%203/%D8%A7%D9%84%D9%85%D9%81%D9%8A%D8%AF/me%20shots/1_16%20-%20Photo.jpg" alt="مشروع معماري">
+                <img src="https://f.top4top.io/p_38283kx9v1.jpg" alt="مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
 
