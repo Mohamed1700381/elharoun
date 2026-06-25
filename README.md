@@ -158,30 +158,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
         }
         
-        /* الأيقونات الدائرية فوق الصور */
-        .circle-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            z-index: 10;
-            border: 2px solid var(--accent-color);
-        }
-        .circle-icon svg {
-            width: 22px;
-            height: 22px;
-            fill: none;
-            stroke: var(--accent-color);
-            stroke-width: 2;
-        }
-        
         /* ضبط وعرض صور المشاريع */
         .card img {
             width: 100%;
@@ -260,7 +236,7 @@
             background-color: #b30000;
         }
 
-        /* كارت الخدمات المستقل */
+        /* كارت الخدمات المستقل (محتفظ بالأيقونة) */
         .service-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
@@ -473,9 +449,6 @@
             
             <!-- المشروع الأول: القرية البدوية -->
             <article class="card">
-                <div class="circle-icon">
-                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
-                </div>
                 <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="مشروع القرية البدوية المستدامة">
                 <div class="card-content">
                     <span class="tag">تم التنفيذ</span>
@@ -490,9 +463,6 @@
 
             <!-- المشروع الثاني: التصميم الحضري والطرق -->
             <article class="card">
-                <div class="circle-icon">
-                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" /></svg>
-                </div>
                 <img src="hgw1_8 - Photo.jpg" alt="مشروع تطوير البيئة الحضرية">
                 <div class="card-content">
                     <span class="tag">تم التنفيذ</span>
@@ -507,9 +477,6 @@
 
             <!-- المشروع الثالث: النادي الرياضي والمنشآت الحضرية -->
             <article class="card">
-                <div class="circle-icon">
-                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
-                </div>
                 <img src="1_16 - Photo.jpg" alt="تصاميم النادي الرياضي والمنشآت الحضرية">
                 <div class="card-content">
                     <span class="tag">تم التنفيذ</span>
@@ -528,7 +495,7 @@
                     <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A1.5 1.5 0 1019.5 18.75l-5.83-5.83M11.42 15.17l2.43-2.43m-2.43 2.43H3.75A1.5 1.5 0 012.25 13.67v-3.42A1.5 1.5 0 013.75 8.75h7.67a1.5 1.5 0 011.5 1.5v3.42a1.5 1.5 0 01-1.5 1.5zm6.83-11l3.58 3.58a1.5 1.5 0 010 2.12l-5.3 5.3a1.5 1.5 0 01-2.12 0L9.36 10.36a1.5 1.5 0 010-2.12l5.3-5.3a1.5 1.5 0 012.12 0z" /></svg>
                 </div>
                 <h3 class="card-title">طلب استشارة أو تنفيذ مشروع معماري</h3>
-                <p class="card-desc">متاح بالكامل لتقديم الاستشارات المعمارية المتخصصة، التخطيط العمراني، وتصميم وتجسييد المشاريع الهندسية المتكاملة بأسلوب حديث ومستدام بناءً على رغبتك.</p>
+                <p class="card-desc">متاح بالكامل لتقديم الاستشارات المعمارية المتخصصة، التخطيط العمراني، وتصميم وتجسيد المشاريع الهندسية المتكاملة بأسلوب حديث ومستدام بناءً على رغبتك.</p>
                 <div class="action-area" style="width: 100%;">
                     <a href="https://wa.me/201021788838?text=مرحباً_مهندس_محمد،_أريد_طلب_استشارة_معمارية_/_تنفيذ_مشروع_جديد" target="_blank" class="btn btn-whatsapp-service">تواصل معي مباشرة عبر واتساب</a>
                 </div>
@@ -569,7 +536,7 @@
             <ol class="modal-steps">
                 <li>قم بتحويل قيمة الملف إلى الرقم أعلاه.</li>
                 <li>خذ لقطة شاشة (Screenshot) لرسالة التأكيد.</li>
-                <li>اضغط على زر التأكيد بالأسفل لإرسال الصورة واستلام ملفاتك فوراً.</li>
+                <li>اضغط على زر التأكيد بالأسفل لإرسال الصورة واستلاف ملفاتك فوراً.</li>
             </ol>
 
             <button id="confirmPaymentBtn" class="btn btn-primary">تأكيد التحويل وإرسال الصورة</button>
