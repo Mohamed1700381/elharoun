@@ -506,19 +506,19 @@
         <main class="photo-gallery">
             <!-- صورة المشروع الأول -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="مشروع معماري">
+                <img src="https://f.top4top.io/p_38283kx9v1.jpg" alt="مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
 
             <!-- صورة المشروع الثاني -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="hgw1_8 - Photo.jpg" alt="مشروع معماري">
+                <img src="https://b.top4top.io/p_382845wxq1.jpg" alt="مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
 
             <!-- صورة المشروع الثالث -->
             <div class="circle-project" title="مشروع معماري">
-                <img src="1_16 - Photo.jpg" alt="مشروع معماري">
+                <img src="https://i.top4top.io/p_3828m5rs31.jpg"مشروع معماري">
                 <div class="circle-overlay">تصفح العمل</div>
             </div>
         </main>
