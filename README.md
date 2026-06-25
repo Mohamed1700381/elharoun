@@ -1,46 +1,66 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض أعمال المهندس محمد الحارون | احترافي</title>
-    <!-- استدعاء خط Cairo المميز والتحديثي -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>معماري | المشاريع المعمارية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --main-color: #0f172a; /* لون داكن فاخر للنصوص والخلفيات الأساسية */
-            --accent-color: #059669; /* لون أخضر زمردي يعبر عن الاستدامة المعمارية */
+            --main-color: #0f172a;
+            --accent-color: #059669;
             --accent-hover: #047857;
+            --accent-glow: rgba(5, 150, 105, 0.4);
             --bg-color: #f8fafc;
             --text-color: #334155;
-            --card-bg: #ffffff;
-            --vodafone-color: #e60000; /* لون فودافون الرسمي */
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --vodafone-color: #e60000;
+            --gold: #d4a574;
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
-        
+
         * {
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* الهيدر وبانر الترحيب */
+        /* ===== خلفية 3D معمارية ===== */
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #0f172a 0%, #1a2a3a 50%, #0d1b2a 100%);
+        }
+
+        /* ===== الهيدر ===== */
         header {
-            background: linear-gradient(135deg, var(--main-color) 0%, #1e293b 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
             position: relative;
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
             overflow: hidden;
+            background: transparent;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(5,150,105,0.15) 0%, transparent 70%);
+            pointer-events: none;
         }
         header::after {
             content: '';
@@ -48,95 +68,163 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 8px;
-            background: linear-gradient(90deg, var(--accent-color), var(--vodafone-color));
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold), var(--vodafone-color));
+            animation: gradientShift 5s ease infinite;
+            background-size: 200% 200%;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            letter-spacing: 1px;
         }
         header p {
-            margin: 15px 0 0 0;
-            font-size: 1.25rem;
+            margin: 20px 0 0 0;
+            font-size: 1.3rem;
             color: #94a3b8;
             font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* ===== حاوية المحتوى ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 20px;
+            position: relative;
+            z-index: 1;
         }
-        
-        /* قسم السيرة الذاتية */
+
+        /* ===== قسم السيرة الذاتية - Glassmorphism ===== */
         .about-section {
             background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 50px;
-            border-right: 6px solid var(--accent-color);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 0 0 1px var(--glass-border);
+            margin-bottom: 60px;
+            border-right: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(5,150,105,0.05) 0%, transparent 60%);
+            pointer-events: none;
         }
         .about-section h2 {
             color: var(--main-color);
             margin-top: 0;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+        }
+        .about-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold));
+            border-radius: 2px;
+            margin-top: 12px;
         }
         .about-section p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #475569;
+            line-height: 2;
         }
 
-        /* قسم المهارات */
+        /* ===== قسم المهارات ===== */
         .section-title {
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: var(--main-color);
+            margin-top: 60px;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: white;
             position: relative;
-            font-weight: 700;
+            font-weight: 800;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 80px;
             height: 4px;
-            background: var(--accent-color);
+            background: linear-gradient(90deg, var(--accent-color), var(--gold));
             border-radius: 2px;
-            margin: 12px auto 0 auto;
+            margin: 15px auto 0;
         }
-        
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 60px;
+            gap: 25px;
+            margin-bottom: 70px;
         }
         .skill-card {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             color: var(--main-color);
-            padding: 25px 20px;
-            border-radius: 12px;
+            padding: 30px 20px;
+            border-radius: 16px;
             text-align: center;
-            font-weight: 600;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
         .skill-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15), 0 0 30px var(--accent-glow);
             border-color: var(--accent-color);
-            box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.1);
+        }
+        .skill-card:hover::before {
+            transform: scaleX(1);
         }
         .skill-card.ai {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #34d399;
-            border: none;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+        .skill-card.ai:hover {
+            box-shadow: 0 20px 40px rgba(52, 211, 153, 0.2);
         }
 
-        /* شبكة المشاريع */
+        /* ===== شبكة المشاريع ===== */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -144,192 +232,299 @@
         }
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08), 0 0 0 1px var(--glass-border);
+            border: 1px solid rgba(255,255,255,0.3);
             display: flex;
             flex-direction: column;
             position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+            transition: box-shadow 0.4s ease;
+            pointer-events: none;
         }
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
+            transform: translateY(-12px) rotateX(2deg);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
         }
-        
-        /* ضبط وعرض صور المشاريع */
+        .card:hover::after {
+            box-shadow: 0 0 30px 5px var(--accent-glow);
+        }
+
         .card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
-            background-color: #cbd5e1;
-            border-bottom: 1px solid #f1f5f9;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.5s ease;
         }
-        
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
         .card-content {
             padding: 30px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            position: relative;
+            z-index: 1;
         }
         .tag {
             align-self: flex-start;
-            background: #d1fae5;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
             color: var(--accent-color);
-            padding: 4px 14px;
+            padding: 6px 16px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(5,150,105,0.15);
         }
         .card-title {
-            font-size: 1.4rem;
-            margin: 0 0 12px 0;
+            font-size: 1.5rem;
+            margin: 0 0 15px 0;
             color: var(--main-color);
-            font-weight: 700;
+            font-weight: 800;
         }
         .card-desc {
-            font-size: 0.98rem;
+            font-size: 1rem;
             color: #64748b;
             margin-bottom: 25px;
             flex-grow: 1;
+            line-height: 1.8;
         }
         .action-area {
             margin-top: auto;
         }
         .price {
-            font-weight: 700;
+            font-weight: 800;
             color: #d97706;
-            font-size: 1.25rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
-        
-        /* أزرار الاتصال والشراء */
+
+        /* ===== أزرار ===== */
         .btn {
             display: block;
-            padding: 14px 20px;
+            padding: 16px 24px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            font-weight: bold;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.05rem;
             cursor: pointer;
             border: none;
             width: 100%;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
         .btn-primary {
-            background-color: var(--main-color);
+            background: linear-gradient(135deg, var(--main-color) 0%, #1e293b 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
         }
         .btn-primary:hover {
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
         }
         .btn-cash {
-            background-color: var(--vodafone-color);
+            background: linear-gradient(135deg, var(--vodafone-color) 0%, #b30000 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
         }
         .btn-cash:hover {
-            background-color: #b30000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 0, 0, 0.4);
         }
 
-        /* كارت الخدمات المستقل (محتفظ بالأيقونة) */
+        /* ===== كارت الخدمات المستقل ===== */
         .service-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            border: none;
+            border: 1px solid rgba(52, 211, 153, 0.2);
             text-align: center;
             justify-content: center;
             align-items: center;
-            padding: 40px 30px;
+            padding: 50px 35px;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 60%);
+            pointer-events: none;
         }
         .service-card .circle-icon-large {
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 2px solid #34d399;
+            box-shadow: 0 0 30px rgba(52, 211, 153, 0.2);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(52, 211, 153, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(52, 211, 153, 0.4); }
         }
         .service-card .circle-icon-large svg {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             fill: none;
             stroke: #34d399;
             stroke-width: 2;
         }
         .service-card .card-title {
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            font-weight: 800;
         }
         .service-card .card-desc {
             color: #94a3b8;
+            font-size: 1.05rem;
         }
         .btn-whatsapp-service {
-            background-color: #25d366;
+            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
         .btn-whatsapp-service:hover {
-            background-color: #20ba5a;
-            transform: scale(1.02);
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
-        /* قسم تواصل معنا */
+        /* ===== قسم تواصل معنا ===== */
         .contact-section {
-            background: var(--main-color);
+            background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,41,59,0.95) 100%);
+            backdrop-filter: blur(20px);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px;
             border-top: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(5,150,105,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212,165,116,0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         .contact-container {
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         .contact-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .contact-desc {
             color: #94a3b8;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
         }
         .whatsapp-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background-color: #25d366;
+            gap: 12px;
+            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
             color: white;
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: 800;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
         .whatsapp-link:hover {
-            transform: scale(1.05);
-            background-color: #20ba5a;
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
+        }
+        .whatsapp-link::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            background: #0b111e;
+            padding: 35px;
+            background: rgba(11, 17, 30, 0.95);
             color: #64748b;
-            font-size: 0.9rem;
-            border-top: 1px solid #1e293b;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        /* النافذة المنبثقة للدفع (Modal) */
+        /* ===== النافذة المنبثقة ===== */
         .modal {
             display: none;
             position: fixed;
@@ -338,198 +533,82 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(15, 23, 42, 0.7);
+            background-color: rgba(15, 23, 42, 0.8);
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
         .modal-content {
-            background-color: white;
-            padding: 35px;
-            border-radius: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 45px;
+            border-radius: 24px;
             width: 90%;
-            max-width: 450px;
+            max-width: 480px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            animation: modalSlide 0.3s ease;
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.3);
+            animation: modalSlide 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.5);
+            position: relative;
+        }
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--vodafone-color), var(--gold));
+            border-radius: 24px 24px 0 0;
         }
         @keyframes modalSlide {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
         }
         .modal-header {
             color: var(--vodafone-color);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
         .modal-header .circle-icon-modal {
-            width: 40px;
-            height: 40px;
-            background: #fee2e2;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(230,0,0,0.15);
         }
         .modal-header .circle-icon-modal svg {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             stroke: var(--vodafone-color);
             fill: none;
-            stroke-width: 2;
+            stroke-width: 2.5;
         }
         .wallet-number {
-            background: #f1f5f9;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 1.4rem;
-            font-weight: 700;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: var(--main-color);
-            letter-spacing: 2px;
-            margin: 20px 0;
+            letter-spacing: 3px;
+            margin: 25px 0;
             border: 2px dashed #cbd5e1;
             user-select: all;
+            font-family: 'Courier New', monospace;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
         }
         .modal-steps {
             text-align: right;
-            padding-right: 20px;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-        .modal-steps li {
-            margin-bottom: 8px;
-        }
-        .close-btn {
-            background: #e2e8f0;
+            padding-right: 25px;
+            margin-bottom: 30px;
+            font-size: 1rem;
             color: #475569;
-            margin-top: 10px;
-        }
-        .close-btn:hover {
-            background: #cbd5e1;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>المهندس المعماري / محمد الحارون</h1>
-        <p>طالب عمارة | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- قسم السيرة الذاتية -->
-        <section class="about-section">
-            <h2>نبذة عني (سيرتي الذاتية)</h2>
-            <p>
-                طالب عمارة لديّ شغف قوي بالتصميم المعماري، التخطيط العمراني، والتنمية المستدامة. أسعى دائماً لابتكار حلول مستدامة ومبتكرة تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع. 
-                خلال مسيرتي الأكاديمية، قمت بإعداد وتطوير مشاريع متنوعة تشمل التخطيط البيئي المعماري، وتصميم لاندسكيب متكامل، بالإضافة إلى مشاريع تطوير وتحديث شبكات الطرق والمباني السكنية والإدارية والتعليمية لرفع جودة الحياة العمرانية.
-            </p>
-        </section>
-
-        <!-- مهاراتك وقدراتك -->
-        <h2 class="section-title">مجالات التميز والقدرات</h2>
-        <div class="skills-grid">
-            <div class="skill-card">التصميم المعماري المستدام</div>
-            <div class="skill-card">التخطيط والتصميم العمراني</div>
-            <div class="skill-card">تنسيق المواقع (Landscape)</div>
-            <div class="skill-card">تطوير شبكات الطرق والمباني</div>
-            <div class="skill-card ai">دمج أدوات الذكاء الاصطناعي (AI)</div>
-        </div>
-
-        <!-- معرض المشاريع والمنشورات -->
-        <h2 class="section-title">معرض المشاريع المنفذة والخدمات</h2>
-        <main class="grid">
             
-            <!-- المشروع الأول: القرية البدوية -->
-            <article class="card">
-                <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="تم تنفيذ العديد من المشاريع">
-                <div class="card-content">
-                    <span class="tag">تم التنفيذ</span>
-                    <h3 class="card-title">تم تنفيذ العديد من المشاريع</h3>
-                    <p class="card-desc">تم التركيز بشكل تام في التصميم علي الوظيفه اولا ومن ثم الجمال والدمج بينهم بشكل دقيق وجميل.</p>
-                    <div class="action-area">
-                        <span class="price">10 - 30 $</span>
-                        <a href="https://wa.me/201021788838?text=أريد_الاستفسار_عن_المشاريع" target="_blank" class="btn btn-primary">طلب المخططات المعمارية</a>
-                    </div>
-                </div>
-            </article>
-
-    <!-- قسم تواصل معنا الإضافي للفوتر -->
-    <section class="contact-section">
-        <div class="contact-container">
-            <div class="contact-title">للتواصل المباشر</div>
-            <p class="contact-desc">اضغط على الزر بالأسفل للتحدث معي مباشرة عبر الواتساب ومناقشة تفاصيل مشروعك أو استشارتك.</p>
-            <a href="https://wa.me/201021788838" target="_blank" class="whatsapp-link">
-                <span>تواصل عبر الواتساب</span>
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © 2026 | معرض أعمال المهندس محمد الحارون</p>
-    </footer>
-
-    <!-- نافذة الدفع المنبثقة الذكية (Vodafone Cash Modal) -->
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="circle-icon-modal">
-                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
-                </div>
-                <span>الدفع عبر فودافون كاش</span>
-            </div>
-            <p>لإتمام شراء <strong id="modalProjectName"></strong> بقيمة تتراوح بين <strong id="modalProjectPrice"></strong>:</p>
-            <p>قم بتحويل المبلغ المتفق عليه بالجنيه المصري إلى الرقم التالي:</p>
-            
-            <div class="wallet-number" title="اضغط لنسخ الرقم">01021788838</div>
-            
-            <ol class="modal-steps">
-                <li>قم بتحويل قيمة الملف إلى الرقم أعلاه.</li>
-                <li>خذ لقطة شاشة (Screenshot) لرسالة التأكيد.</li>
-                <li>اضغط على زر التأكيد بالأسفل لإرسال الصورة واستلاف ملفاتك فوراً.</li>
-            </ol>
-
-            <button id="confirmPaymentBtn" class="btn btn-primary">تأكيد التحويل وإرسال الصورة</button>
-            <button onclick="closePaymentModal()" class="btn close-btn">إلغاء</button>
-        </div>
-    </div>
-
-    <!-- كود الجافا سكريبت لتشغيل نافذة الدفع -->
-    <script>
-        const modal = document.getElementById('paymentModal');
-        const projectNameText = document.getElementById('modalProjectName');
-        const projectPriceText = document.getElementById('modalProjectPrice');
-        const confirmBtn = document.getElementById('confirmPaymentBtn');
-
-        function openPaymentModal(projectName, price) {
-            projectNameText.innerText = projectName;
-            projectPriceText.innerText = price;
-            
-            confirmBtn.onclick = function() {
-                const message = encodeURIComponent(`مرحباً مهندس محمد، لقد قمت بتحويل المبلغ عبر فودافون كاش لشراء: (${projectName}). أريد إرسال لقطة الشاشة لاستلام الملفات.`);
-                window.open(`https://wa.me/201021788838?text=${message}`, '_blank');
-                closePaymentModal();
-            };
-
-            modal.style.display = 'flex';
-        }
-
-        function closePaymentModal() {
-            modal.style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closePaymentModal();
-            }
-        }
-    </script>
-
-</body>
-</html>
