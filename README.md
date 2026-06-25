@@ -151,13 +151,38 @@
             border: 1px solid #f1f5f9;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
         }
         
-        /* ضبط وعرض صور المشاريع بشكل احترافي */
+        /* الأيقونات الدائرية فوق الصور */
+        .circle-icon {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 10;
+            border: 2px solid var(--accent-color);
+        }
+        .circle-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--accent-color);
+            stroke-width: 2;
+        }
+        
+        /* ضبط وعرض صور المشاريع */
         .card img {
             width: 100%;
             height: 240px;
@@ -233,6 +258,50 @@
         }
         .btn-cash:hover {
             background-color: #b30000;
+        }
+
+        /* كارت الخدمات المستقل */
+        .service-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            border: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+        }
+        .service-card .circle-icon-large {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 2px solid #34d399;
+        }
+        .service-card .circle-icon-large svg {
+            width: 35px;
+            height: 35px;
+            fill: none;
+            stroke: #34d399;
+            stroke-width: 2;
+        }
+        .service-card .card-title {
+            color: white;
+            font-size: 1.6rem;
+        }
+        .service-card .card-desc {
+            color: #94a3b8;
+        }
+        .btn-whatsapp-service {
+            background-color: #25d366;
+            color: white;
+        }
+        .btn-whatsapp-service:hover {
+            background-color: #20ba5a;
+            transform: scale(1.02);
         }
 
         /* قسم تواصل معنا */
@@ -323,6 +392,22 @@
             justify-content: center;
             gap: 10px;
         }
+        .modal-header .circle-icon-modal {
+            width: 40px;
+            height: 40px;
+            background: #fee2e2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-header .circle-icon-modal svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--vodafone-color);
+            fill: none;
+            stroke-width: 2;
+        }
         .wallet-number {
             background: #f1f5f9;
             padding: 12px;
@@ -383,59 +468,80 @@
         </div>
 
         <!-- معرض المشاريع والمنشورات -->
-        <h2 class="section-title">معرض المشاريع والمنشورات</h2>
+        <h2 class="section-title">معرض المشاريع المنفذة والخدمات</h2>
         <main class="grid">
             
             <!-- المشروع الأول: القرية البدوية -->
             <article class="card">
+                <div class="circle-icon">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+                </div>
                 <img src="1c6dc5a7-b564-4191-9808-2520c4dcae7a.jpg" alt="مشروع القرية البدوية المستدامة">
                 <div class="card-content">
-                    <span class="tag">تخطيط عمراني واستدامة</span>
+                    <span class="tag">تم التنفيذ</span>
                     <h3 class="card-title">مشروع القرية البدوية المستدامة في الصحراء</h3>
                     <p class="card-desc">مشروع متكامل يدمج التخطيط المعماري وتصميم اللاندسكيب مع استراتيجيات التصميم المستجيب للبيئة الصحراوية وتلبية احتياجات المجتمع المحلي.</p>
                     <div class="action-area">
-                        <span class="price">متاح للاستشارة والتطوير</span>
-                        <a href="https://wa.me/201021788838?text=أريد_الاستفسار_عن_مشروع_القرية_البدوية" target="_blank" class="btn btn-primary">تواصل لطلب التفاصيل</a>
+                        <span class="price">10 - 30 $</span>
+                        <a href="https://wa.me/201021788838?text=أريد_الاستفسار_عن_مشروع_القرية_البدوية" target="_blank" class="btn btn-primary">طلب المخططات المعمارية</a>
                     </div>
                 </div>
             </article>
 
             <!-- المشروع الثاني: التصميم الحضري والطرق -->
             <article class="card">
+                <div class="circle-icon">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" /></svg>
+                </div>
                 <img src="hgw1_8 - Photo.jpg" alt="مشروع تطوير البيئة الحضرية">
                 <div class="card-content">
-                    <span class="tag">تصميم حضري وكفاءة عمرانية</span>
+                    <span class="tag">تم التنفيذ</span>
                     <h3 class="card-title">مشروع تطوير كفاءة البيئة الحضرية</h3>
                     <p class="card-desc">دراسة وتصميم لتطوير شبكات الطرق والمباني السكنية، الإدارية، والتعليمية لرفع الكفاءة العمرانية وتحسين جودة الحياة داخل المدينة.</p>
                     <div class="action-area">
-                        <span class="price">200 دولار (أو ما يعادله بالمصري)</span>
-                        <button onclick="openPaymentModal('مشروع تطوير البيئة الحضرية', '200$')" class="btn btn-cash">شراء المخططات عبر فودافون كاش</button>
+                        <span class="price">10 - 30 $</span>
+                        <button onclick="openPaymentModal('مشروع تطوير البيئة الحضرية', '10 - 30 $')" class="btn btn-cash">شراء المخططات عبر فودافون كاش</button>
                     </div>
                 </div>
             </article>
 
             <!-- المشروع الثالث: النادي الرياضي والمنشآت الحضرية -->
             <article class="card">
+                <div class="circle-icon">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                </div>
                 <img src="1_16 - Photo.jpg" alt="تصاميم النادي الرياضي والمنشآت الحضرية">
                 <div class="card-content">
-                    <span class="tag">مباني ترفيهية وسكنية</span>
+                    <span class="tag">تم التنفيذ</span>
                     <h3 class="card-title">تصاميم النادي الرياضي والمنشآت الحضرية</h3>
                     <p class="card-desc">مجموعة من التصاميم المعمارية المتنوعة التي تشمل نادياً رياضياً ترفيهياً متكاملاً، وتصميم بيئة عمرانية ومساحات مفتوحة مريحة وعصرية.</p>
                     <div class="action-area">
-                        <span class="price">طلب تعديل أو شراء</span>
-                        <a href="https://wa.me/201021788838?text=أريد_التواصل_بخصوص_تصاميم_النادي_أو_المنشآت_الحضرية" target="_blank" class="btn btn-primary">تواصل الآن عبر الواتساب</a>
+                        <span class="price">10 - 30 $</span>
+                        <button onclick="openPaymentModal('تصاميم النادي والمنشآت الحضرية', '10 - 30 $')" class="btn btn-cash">شراء الملفات الهندسية</button>
                     </div>
+                </div>
+            </article>
+
+            <!-- الأيقونة والبطاقة المستقلة المخصصة للاستشارات والتنفيذ المعماري -->
+            <article class="card service-card">
+                <div class="circle-icon-large">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A1.5 1.5 0 1019.5 18.75l-5.83-5.83M11.42 15.17l2.43-2.43m-2.43 2.43H3.75A1.5 1.5 0 012.25 13.67v-3.42A1.5 1.5 0 013.75 8.75h7.67a1.5 1.5 0 011.5 1.5v3.42a1.5 1.5 0 01-1.5 1.5zm6.83-11l3.58 3.58a1.5 1.5 0 010 2.12l-5.3 5.3a1.5 1.5 0 01-2.12 0L9.36 10.36a1.5 1.5 0 010-2.12l5.3-5.3a1.5 1.5 0 012.12 0z" /></svg>
+                </div>
+                <h3 class="card-title">طلب استشارة أو تنفيذ مشروع معماري</h3>
+                <p class="card-desc">متاح بالكامل لتقديم الاستشارات المعمارية المتخصصة، التخطيط العمراني، وتصميم وتجسييد المشاريع الهندسية المتكاملة بأسلوب حديث ومستدام بناءً على رغبتك.</p>
+                <div class="action-area" style="width: 100%;">
+                    <a href="https://wa.me/201021788838?text=مرحباً_مهندس_محمد،_أريد_طلب_استشارة_معمارية_/_تنفيذ_مشروع_جديد" target="_blank" class="btn btn-whatsapp-service">تواصل معي مباشرة عبر واتساب</a>
                 </div>
             </article>
 
         </main>
     </div>
 
-    <!-- قسم تواصل معنا -->
+    <!-- قسم تواصل معنا الإضافي للفوتر -->
     <section class="contact-section">
         <div class="contact-container">
-            <div class="contact-title">للتواصل معنا</div>
-            <p class="contact-desc">لديك مشروع خاص، استشارة، أو ترغب في تعديل أحد التصاميم؟ اضغط على الزر بالأسفل للتحدث معي مباشرة عبر الواتساب.</p>
+            <div class="contact-title">للتواصل المباشر</div>
+            <p class="contact-desc">اضغط على الزر بالأسفل للتحدث معي مباشرة عبر الواتساب ومناقشة تفاصيل مشروعك أو استشارتك.</p>
             <a href="https://wa.me/201021788838" target="_blank" class="whatsapp-link">
                 <span>تواصل عبر الواتساب</span>
             </a>
@@ -450,10 +556,13 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
+                <div class="circle-icon-modal">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
+                </div>
                 <span>الدفع عبر فودافون كاش</span>
             </div>
-            <p>لإتمام شراء <strong id="modalProjectName"></strong> بقيمة <strong id="modalProjectPrice"></strong>:</p>
-            <p>قم بتحويل المبلغ (أو ما يعادله بالجنيه المصري) إلى الرقم التالي:</p>
+            <p>لإتمام شراء <strong id="modalProjectName"></strong> بقيمة تتراوح بين <strong id="modalProjectPrice"></strong>:</p>
+            <p>قم بتحويل المبلغ المتفق عليه بالجنيه المصري إلى الرقم التالي:</p>
             
             <div class="wallet-number" title="اضغط لنسخ الرقم">01021788838</div>
             
