@@ -133,11 +133,9 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         
         .about-section {
-            background: var(--card-glass);
-            backdrop-filter: blur(12px);
+            background: var(--card-glass); backdrop-filter: blur(12px);
             padding: 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            margin-bottom: 60px; border: 1px solid var(--border-glass);
-            border-right: 5px solid var(--accent-color);
+            margin-bottom: 60px; border: 1px solid var(--border-glass); border-right: 5px solid var(--accent-color);
         }
         
         .section-title { text-align: center; margin-top: 80px; margin-bottom: 10px; font-size: 2.4rem; color: #ffffff; font-weight: 700; }
@@ -157,8 +155,7 @@
         }
         .students-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .student-service-card {
-            background: rgba(5, 8, 17, 0.6);
-            border: 1px solid var(--border-glass); 
+            background: rgba(5, 8, 17, 0.6); border: 1px solid var(--border-glass); 
             padding: 25px; border-radius: 16px;
         }
         .student-service-card:hover { border-color: var(--accent-color); transform: translateY(-4px); }
@@ -168,8 +165,7 @@
         
         .programs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 35px; }
         .program-badge {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-glass);
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass);
             padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; color: #e5e7eb;
         }
         .program-badge span { color: var(--accent-color); font-weight: 700; margin-left: 4px; }
@@ -185,8 +181,7 @@
 
         /* حاسبة التكلفة */
         .calculator-section {
-            background: var(--card-glass);
-            border: 1px solid var(--border-glass);
+            background: var(--card-glass); border: 1px solid var(--border-glass);
             border-radius: 24px; padding: 40px; max-width: 800px; margin: 40px auto;
             backdrop-filter: blur(15px);
         }
@@ -198,8 +193,7 @@
         }
         .calc-field label { display: block; font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 8px; font-weight: 600; }
         .calc-field select, .calc-field input {
-            width: 100%;
-            padding: 14px; background: rgba(5,8,17,0.7);
+            width: 100%; padding: 14px; background: rgba(5,8,17,0.7);
             border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
             color: white; font-family: 'Cairo'; font-size: 0.95rem;
         }
@@ -208,8 +202,7 @@
         
         .currency-switch-wrapper { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: -10px; }
         .currency-btn {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-glass); color: var(--text-secondary);
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); color: var(--text-secondary);
             padding: 5px 15px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; font-family: 'Cairo';
         }
         .currency-btn.active { background: var(--accent-color); color: #000000; font-weight: 700; box-shadow: 0 0 10px var(--accent-glow); }
@@ -253,11 +246,9 @@
 
         /* قسم التعليقات المطور - الأيقونة العائمة المتحركة بنبضات هادئة */
         .comments-fab {
-            position: fixed;
-            bottom: 30px; right: 30px; width: 60px; height: 60px;
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
             background: var(--accent-color); border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; cursor: pointer;
-            z-index: 1500;
+            align-items: center; justify-content: center; cursor: pointer; z-index: 1500;
             box-shadow: 0 10px 30px var(--accent-glow); animation: fabPulse 2s infinite;
         }
         .comments-fab:hover { transform: scale(1.1); background: #34d399; }
@@ -271,11 +262,9 @@
 
         /* الدرج أو اللوحة الجانبية للتعليقات المتراكمة */
         .comments-drawer {
-            position: fixed;
-            top: 0; right: -380px; width: 360px; height: 100%;
+            position: fixed; top: 0; right: -380px; width: 360px; height: 100%;
             background: rgba(7, 11, 22, 0.98); backdrop-filter: blur(20px);
-            border-left: 1px solid var(--border-glass);
-            z-index: 2500; padding: 30px 20px;
+            border-left: 1px solid var(--border-glass); z-index: 2500; padding: 30px 20px;
             display: flex; flex-direction: column; gap: 20px; box-shadow: -20px 0 50px rgba(0,0,0,0.7);
         }
         .comments-drawer.open { right: 0; }
@@ -290,15 +279,13 @@
         /* نموذج إرسال الآراء والتعليقات */
         .comment-form { display: flex; flex-direction: column; gap: 12px; }
         .comment-input, .comment-textarea {
-            width: 100%;
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass);
+            width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass);
             border-radius: 10px; padding: 12px; color: white; font-family: 'Cairo'; font-size: 0.9rem;
         }
         .comment-textarea { resize: none; height: 80px; }
         .comment-input:focus, .comment-textarea:focus { border-color: var(--accent-color); outline: none; background: rgba(255,255,255,0.05); }
         .comment-submit-btn {
-            background: var(--accent-color);
-            color: #000000; font-family: 'Cairo'; font-weight: 700;
+            background: var(--accent-color); color: #000000; font-family: 'Cairo'; font-weight: 700;
             padding: 10px; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem;
         }
         .comment-submit-btn:hover { background: #34d399; transform: translateY(-2px); }
@@ -309,8 +296,7 @@
         .comments-list-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
         
         .single-comment-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border-glass);
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass);
             padding: 15px; border-radius: 12px; position: relative;
         }
         .comment-user-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
@@ -355,11 +341,7 @@
         .face-left   { transform: rotateY(-90deg) translateZ(50px); }
         .face-top    { transform: rotateX(90deg) translateZ(50px); }
         .face-bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-        @keyframes rotateCube {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
-        }
+        @keyframes rotateCube { 0% { transform: rotateX(0deg) rotateY(0deg); } 100% { transform: rotateX(360deg) rotateY(360deg); } }
 
         /* سلايدر استعراض الصور */
         .lightbox-content { position: relative; max-width: 850px; width: 92%; display: flex; flex-direction: column; align-items: center; gap: 15px; }
@@ -367,23 +349,25 @@
         .lightbox-image-container img { max-width: 100%; max-height: 72vh; object-fit: contain; display: block; }
         .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.1); color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .nav-arrow:hover { background: var(--accent-color); box-shadow: 0 0 15px var(--accent-glow); }
-        .prev-arrow { right: 20px; }
-        .next-arrow { left: 20px; }
+        .prev-arrow { right: 20px; } .next-arrow { left: 20px; }
         .lightbox-close { position: absolute; top: -50px; left: 0; background: rgba(255,255,255,0.1); border: none; color: white; font-size: 1.2rem; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .lightbox-counter { color: var(--text-primary); background: rgba(255,255,255,0.05); padding: 6px 20px; border-radius: 30px; font-weight: 600; }
 
         footer { text-align: center; padding: 40px 20px; color: #4b5563; font-size: 0.95rem; border-top: 1px solid var(--border-glass); margin-top: 40px; }
-    </style>
-</head>
-<body>
+    </style></head>
+    
+    <body>
+
     <div class="custom-cursor" id="customCursor"></div>
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer(false)"></div>
     <div class="drawer-overlay" id="commentsOverlay" onclick="toggleCommentsDrawer(false)"></div>
 
+    <!-- الأيقونة المتحركة العائمة للتعليقات الحقيقية المتراكمة -->
     <div class="comments-fab" onclick="toggleCommentsDrawer(true)" title="شاهد تعليقات وآراء العملاء والطلاب">
         <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
     </div>
 
+    <!-- لوحة التعليقات المتراكمة الجانبية من المستخدمين فقط -->
     <div class="comments-drawer" id="commentsDrawer">
         <div class="comments-header">
             <div class="comments-title">
@@ -392,10 +376,13 @@
             </div>
             <button class="close-comments-btn" onclick="toggleCommentsDrawer(false)">✕</button>
         </div>
-        
-        <div class="comments-list-box" id="commentsListBox">
-            </div>
 
+        <!-- قائمة عرض التعليقات -->
+        <div class="comments-list-box" id="commentsListBox">
+            <!-- فارغ افتراضياً ولا يمتلئ إلا عبر إدخال المستخدمين -->
+        </div>
+
+        <!-- نموذج إضافة تعليق جديد -->
         <div class="comment-form">
             <input type="text" id="commenterName" class="comment-input" placeholder="الاسم الكريم...">
             <textarea id="commenterText" class="comment-textarea" placeholder="اكتب تعليقك أو رأيك هنا..."></textarea>
@@ -411,281 +398,335 @@
             </button>
         </div>
         <ul class="drawer-menu">
-            <li class="drawer-item"><a href="#" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>الرئيسية</a></li>
-            <li class="drawer-item"><a href="#studentProjects" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>مشاريع الطلاب</a></li>
-            <li class="drawer-item"><a href="#calc" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>حاسبة التكلفة</a></li>
-            <li class="drawer-item"><a href="#workflow" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.33.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.19.02-.36.07-.52l-2.55-2.55c-.16.05-.33.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.19 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .19-.02.36-.07.52l2.55 2.55c.16-.05.33-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 6.35 19 6.18 19 6c0-1.1.9-2 2-2s2 .9 2 2z"/></svg>سير العمل الهندسي</a></li>
-            <li class="drawer-item"><a href="#contact" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>تواصل معي</a></li>
+            <li class="drawer-item"><a href="#" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>الرئيسية</span></a></li>
+            <li class="drawer-item"><a href="#about" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>نبذة عني</span></a></li>
+            <li class="drawer-item"><a href="#students" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 14zm-6 1.341c0-1.802.434-3.5 1.196-5L2 13l7 4 1-.57V19a2 2 0 002 2h2a2 2 0 002-2v-2.57l1 .57 1.196-1c.762 1.5 1.196 3.198 1.196 5H6v-3.659z" /></svg><span>مشاريع الطلاب</span></a></li>
+            <li class="drawer-item"><a href="#lifecycle" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>مراحل العمل</span></a></li>
+            <li class="drawer-item"><a href="#gallery" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>معرض المشاريع</span></a></li>
+            <li class="drawer-item"><a href="#calculator" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>حاسبة التكلفة</span></a></li>
+            <li class="drawer-item"><a href="#faq" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>الأسئلة الشائعة</span></a></li>
         </ul>
     </nav>
 
+    <div class="top-nav-bar">
+        <button class="menu-toggle-btn" onclick="toggleDrawer(true)">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
     <header>
-        <div class="top-nav-bar">
-            <button class="menu-toggle-btn" onclick="toggleDrawer(true)">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="cube-scene">
-                <div class="cube">
-                    <div class="cube-face face-front"></div>
-                    <div class="cube-face face-back"></div>
-                    <div class="cube-face face-right"></div>
-                    <div class="cube-face face-left"></div>
-                    <div class="cube-face face-top"></div>
-                    <div class="cube-face face-bottom"></div>
-                </div>
+        <div class="cube-scene">
+            <div class="cube">
+                <div class="cube-face face-front"></div>
+                <div class="cube-face face-back"></div>
+                <div class="cube-face face-right"></div>
+                <div class="cube-face face-left"></div>
+                <div class="cube-face face-top"></div>
+                <div class="cube-face face-bottom"></div>
             </div>
         </div>
-        <h1>المهندس محمد الحارون</h1>
-        <p>مـعـمـاري ومـصـمـم تـفـاعـلـي | نبتكر الفراغات برؤية هندسية معاصرة تدمج الوظيفة بالجمال التكنولوجي الساحر.</p>
+        <h1>المهندس المعماري / محمد الحارون</h1>
+        <p>معماري | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية ومشاريع التخرج الطلابية</p>
     </header>
 
     <div class="container">
-        <section class="about-section">
-            <h2 style="margin-top:0; color:#fff; font-size:1.6rem; margin-bottom:15px;">من نحن؟</h2>
-            <p style="margin:0; color:var(--text-secondary); font-size:1.05rem;">نحن نقدم حلولاً هندسية متكاملة تبدأ من دراسة الـ Concept الأولي للمشروع وتطوير الفكرة التصميمية، مروراً بكافة الرسومات التنفيذية التفصيلية وحسابات المساحات بدقة متناهية، وصولاً إلى إخراج اللوحات والبانرات النهائية بأعلى جودة بصرية معمارية تضمن تميز مشاريعكم في المحافل الأكاديمية والمهنية.</p>
+        
+        <section class="about-section" id="about">
+            <h2>نبذة عني</h2>
+            <p>
+                معماري لديّ شغف قوي بالتصميم المعماري، التخطيط العمراني، والتنمية المستدامة. أسعى دائماً لابتكار حلول مستدامة ومبتكرة تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع. 
+                خلال مسيرتي الأكاديمية والعملية، قمت بإعداد وتطوير مشاريع متنوعة تشمل التخطيط البيئي المعماري، وتصميم لاندسكيب متكامل، بالإضافة إلى دعم ومساعدة طلاب كليات الهندسة والعمارة في إنهاء مشاريع فصولهم الدراسية وتخرجهم بأفضل إخراج ممكن.
+            </p>
         </section>
 
-        <div class="section-title" id="studentProjects">خدمات مشاريع الطلاب</div>
-        <div class="section-subtitle">مزنوق في الفاينل؟ شايل هم الإخراج والرصة؟ بنشيل عنك العبء وبنحول أفكارك للوحات مبهرة</div>
-
+        <!-- قسم مساعدة الطلاب والأكاديميين المطور حديثاً -->
+        <h2 class="section-title" id="students">مساعدات ومشاريع الطلاب</h2>
+        <p class="section-subtitle">مزنوق في الفاينل؟ شايل هم الإخراج والرصة؟ إحنا هنا علشان نشيل عنك الضغط ونطلع مشروعك بأعلى جودة تضمن لك التقدير!</p>
         <section class="students-section">
             <div class="students-grid">
                 <div class="student-service-card">
-                    <h3><svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99z"/></svg>تطوير الفكرة المعمارية (Concept)</h3>
-                    <p>نساعدك في بلورة وترجمة فكرتك الفلسفية إلى خطوط وتكتيلات معمارية قوية ومقنعة للجنة التحكيم.</p>
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        تطوير ومساعدة المشاريع
+                    </h3>
+                    <p>مساعدتك خطوة بخطوة في بلورة فكرة المشروع (الـ Concept) وتطوير الرسومات التنفيذية والمعمارية وتعديلها بمرونة أكاديمية كاملة تتماشى مع طلبات الدكاترة والمناقشين.</p>
                 </div>
                 <div class="student-service-card">
-                    <h3><svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>الرسومات التنفيذية (Working Drawings)</h3>
-                    <p>إعداد المساقط الأفقية، الواجهات، والقطاعات التفصيلية المطابقة للمواصفات القياسية بدقة تامة.</p>
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        الإخراج المعماري المتكامل
+                    </h3>
+                    <p>توليد وإنتاج كافة الإخراجات واللقطات المعمارية الفاخرة، مناظير داخلية وخارجية ببيئة ضوئية متكاملة لاندسكيب ومواد واقعية تبرز جمال وقوة تصميمك.</p>
                 </div>
                 <div class="student-service-card">
-                    <h3><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>حساب المساحات والدراسات</h3>
-                    <p>عمل الجداول التحليلية الدقيقة للمساحات، النسب البنائية، وحسابات الـ Zoning للمشروع بالكامل.</p>
-                </div>
-                <div class="student-service-card">
-                    <h3><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>إخراج البانر النهائي (Post-Production)</h3>
-                    <p>تجميع عناصر المشروع وترتيبها في شيتات وبانرات تخرج احترافية ومبهرة بصرياً تشد العين مباشرة.</p>
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                        تنسيق ورصة البانر النهائي
+                    </h3>
+                    <p>نقوم بتجميع ورص شاسيهات التسليم النهائي للفاينل وبنرات التخرج (Final Layout/Postering) وفق تكوين بصري (Composition) مريح ومقروء يبرز تسلسل المشروع بشكل علمي واحترافي أمام لجنة التحكيم.</p>
                 </div>
             </div>
-            
+
             <div class="programs-container">
-                <div class="program-badge">AutoCAD <span>2D/3D</span></div>
-                <div class="program-badge">Revit <span>BIM</span></div>
-                <div class="program-badge">3ds Max <span>V-Ray</span></div>
-                <div class="program-badge">Photoshop <span>Architecture</span></div>
-                <div class="program-badge">Lumion <span>Render</span></div>
+                <div class="program-badge"><span>AutoCAD</span> للرسومات الثنائية والمساقط 2D</div>
+                <div class="program-badge"><span>Revit</span> للنمذجة ثلاثية الأبعاد الـ 3D BIM</div>
+                <div class="program-badge"><span>D5 Render</span> لإخراج الريندرات والمناظير الفائقة الواقعية</div>
+                <div class="program-badge"><span>Photoshop</span> للبوست برودكشن وتنسيق البانر النهائي</div>
             </div>
         </section>
 
-        <div class="skills-grid">
+        <h2 class="section-title" id="skills">مهاراتي ومخرجات العمل</h2>
+        <section class="skills-grid">
+            <div class="skill-card">مساقط أفقية دقيقة (Floor Plans)</div>
+            <div class="skill-card">قطاعات رأسية وسكاشن (Sections)</div>
+            <div class="skill-card">واجهات معمارية حديثة (Elevations)</div>
+            <div class="skill-card">المخطط العام واللاي أوت (Layout)</div>
             <div class="skill-card">التصميم المعماري المستدام</div>
-            <div class="skill-card">الإظهار المعماري الاحترافي</div>
-            <div class="skill-card">إعداد المخططات التنفيذية الكاملة</div>
-            <div class="skill-card">التخطيط العمراني وتصميم المواقع</div>
-        </div>
-
-        <div class="section-title">معرض المشاريع البصرية</div>
-        <div class="section-subtitle">انقر على أي مشروع لاستعراض صوره الهندسية في نافذة تفاعلية مكبرة</div>
-
-        <div class="photo-gallery">
-            <div class="circle-project" onclick="openGalleryLightbox(1)">
-                <img src="https://g.top4top.io/p_38289k2v61.jpg" alt="المشروع الأول">
-                <div class="circle-overlay">مشروع السكن المعاصر <span>اضغط للعرض 👁️</span></div>
-            </div>
-            <div class="circle-project" onclick="openGalleryLightbox(2)">
-                <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="المشروع الثاني">
-                <div class="circle-overlay">المركز الثقافي الذكي <span>اضغط للعرض 👁️</span></div>
-            </div>
-        </div>
-
-        <div class="section-title" id="calc">حاسبة التكلفة الهندسية الذكية</div>
-        <div class="section-subtitle">احسب تكلفة مشروعك المعماري والوقت المتوقع فوراً وبشفافية كاملة</div>
-
-        <section class="calculator-section">
-            <div class="currency-switch-wrapper">
-                <button class="currency-btn active" id="btnEGP" onclick="switchCurrency('EGP')">EGP (جنيه)</button>
-                <button class="currency-btn" id="btnUSD" onclick="switchCurrency('USD')">USD ($)</button>
-            </div>
-            
-            <div class="calc-grid">
-                <div class="calc-field">
-                    <label>نوع الخدمة أو الباقة المطلوبة</label>
-                    <select id="calcPackage" onchange="calculateProjectCost()">
-                        <option value="45">تصميم خارجي مبدئي (3D Facades) - 45 للمتر</option>
-                        <option value="75" selected>تصميم خارجي متكامل ومخططات - 75 للمتر</option>
-                        <option value="110">تصميم داخلي وتوزيع فراغات (Interior) - 110 للمتر</option>
-                        <option value="140">الباقة الذهبية (داخلي + خارجي + لاندسكيب) - 140 للمتر</option>
-                        <option value="35">التخطيط العمراني وتصميم المواقع (Urban) - 35 للمتر</option>
-                    </select>
-                </div>
-                <div class="calc-field">
-                    <label>مساحة الأرض / المبنى الإجمالية (متر مربع)</label>
-                    <input type="number" id="calcArea" value="200" min="20" oninput="calculateProjectCost()">
-                </div>
-
-                <div class="live-stats-panel">
-                    <div class="stat-box">
-                        <div class="stat-value" id="statDays">0</div>
-                        <div class="stat-label">أيام عمل متوقعة</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="statDrawings">0</div>
-                        <div class="stat-label">لوحة هندسية تقديرية</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="statRevisions">3</div>
-                        <div class="stat-label">تعديلات مجانية متاحين</div>
-                    </div>
-                </div>
-
-                <div class="calc-full-width">
-                    <div class="calc-result-box">
-                        <div style="font-size:1.05rem; color:var(--text-secondary);">التكلفة الإجمالية التقديرية للمشروع</div>
-                        <div class="calc-price" id="calcTotalPrice">0 جنيه</div>
-                        <p style="font-size:0.85rem; color:var(--text-secondary); margin:5px 0 15px 0;">السعر نهائي ويشمل اللوحات المتفق عليها والتسليم بصيغ متعددة.</p>
-                        <button class="submit-auth-btn comment-submit-btn" onclick="openPaymentModal()">احجز مشروعك واشحن الآن</button>
-                    </div>
-                </div>
-            </div>
+            <div class="skill-card">تنسيق المواقع (Landscape)</div>
         </section>
 
-        <div class="section-title" id="workflow">مراحل سير العمل المعماري</div>
-        <div class="section-subtitle">آلية عمل هندسية دقيقة تضمن تحويل حلمك إلى حقيقة مدروسة وقابلة للتنفيذ</div>
-
-        <div class="timeline-container">
+        <!-- خطة ومراحل سير العمل الهندسية -->
+        <h2 class="section-title" id="lifecycle">مراحل سير العمل الهندسي</h2>
+        <p class="section-subtitle">خطوات منهجية واضحة ومدروسة نتبعها لتحويل رؤيتك المعمارية إلى واقع ملموس</p>
+        <section class="timeline-container">
             <div class="timeline-step">
                 <div class="timeline-content">
                     <span class="timeline-num">المرحلة 01</span>
-                    <h4 class="timeline-title">جمع البيانات واستلام المتطلبات (Briefing)</h4>
-                    <p class="timeline-desc">نجلس معك لمناقشة الاحتياجات، فكرة المشروع، دراسة طبيعة الأرض، وتحديد الأهداف والأنماط المعمارية المفضلة لديك.</p>
+                    <h3 class="timeline-title">جمع البيانات والبرنامج المعماري</h3>
+                    <p class="timeline-desc">مناقشة متطلباتك، أبعاد قطعة الأرض، الارتدادات القانونية، والأسلوب المعماري المفضل (مودرن، كلاسيك، نيومودرن) لإنشاء وثيقة المشروع المبدئية.</p>
                 </div>
             </div>
             <div class="timeline-step">
                 <div class="timeline-content">
                     <span class="timeline-num">المرحلة 02</span>
-                    <h4 class="timeline-title">التصميم المبدئي وتطوير الفكرة (Concept & 2D)</h4>
-                    <p class="timeline-desc">نقوم بإعداد المساقط الأفقية وتوزيع الفراغات المعمارية بشكل أولي مع تقديم خطوط الـ Concept العامة لمناقشتها وتعديلها.</p>
+                    <h3 class="timeline-title">التخطيط المبدئي والمساقط (2D)</h3>
+                    <p class="timeline-desc">دراسة التوجيه الشمسي وحركة الرياح لتوزيع الفراغات الداخلية بذكاء واستغلال كل متر مربع، ثم عرض المساقط الأفقية لاعتمادها وعمل التعديلات.</p>
                 </div>
             </div>
             <div class="timeline-step">
                 <div class="timeline-content">
                     <span class="timeline-num">المرحلة 03</span>
-                    <h4 class="timeline-title">النمذجة ثلاثية الأبعاد والإظهار (3D Modeling & Rendering)</h4>
-                    <p class="timeline-desc">نرفع المشروع إلى مجسم ثلاثي أبعاد كامل لترى التفاصيل، المواد، الألوان، والإضاءة بواقعية مذهلة قبل أي خطوة تنفيذية.</p>
+                    <h3 class="timeline-title">الكتل ثلاثية الأبعاد والواجهات (3D)</h3>
+                    <p class="timeline-desc">تجسيد المساقط الصامتة إلى مجسمات حية، وتصميم الواجهات الخارجية وتنسيق المسطحات الخضراء وعناصر الـ Landscape لتشاهد مشروعك قبل بنائه.</p>
                 </div>
             </div>
             <div class="timeline-step">
                 <div class="timeline-content">
                     <span class="timeline-num">المرحلة 04</span>
-                    <h4 class="timeline-title">اللوحات التنفيذية وشيتات التسليم (Working Drawings)</h4>
-                    <p class="timeline-desc">نصدر المخططات التفصيلية النهائية، القطاعات، الجداول، ورص اللوحات والبانرات الجاهزة للطباعة والتسليم الفوري.</p>
+                    <h3 class="timeline-title">المخططات التنفيذية والتسليم النهائي</h3>
+                    <p class="timeline-desc">إعداد وتجهيز لوحات الـ Working والقطاعات والواجهات التنفيذية الشاملة للأبعاد والمواد بدقة عالية لتسليمها لمهندسي المقاولات والبدء في التنفيذ مباشرة.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section-title">الأسئلة الشائعة (FAQ)</div>
-        <div class="section-subtitle">إجابات هندسية سريعة ومباشرة على أكثر الاستفسارات التي تدور في ذهنك</div>
+        <h2 class="section-title" id="gallery">معرض المشاريع المنفذة</h2>
+        <p class="section-subtitle">تتكون المنصة من مشروعين رئيسيين، اضغط لتصفح الـ 5 صور الخاصة بكل مشروع بالكامل</p>
+        
+        <main class="photo-gallery">
+            <div class="circle-project" title="مشروع معماري 1" onclick="openGalleryLightbox(1)">
+                <img src="https://b.top4top.io/p_3828lnjav1.jpg" alt="مشروع معماري 1">
+                <div class="circle-overlay">المشروع الأول<span>elharoun (يحتوي على 5 صور)</span></div>
+            </div>
+            <div class="circle-project" title="مشروع معماري 2" onclick="openGalleryLightbox(2)">
+                <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="مشروع معماري 2">
+                <div class="circle-overlay">المشروع الثاني<span>elharoun (يحتوي على 5 صور)</span></div>
+            </div>
+        </main>
 
-        <div class="faq-wrapper">
+        <!-- حاسبة التكلفة -->
+        <h2 class="section-title" id="calculator">حاسبة التكلفة المبدئية والباقات الهندسية</h2>
+        <p class="section-subtitle">اختر باقة التصميم والمخرجات المطلوبة مع إدخال المساحة للحصول على تقرير دقيق حياً</p>
+        <section class="calculator-section">
+            <div class="currency-switch-wrapper">
+                <button id="btnEGP" class="currency-btn active" onclick="setCurrency('EGP')">ج.م (EGP)</button>
+                <button id="btnUSD" class="currency-btn" onclick="setCurrency('USD')">دولار ($)</button>
+            </div>
+            
+            <div class="calc-grid">
+                <div class="calc-field calc-full-width">
+                    <label>باقة التصميم المعماري والمخرجات المطلوبة</label>
+                    <select id="calcPackage" onchange="calculateProjectCost()">
+                        <option value="45" data-sheets="4" data-hours="25" data-days="5">باقة التصميم الخارجي المبدئي (مساقط أفقية + كتل خارجية مبدئية)</option>
+                        <option value="75" data-sheets="8" data-hours="45" data-days="10">باقة التصميم الخارجي المتكامل (مساقط + قطاعات + واجهات + رندر 3D)</option>
+                        <option value="110" data-sheets="12" data-hours="70" data-days="15">باقة التصميم الداخلي الشامل (مساقط توزيع الأثاث + لقطات رندر مجسمة لكل الفراغات)</option>
+                        <option value="140" data-sheets="16" data-hours="100" data-days="22">الباقة الذهبية المدمجة (معماري خارجي + لاندسكيب حدائق + مخططات تنفيذية ووركينج)</option>
+                        <option value="35" data-sheets="5" data-hours="35" data-days="7">باقة التخطيط العمراني (دراسة شبكات الطرق وتوزيع الأراضي واللاي أوت المبدئي)</option>
+                    </select>
+                </div>
+                
+                <div class="calc-field calc-full-width" style="margin-top: 10px;">
+                    <label>المساحة الإجمالية للمشروع (متر مربع)</label>
+                    <input type="number" id="calcArea" value="150" min="10" oninput="calculateProjectCost()">
+                </div>
+
+                <div class="live-stats-panel">
+                    <div class="stat-box">
+                        <div class="stat-value" id="statSheets">0</div>
+                        <div class="stat-label">عدد اللوحات المتوقعة</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="statHours">0 ساعة</div>
+                        <div class="stat-label">ساعات العمل المقدرة</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="statDays">0 أيام</div>
+                        <div class="stat-label">زمن التسليم المتوقع</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calc-result-box">
+                <div style="font-weight: 600; color: var(--text-secondary);">التكلفة التقديرية المقدرة للباقة بالكامل:</div>
+                <div class="calc-price" id="calcPriceDisplay">0 ج.م</div>
+                <button class="submit-auth-btn" style="background: rgba(255,255,255,0.05); color: #ffffff; border: 1px solid var(--accent-color); margin-top: 15px;" onclick="sendEstimateToWhatsapp()">مناقشة تفاصيل الباقة والمشروع عبر واتساب</button>
+            </div>
+        </section>
+
+        <!-- الأسئلة الشائعة الأكورديون -->
+        <h2 class="section-title" id="faq">الأسئلة الشائعة (FAQ)</h2>
+        <p class="section-subtitle">إجابات سريعة وواضحة على أكثر الأسئلة المعمارية والفنية تداولاً</p>
+        <section class="faq-wrapper">
             <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">ما هي البيانات المطلوبة لبدء العمل في مشروعي؟ <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
-                <div class="faq-answer">نحتاج أبعاد الأرض الكروكية، المتطلبات الأساسية (كم غرفة، كم دور)، وأي طراز معماري تفضله أو صور ملهمة تعجبك لبناء الفكرة عليها.</div>
+                <div class="faq-question">
+                    <span>هل يمكنني إجراء تعديلات على التصاميم بعد تسليمها؟</span>
+                    <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq-answer">نعم بكل تأكيد، نتيح جولتين من التعديلات المجانية على المساقط الأفقية والكتل المبدئية لضمان تلبية التصاميم بالكامل لتطلعاتك قبل إخراج اللوحات النهائية والتنفيذية.</div>
             </div>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">هل يمكنني تعديل التصميم بعد استلامه؟ <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
-                <div class="faq-answer">نعم، جميع الباقات تمنحك تعديلات مجانية مرنة أثناء المراحل الأساسية لضمان خروج المشروع بالشكل الذي يرضيك تماماً.</div>
+                <div class="faq-question">
+                    <span>ما هي الصيغ والملفات التي يتم تسليمها للعميل؟</span>
+                    <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq-answer">يتم تسليم لوحات ومخططات العمل بصيغة PDF عالية الجودة وصور رندر فائقة الدقة للواجهات والكتل، بالإضافة للملفات المصدرية للأوتوكاد (DWG) عند طلب المخططات التنفيذية.</div>
             </div>
             <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">كيف يتم استلام الملفات واللوحات النهائية؟ <svg viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg></div>
-                <div class="faq-answer">يتم تسليمك ملفات رقمية عالية الجودة بصيغة PDF جاهزة للطباعة مباشرة، بالإضافة إلى الملفات المصدرية الأصلية (DWG أو RVT) حسب نوع الاتفاق.</div>
+                <div class="faq-question">
+                    <span>هل التصاميم واللوحات تكون متوافقة مع شروط البناء المعتمدة؟</span>
+                    <svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="faq-answer">نعم، جميع التصاميم المعمارية يتم إعدادها بدقة بالغة بالاعتماد على كود البناء وشروط الارتدادات والمساحات المعتمدة محلياً لضمان سهولة ترخيصها وتنفيذها دون أي معوقات قانونية.</div>
             </div>
-        </div>
-
-        <div class="section-title">بوابة الشحن المالي المباشر</div>
-        <div class="section-subtitle">اشحن قيمة باقتك فوراً عبر فودافون كاش لربط المعاملة وبدء حجز المهندس وتثبيت موعدك</div>
+        </section>
 
         <div class="payment-status-container">
             <div class="payment-card" onclick="openPaymentModal()">
                 <div class="wallet-icon-glow">
-                    <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
                 </div>
-                <h4 style="margin:0; font-size:1.15rem; color:#ffffff;">فودافون كاش (Vodafone Cash)</h4>
-                <p style="margin:0; font-size:0.85rem; color:var(--text-secondary);">اضغط لشحن الحساب وتأكيد التعاقد</p>
+                <h4 class="payment-text-main">بوابة الدفع الإلكتروني</h4>
             </div>
         </div>
 
         <section class="contact-section" id="contact">
-            <h2 style="margin-top:0; font-size:2rem; margin-bottom:10px;">هل أنت جاهز لبدء مشروعك الآن؟</h2>
-            <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 35px auto; font-size:1.1rem;">اضغط على الزر أدناه لفتح محادثة مباشرة تفاعلية عبر واتساب مع المهندس محمد الحارون لمناقشة تفاصيل وأفكار مشروعك فوراً.</p>
-            <a href="https://wa.me/201021469502" target="_blank" class="whatsapp-link">تواصل عبر الواتساب الفوري 💬</a>
+            <div class="contact-container">
+                <h2 class="contact-title">هل لديك مشروع ترغب في تطويره؟</h2>
+                <p class="contact-desc">يسعدني دائماً تواصلك لمناقشة الأفكار المعمارية وتحويلها إلى واقع مستدام.</p>
+                <a href="https://wa.me/201050758773" class="whatsapp-link" target="_blank" id="mainWhatsappBtn">تواصل عبر واتساب</a>
+            </div>
         </section>
+
     </div>
 
-    <div class="modal" id="galleryLightbox">
+    <!-- فودافون كاش -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;">تفاصيل الدفع عبر فودافون كاش</div>
+            <p style="color: var(--text-secondary);">يمكنك تحويل الرسوم المتفق عليها إلى الرقم التالي:</p>
+            <div style="font-size: 1.8rem; font-weight: 700; color: var(--vodafone-color); margin: 15px 0; letter-spacing: 2px;">01050758773</div>
+            <button class="close-btn" onclick="closePaymentModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- سلايدر استعراض المشاريع -->
+    <div id="galleryLightbox" class="modal">
         <div class="lightbox-content">
             <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
             <div class="lightbox-image-container">
                 <button class="nav-arrow prev-arrow" onclick="changeLightboxImage(1)">❯</button>
-                <img id="lightboxImg" src="" alt="صورة المعرض المعماري المكبرة">
+                <img id="lightboxImg" src="">
                 <button class="nav-arrow next-arrow" onclick="changeLightboxImage(-1)">❮</button>
             </div>
-            <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
-        </div>
-    </div>
-
-    <div class="modal" id="paymentModal">
-        <div class="modal-content">
-            <div class="wallet-icon-glow" style="margin:0 auto 20px auto;">
-                <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-            </div>
-            <h3 style="margin:0 0 10px 0; color:white;">رقم الشحن والتحويل المباشر</h3>
-            <p style="color:var(--text-secondary); font-size:0.95rem; margin:0 0 20px 0;">يرجى تحويل المبلغ المستحق التقديري أو العربون إلى الرقم التالي:</p>
-            <div style="background:rgba(230, 0, 0, 0.1); border:1px dashed var(--vodafone-color); color:white; font-size:1.5rem; font-weight:700; padding:12px; border-radius:12px; letter-spacing:1px; margin-bottom:20px;">
-                01021469502
-            </div>
-            <p style="color:var(--accent-color); font-size:0.85rem; margin:0 0 10px 0; font-weight:600;">* بعد إتمام التحويل، أرسل لقطة شاشة (Screenshot) للرسالة عبر الواتساب لتفعيل وحجز المشروع فوراً.</p>
-            <button class="close-btn" onclick="closePaymentModal()">إغلاق النافذة</button>
+            <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
         </div>
     </div>
 
     <footer>
-        حقوق النشر والطبع محفوظة © 2026 | تصميم وتطوير منصة المهندس محمد الحارون التفاعلية المعمارية.
+        <p>جميع الحقوق محفوظة © المهندس محمد الحارون 2026</p>
     </footer>
 
     <script>
-        // مؤشر الماوس
+        // تتبع حركة الماوس المعماري
         const cursor = document.getElementById('customCursor');
         document.addEventListener('mousemove', (e) => {
-            if(cursor) { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; }
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
         });
 
-        // التبديل والتحكم بالقوائم واللوحات الجانبية
-        function toggleDrawer(open) {
-            document.getElementById('sideDrawer').classList.toggle('open', open);
-            document.getElementById('drawerOverlay').classList.toggle('show', open);
-        }
+        // نظام التخزين المتراكم للتعليقات الحقيقية (LocalStorage) بدون تعليقات افتراضية
+        let commentsArray = JSON.parse(localStorage.getItem('haroun_comments')) || [];
+
         function toggleCommentsDrawer(open) {
-            document.getElementById('commentsDrawer').classList.toggle('open', open);
-            document.getElementById('commentsOverlay').classList.toggle('show', open);
-            if(open) { displayComments(); }
+            const drawer = document.getElementById('commentsDrawer');
+            const overlay = document.getElementById('commentsOverlay');
+            if (open) { drawer.classList.add('open'); overlay.classList.add('show'); renderComments(); }
+            else { drawer.classList.remove('open'); overlay.classList.remove('show'); }
         }
 
-        // الأكورديون للأسئلة
-        function toggleFaq(element) {
-            const isActive = element.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-            if (!isActive) element.classList.add('active');
+        function renderComments() {
+            const box = document.getElementById('commentsListBox');
+            box.innerHTML = '';
+            document.getElementById('commentCount').innerText = commentsArray.length;
+
+            if (commentsArray.length === 0) {
+                box.innerHTML = '<div class="empty-comments-notice">لا توجد تعليقات بعد. كن أول من يترك تعليقه المعماري أو رأيه هنا!</div>';
+                return;
+            }
+
+            commentsArray.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'single-comment-card';
+                card.innerHTML = `
+                    <div class="comment-user-meta">
+                        <span class="comment-username">${item.name}</span>
+                        <span class="comment-date">${item.date}</span>
+                    </div>
+                    <p class="comment-text-content">${item.text}</p>
+                `;
+                box.appendChild(card);
+            });
+            box.scrollTop = box.scrollHeight; // التمرير التلقائي لآخر تعليق مضاف بالأسفل
         }
 
-        // نوافذ الدفع والشحن
-        function openPaymentModal() { document.getElementById('paymentModal').style.display = 'flex'; }
-        function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
+        function addNewComment() {
+            const nameInput = document.getElementById('commenterName');
+            const textInput = document.getElementById('commenterText');
 
-        // نظام احتساب وتثبيت العملات والأسعار
+            if (!nameInput.value.trim() || !textInput.value.trim()) {
+                alert('فضلاً، املأ حقل الاسم والتعليق أولاً!');
+                return;
+            }
+
+            const today = new Date().toISOString().split('T')[0];
+            const newComment = {
+                name: nameInput.value.trim(),
+                text: textInput.value.trim(),
+                date: today
+            };
+
+            commentsArray.push(newComment);
+            localStorage.setItem('haroun_comments', JSON.stringify(commentsArray)); // تخزين دائم ومتراكم
+
+            nameInput.value = '';
+            textInput.value = '';
+            renderComments();
+        }
+
+        // نظام حساب التكلفة والباقات
         let currentCurrency = 'EGP';
-        let currentExchangeRate = 50; 
+        const exchangeRate = 0.021; 
 
-        function switchCurrency(currency) {
+        function setCurrency(currency) {
             currentCurrency = currency;
             document.getElementById('btnEGP').classList.toggle('active', currency === 'EGP');
             document.getElementById('btnUSD').classList.toggle('active', currency === 'USD');
@@ -693,92 +734,67 @@
         }
 
         function calculateProjectCost() {
-            const basePricePerMeter = parseFloat(document.getElementById('calcPackage').value);
+            const selectElement = document.getElementById('calcPackage');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            
+            const costPerMeter = parseFloat(selectedOption.value);
             const area = parseFloat(document.getElementById('calcArea').value) || 0;
             
-            if(area <= 0) {
-                document.getElementById('calcTotalPrice').innerText = currentCurrency === 'EGP' ? '0 جنيه' : '0 $';
-                document.getElementById('statDays').innerText = '0';
-                document.getElementById('statDrawings').innerText = '0';
-                return;
-            }
+            let finalCostEGP = Math.round(costPerMeter * area);
 
-            // حساب السعر الإجمالي الأساسي بالجنيه المصري
-            let totalPriceInEGP = basePricePerMeter * area;
-            
-            // معادلة الـ scaleFactor المعتمدة على المساحة لعدم تضخم الأيام بشكل عشوائي
-            const scaleFactor = Math.sqrt(area / 100);
-            
-            let days = Math.round(7 * scaleFactor);
-            let drawings = Math.round(5 * scaleFactor);
-            
-            if(days < 3) days = 3;
-            if(drawings < 2) drawings = 2;
+            const baseSheets = parseInt(selectedOption.getAttribute('data-sheets'));
+            const baseHours = parseInt(selectedOption.getAttribute('data-hours'));
+            const baseDays = parseInt(selectedOption.getAttribute('data-days'));
 
-            document.getElementById('statDays').innerText = days;
-            document.getElementById('statDrawings').innerText = drawings;
+            const scaleFactor = Math.max(0.6, area / 150); 
+            const calculatedSheets = Math.max(3, Math.round(baseSheets * Math.sqrt(scaleFactor)));
+            const calculatedHours = Math.max(10, Math.round(baseHours * scaleFactor));
+            const calculatedDays = Math.max(2, Math.round(baseDays * Math.sqrt(scaleFactor)));
 
-            if (currentCurrency === 'USD') {
-                let totalPriceInUSD = Math.round(totalPriceInEGP / currentExchangeRate);
-                document.getElementById('calcTotalPrice').innerText = totalPriceInUSD + ' $';
+            document.getElementById('statSheets').innerText = `${calculatedSheets} لوحات`;
+            document.getElementById('statHours').innerText = `${calculatedHours} ساعة`;
+            document.getElementById('statDays').innerText = `${calculatedDays} يوم`;
+            
+            if (currentCurrency === 'EGP') {
+                document.getElementById('calcPriceDisplay').innerText = finalCostEGP.toLocaleString('ar-EG') + " ج.م";
             } else {
-                document.getElementById('calcTotalPrice').innerText = Math.round(totalPriceInEGP).toLocaleString('ar-EG') + ' جنيه';
+                let finalCostUSD = Math.round(finalCostEGP * exchangeRate);
+                document.getElementById('calcPriceDisplay').innerText = finalCostUSD.toLocaleString('en-US') + " $";
             }
         }
 
-        // نظام التعليقات المحلي (LocalStorage) المعتمد كلياً على مدخلات زوارك فقط
-        function addNewComment() {
-            const nameInput = document.getElementById('commenterName');
-            const textInput = document.getElementById('commenterText');
-            const name = nameInput.value.trim();
-            const text = textInput.value.trim();
-
-            if(!name || !text) { alert('من فضلك املأ حقل الاسم والتعليق الكريم أولاً.'); return; }
-
-            const newComment = {
-                id: Date.now(),
-                username: name,
-                commentText: text,
-                dateString: new Date().toLocaleDateString('ar-EG', {hour: '2-digit', minute:'2-digit'})
-            };
-
-            let commentsList = JSON.parse(localStorage.getItem('haroun_user_comments')) || [];
-            commentsList.unshift(newComment);
-            localStorage.setItem('haroun_user_comments', JSON.stringify(commentsList));
-
-            nameInput.value = '';
-            textInput.value = '';
-            displayComments();
+        function sendEstimateToWhatsapp() {
+            const packageText = document.getElementById('calcPackage').options[document.getElementById('calcPackage').selectedIndex].text;
+            const area = document.getElementById('calcArea').value;
+            const price = document.getElementById('calcPriceDisplay').innerText;
+            const sheets = document.getElementById('statSheets').innerText;
+            const days = document.getElementById('statDays').innerText;
+            
+            const message = encodeURIComponent(`مرحباً مهندس محمد، أود الاستفسار وبدء العمل على مشروع بالبيانات الآتية:\n- الباقة المختارة: ${packageText}\n- المساحة الإجمالية: ${area} متر مربع\n- التقدير الإحصائي: [ ${sheets} | خلال ${days} ]\n- التكلفة الإجمالية: ${price}\nبرجاء مراجعة البيانات للبدء.`);
+            window.open(`https://wa.me/201050758773?text=${message}`, '_blank');
         }
 
-        function displayComments() {
-            const container = document.getElementById('commentsListBox');
-            let commentsList = JSON.parse(localStorage.getItem('haroun_user_comments')) || [];
-            document.getElementById('commentCount').innerText = commentsList.length;
-
-            if(commentsList.length === 0) {
-                container.innerHTML = `<div class="empty-comments-notice">لا توجد آراء مكتوبة حالياً. كن أول من يكتب تعليقاً أو رأياً معمارياً كريمًا!</div>`;
-                return;
-            }
-
-            container.innerHTML = commentsList.map(item => `
-                <div class="single-comment-card">
-                    <div class="comment-user-meta">
-                        <span class="comment-username">${escapeHtml(item.username)}</span>
-                        <span class="comment-date">${item.dateString}</span>
-                    </div>
-                    <p class="comment-text-content">${escapeHtml(item.commentText)}</p>
-                </div>
-            `).join('');
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) { element.classList.add('active'); }
         }
 
-        function escapeHtml(text) {
-            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        document.addEventListener("DOMContentLoaded", () => {
+            calculateProjectCost();
+            document.getElementById('commentCount').innerText = commentsArray.length;
+        });
+
+        function toggleDrawer(open) {
+            const drawer = document.getElementById('sideDrawer');
+            const overlay = document.getElementById('drawerOverlay');
+            if (open) { drawer.classList.add('open'); overlay.classList.add('show'); }
+            else { drawer.classList.remove('open'); overlay.classList.remove('show'); }
         }
 
-        // معرض اللايتبوكس التفاعلي للصور المعمارية المرفوعة
+        // سلايدر صور المشاريع
         const projectGalleries = {
-            1: ["https://g.top4top.io/p_38289k2v61.jpg", "https://i.top4top.io/p_3828nlyg81.jpg", "https://g.top4top.io/p_38288wnor1.jpg", "https://g.top4top.io/p_3828f4bqz1.jpg"],
+            1: ["https://b.top4top.io/p_3828lnjav1.jpg", "https://k.top4top.io/p_3828jbw581.jpg", "https://d.top4top.io/p_38285y97w1.jpg", "https://g.top4top.io/p_38288wnor1.jpg", "https://g.top4top.io/p_3828f4bqz1.jpg"],
             2: ["https://h.top4top.io/p_3828kfxcl1.jpg", "https://k.top4top.io/p_3828clele1.jpg", "https://c.top4top.io/p_3828gvugl1.jpg", "https://k.top4top.io/p_3828qrim11.jpg", "https://b.top4top.io/p_3828lgvbq1.jpg"]
         };
         let activeProjectId = 1, activeImageIndex = 0;
@@ -786,12 +802,10 @@
         function openGalleryLightbox(projectId) { activeProjectId = projectId; activeImageIndex = 0; updateLightboxUI(); document.getElementById('galleryLightbox').style.display = 'flex'; }
         function closeGalleryLightbox() { document.getElementById('galleryLightbox').style.display = 'none'; }
         function changeLightboxImage(direction) { const imagesList = projectGalleries[activeProjectId]; activeImageIndex += direction; if (activeImageIndex >= imagesList.length) activeImageIndex = 0; else if (activeImageIndex < 0) activeImageIndex = imagesList.length - 1; updateLightboxUI(); }
-        function updateLightboxUI() { const imagesList = projectGalleries[activeProjectId]; document.getElementById('lightboxImg').src = imagesList[activeImageIndex]; document.getElementById('lightboxCounter').innerText = (activeImageIndex + 1) + " / " + imagesList.length; }
+        function updateLightboxUI() { const imagesList = projectGalleries[activeProjectId]; document.getElementById('lightboxImg').src = imagesList[activeImageIndex]; document.getElementById('lightboxCounter').innerText = `${activeImageIndex + 1} / ${imagesList.length}`; }
 
-        // تشغيل الحاسبة بشكل تلقائي عند تحميل الصفحة للمرة الأولى
-        window.addEventListener('DOMContentLoaded', () => {
-            calculateProjectCost();
-        });
+        function openPaymentModal() { document.getElementById('paymentModal').style.display = 'flex'; }
+        function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; }
     </script>
 </body>
 </html>
