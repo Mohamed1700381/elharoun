@@ -171,7 +171,7 @@
         .side-drawer {
             position: fixed;
             top: 0;
-            left: -320px; /* مخفية تماماً جهة اليسار */
+            left: -320px;
             width: 300px;
             height: 100%;
             background: rgba(5, 8, 17, 0.92);
@@ -186,7 +186,7 @@
             box-shadow: 20px 0 50px rgba(0, 0, 0, 0.8);
         }
         .side-drawer.open {
-            left: 0; /* تتحرك لتظهر بالكامل */
+            left: 0;
         }
         .drawer-header {
             display: flex;
@@ -213,9 +213,6 @@
             height: 24px;
             stroke: var(--text-secondary);
             stroke-width: 2;
-        }
-        .close-drawer-btn:hover svg {
-            stroke: #ffffff;
         }
 
         /* مسارات وروابط القائمة */
@@ -244,7 +241,7 @@
             color: #ffffff;
             background: rgba(16, 185, 129, 0.1);
             border-color: rgba(16, 185, 129, 0.3);
-            padding-right: 22px; /* حركة ترحيبية بالماوس */
+            padding-right: 22px;
         }
         .drawer-item svg {
             width: 20px;
@@ -254,7 +251,7 @@
             fill: none;
         }
 
-        /* غطاء خلفي عند فتح القائمة لجعل التركيز عليها */
+        /* غطاء خلفي عند فتح القائمة */
         .drawer-overlay {
             display: none;
             position: fixed;
@@ -375,7 +372,6 @@
             font-size: 0.95rem;
             margin-top: 5px;
         }
-        /* نقطة النبض الأخضر للمستخدمين النشطين */
         .live-dot {
             width: 10px;
             height: 10px;
@@ -391,7 +387,7 @@
             100% { transform: scale(0.8); opacity: 0.5; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
-        /* العناوين الرئيسية للأقسام */
+        /* العناوين الرئيسية الأقسام */
         .section-title {
             text-align: center;
             margin-top: 60px;
@@ -441,7 +437,7 @@
             box-shadow: 0 10px 25px var(--accent-glow);
         }
 
-        /* معرض صور المشاريع المتطورة بروابط مستقلة */
+        /* معرض صور المشاريع المتطورة */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -450,10 +446,13 @@
             margin-bottom: 60px;
         }
         
-        .project-link {
-            text-decoration: none;
-            color: inherit;
+        .project-trigger-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
             display: block;
+            outline: none;
         }
 
         .circle-project {
@@ -464,7 +463,6 @@
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            cursor: pointer;
         }
         
         .circle-project img {
@@ -500,17 +498,59 @@
             font-weight: 400;
         }
         
-        .project-link:hover .circle-project {
+        .project-trigger-btn:hover .circle-project {
             transform: scale(1.05) translateY(-8px);
             border-color: var(--accent-color);
             box-shadow: 0 0 35px var(--accent-glow);
         }
         
-        .project-link:hover .circle-overlay {
+        .project-trigger-btn:hover .circle-overlay {
             opacity: 1;
         }
 
-        /* حاوية أيقونة وبطاقة الدفع فودافون كاش */
+        /* نافذة معرض صور المشروع الفاخرة (Project Lightbox Modal) */
+        .project-modal-content {
+            background-color: #0d1426;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 30px;
+            border-radius: 24px;
+            width: 95%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(16, 185, 129, 0.05);
+            animation: modalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .project-modal-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* شبكة ألبوم صور المشروع التابع */
+        .project-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .project-gallery-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .project-gallery-img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* حاوية بطاقة فودافون كاش */
         .payment-status-container {
             text-align: center; 
             margin: 60px auto; 
@@ -530,7 +570,6 @@
             justify-content: center;
             gap: 14px;
             cursor: pointer;
-            text-decoration: none;
         }
         .payment-card:hover {
             transform: translateY(-5px) scale(1.02);
@@ -614,11 +653,11 @@
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
 
-        /* النافذة المنبثقة للدفع (Modal) */
+        /* النافذة المنبثقة العامة (Modal) */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 3000;
             left: 0;
             top: 0;
             width: 100%;
@@ -719,10 +758,8 @@
 </head>
 <body>
 
-    <!-- غطاء خلفي شفاف عند فتح القائمة -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer(false)"></div>
 
-    <!-- القائمة الجانبية المنسحبة من اليسار -->
     <nav class="side-drawer" id="sideDrawer">
         <div class="drawer-header">
             <div class="drawer-title">خريطة المنصة</div>
@@ -764,16 +801,13 @@
         </ul>
     </nav>
 
-    <!-- شريط التحكم العلوي المتناسق -->
     <div class="top-nav-bar">
-        <!-- زر فتح القائمة المنسحبة تم نقله لليسار لمطابقة طلبك -->
         <button class="menu-toggle-btn" onclick="toggleDrawer(true)" title="افتح القائمة">
             <svg viewBox="0 0 24 24">
                 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
 
-        <!-- نظام تسجيل الدخول بجوجل -->
         <div class="auth-container">
             <button class="google-btn" id="loginBtn" onclick="handleGoogleLogin()">
                 <svg viewBox="0 0 24 24">
@@ -817,7 +851,6 @@
             </p>
         </section>
 
-        <!-- لوحة الإحصائيات التفاعلية الاحترافية للموقع -->
         <div class="analytics-bar">
             <div class="counter-card">
                 <div class="counter-number">
@@ -843,28 +876,28 @@
         </section>
 
         <h2 class="section-title" id="gallery">معرض المشاريع المنفذة</h2>
-        <p class="section-subtitle">اضغط على أي مشروع لاستعراض المخططات والتفاصيل الكاملة</p>
+        <p class="section-subtitle">اضغط على أي مشروع لاستعراض كافة الصور والمخططات الهندسية مباشرة</p>
         
         <main class="photo-gallery">
-            <a href="project-details-1.html" class="project-link" title="عرض تفاصيل المشروع الأول">
+            <button class="project-trigger-btn" onclick="openProjectLightbox(1)" title="تصفح ألبوم صور المشروع الأول">
                 <div class="circle-project">
                     <img src="https://b.top4top.io/p_3828lnjav1.jpg" alt="المشروع المعماري الأول">
                     <div class="circle-overlay">
                         المشروع الأول
-                        <span>اضغط للتفاصيل المعمارية</span>
+                        <span>اضغط لاستعراض كافة الصور</span>
                     </div>
                 </div>
-            </a>
+            </button>
 
-            <a href="project-details-2.html" class="project-link" title="عرض تفاصيل المشروع الثاني">
+            <button class="project-trigger-btn" onclick="openProjectLightbox(2)" title="تصفح ألبوم صور المشروع الثاني">
                 <div class="circle-project">
                     <img src="https://k.top4top.io/p_3828jbw581.jpg" alt="المشروع المعماري الثاني">
                     <div class="circle-overlay">
                         المشروع الثاني
-                        <span>اضغط للتفاصيل المعمارية</span>
+                        <span>اضغط لاستعراض كافة الصور</span>
                     </div>
                 </div>
-            </a>
+            </button>
         </main>
 
         <div class="payment-status-container">
@@ -895,17 +928,28 @@
                 <span>الدفع عبر فودافون كاش</span>
             </div>
             <p>يمكنك تحويل الرسوم المتفق عليها مباشرة إلى رقم المحفظة التالي:</p>
-            
             <div class="wallet-number" title="اضغط لتحديد الرقم">01021788838</div>
-            
             <ol class="modal-steps">
                 <li>قم بتحويل قيمة الخدمة أو المخطط للرقم أعلاه.</li>
                 <li>خذ لقطة شاشة (Screenshot) لرسالة التأكيد الفورية.</li>
                 <li>اضغط على الزر بالأسفل لإرسال الصورة واستلام ملفاتك المعمارية.</li>
             </ol>
-
             <a href="https://wa.me/201021788838?text=مرحباً_مهندس_محمد،_لقد_قمت_بتحويل_المبلغ_عبر_فودافون_كاش_وأريد_تأكيد_الطلب" target="_blank" class="btn-modal-action">تأكيد وإرسال لقطة الشاشة</a>
             <button onclick="closePaymentModal()" class="close-btn">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="projectLightbox" class="modal">
+        <div class="project-modal-content">
+            <div class="modal-header">
+                <span id="modalProjectTitle">عنوان المشروع</span>
+            </div>
+            <p class="project-modal-desc" id="modalProjectDesc">الوصف الهندسي والمخططات التفصيلية الخاصة بالمشروع المعماري.</p>
+            
+            <div class="project-images-grid" id="modalImagesContainer">
+                </div>
+
+            <button onclick="closeProjectLightbox()" class="close-btn" style="max-width: 200px; margin: 0 auto; display: block;">إغلاق المعرض</button>
         </div>
     </div>
 
@@ -914,11 +958,34 @@
     </footer>
 
     <script>
-        const modal = document.getElementById('paymentModal');
+        const paymentModal = document.getElementById('paymentModal');
+        const projectLightbox = document.getElementById('projectLightbox');
         const sideDrawer = document.getElementById('sideDrawer');
         const drawerOverlay = document.getElementById('drawerOverlay');
 
-        // دوال التحكم بالمنيو الجانبي
+        // مصفوفة بيانات ألبومات المشاريع لسهولة التحكم والتعديل في المستقبل
+        const projectsData = {
+            1: {
+                title: "المشروع المعماري الأول - التخطيط العمراني المستدام",
+                desc: "يتضمن هذا المشروع دراسة شاملة لإعادة هيكلة البيئة السكنية مع دمج ممرات خضراء لتقليل الانبعاثات الكربونية ورفع جودة الحياة السكنية وفق معايير ريادة التصميم البيئي.",
+                images: [
+                    "https://b.top4top.io/p_3828lnjav1.jpg",
+                    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80"
+                ]
+            },
+            2: {
+                title: "المشروع المعماري الثاني - تطوير اللاندسكيب والشبكات",
+                desc: "مشروع متكامل لتصميم مساحات اللاندسكيب والحدائق المفتوحة، متضمناً تحديثات جذرية لشبكات الطرق الفرعية لضمان انسيابية الحركة المرورية داخل المجمع الإداري.",
+                images: [
+                    "https://k.top4top.io/p_3828jbw581.jpg",
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+                ]
+            }
+        };
+
+        // فتح منيو الانسحاب الجانبي
         function toggleDrawer(open) {
             if (open) {
                 sideDrawer.classList.add('open');
@@ -929,21 +996,52 @@
             }
         }
 
+        // فتح واستدعاء صور المشروع المختار داخل الصفحة
+        function openProjectLightbox(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+            document.getElementById('modalProjectTitle').innerText = project.title;
+            document.getElementById('modalProjectDesc').innerText = project.desc;
+            
+            const container = document.getElementById('modalImagesContainer');
+            container.innerHTML = ''; // تفريغ الصور السابقة
+
+            // بناء وحقن الصور داخل الشبكة
+            project.images.forEach(imgUrl => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imgUrl;
+                imgElement.alt = "مخطط للمشروع المعماري";
+                imgElement.className = "project-gallery-img";
+                container.appendChild(imgElement);
+            });
+
+            projectLightbox.style.display = 'flex';
+        }
+
+        function closeProjectLightbox() {
+            projectLightbox.style.display = 'none';
+        }
+
         function openPaymentModal() {
-            modal.style.display = 'flex';
+            paymentModal.style.display = 'flex';
         }
 
         function closePaymentModal() {
-            modal.style.display = 'none';
+            paymentModal.style.display = 'none';
         }
 
+        // إغلاق النوافذ عند الضغط خارجها
         window.onclick = function(event) {
-            if (event.target == modal) {
+            if (event.target == paymentModal) {
                 closePaymentModal();
+            }
+            if (event.target == projectLightbox) {
+                closeProjectLightbox();
             }
         }
 
-        /* برمجة العداد التفاعلي الذكي والـ Google Sign-In */
+        /* برمجة العداد المباشر الذكي والـ Google Sign-In */
         document.addEventListener("DOMContentLoaded", () => {
             const liveUsersEl = document.getElementById("liveUsers");
             setInterval(() => {
@@ -972,7 +1070,6 @@
         function handleGoogleLogin() {
             const mockNames = ["أحمد كريم", "م. سارة المهدي", "عبد الله العتيبي", "يوسف حسن"];
             const randomName = mockNames[Math.floor(Math.random() * mockNames.length)];
-            
             localStorage.setItem("google_user_name", randomName);
             showUserProfile(randomName);
         }
