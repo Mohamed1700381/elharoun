@@ -6,11 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    
     <style>
         :root {
-            --main-dark: #050811; /* لون أسود عميق وفاخر */
+            --main-dark: #050811; /* لون أسود عميق وفخم */
             --card-glass: rgba(13, 20, 38, 0.65); /* تأثير زجاجي داكن */
             --accent-color: #10b981; /* أخضر زمردي يرمز للاستدامة المعمارية */
             --accent-glow: rgba(16, 185, 129, 0.3);
@@ -114,59 +112,131 @@
             stroke-width: 2;
         }
 
-        /* زر تسجيل الدخول بجوجل الاحترافي */
+        /* زر تسجيل الدخول الخاص بالمنصة */
         .auth-container {
             display: flex;
             align-items: center;
         }
-        .google-btn {
+        .custom-auth-btn {
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 8px 18px;
             border-radius: 50px;
             cursor: pointer;
-            text-decoration: none;
             backdrop-filter: blur(10px);
-        }
-        .google-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        .google-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-        .google-btn span {
             color: #ffffff;
+            font-family: 'Cairo', sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
         }
+        .custom-auth-btn:hover {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .custom-auth-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-color);
+            fill: none;
+            stroke-width: 2;
+        }
         
-        /* حالة المستخدم بعد تسجيل الدخول */
+        /* حالة المستخدم بعد تسجيل الدخول للموقع */
         .user-profile {
             display: none;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: var(--card-glass);
-            padding: 6px 14px;
+            padding: 6px 16px;
             border-radius: 50px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.4);
         }
-        .user-avatar {
+        .user-avatar-initials {
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            object-fit: cover;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 0 10px var(--accent-glow);
         }
         .user-name {
             font-size: 0.9rem;
             font-weight: 600;
             color: #ffffff;
+        }
+        .logout-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0 4px;
+        }
+
+        /* حقول إدخال لوحة التسجيل والاشتراك المخصصة */
+        .input-group {
+            text-align: right;
+            margin-bottom: 18px;
+        }
+        .input-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(5, 8, 17, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+        }
+        .input-group input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+        .submit-auth-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 10px;
+        }
+        .submit-auth-btn:hover {
+            background: #059669;
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+        .toggle-auth-text {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .toggle-auth-text a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         /* القائمة الجانبية المنسحبة من اليسار */
@@ -333,49 +403,7 @@
             margin: 0;
         }
 
-        /* عدادات الإحصائيات المباشرة */
-        .analytics-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .counter-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-        }
-        .counter-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--accent-color);
-            opacity: 0.7;
-        }
-        .counter-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #ffffff;
-            font-family: monospace, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .counter-label {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
-        /* العناوين الرئيسية الأقسام */
+        /* العناوين الرئيسية للأقسام */
         .section-title {
             text-align: center;
             margin-top: 60px;
@@ -425,24 +453,24 @@
             box-shadow: 0 10px 25px var(--accent-glow);
         }
 
-        /* معرض صور المشاريع المنفذة */
+        /* معرض صور المشاريع المنفذة (مشروعين متباعدين بشكل ممتاز ومتناسق) */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 60px;
             justify-content: center;
             margin-bottom: 60px;
         }
 
         .circle-project {
             position: relative;
-            width: 240px;
-            height: 240px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            cursor: pointer; /* جعل العنصر قابلاً للضغط */
+            cursor: pointer;
         }
         
         .circle-project img {
@@ -457,22 +485,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(5, 8, 17, 0.85);
+            background: rgba(5, 8, 17, 0.88);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             opacity: 0;
             color: #34d399;
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
             border-radius: 50%;
             padding: 20px;
             text-align: center;
-            letter-spacing: 1px;
+        }
+        .circle-overlay span {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-weight: 400;
         }
         
-        /* تأثيرات التحويم متوافقة مباشرة مع كود الـ div الجديد */
         .circle-project:hover {
             transform: scale(1.05) translateY(-8px);
             border-color: var(--accent-color);
@@ -577,7 +609,7 @@
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
 
-        /* النافذة المنبثقة العامة (Modal) */
+        /* النوافذ المنبثقة العامة (Modals) */
         .modal {
             display: none;
             position: fixed;
@@ -586,7 +618,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(4, 6, 11, 0.85);
+            background-color: rgba(4, 6, 11, 0.88);
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(8px);
@@ -595,10 +627,10 @@
         .modal-content {
             background-color: #0f172a;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
             width: 90%;
-            max-width: 480px;
+            max-width: 450px;
             text-align: center;
             box-shadow: 0 30px 60px rgba(0,0,0,0.6);
         }
@@ -612,10 +644,92 @@
             cursor: pointer;
             font-weight: 600;
             margin-top: 15px;
+            font-family: 'Cairo', sans-serif;
         }
         .close-btn:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
+        }
+
+        /* تصميم الألبوم والـ Slider للمشاريع */
+        .lightbox-content {
+            position: relative;
+            max-width: 850px;
+            width: 92%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .lightbox-image-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: #020408;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+        .lightbox-image-container img {
+            max-width: 100%;
+            max-height: 72vh;
+            object-fit: contain;
+            display: block;
+        }
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .nav-arrow:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        .prev-arrow { right: 20px; }
+        .next-arrow { left: 20px; }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-close:hover {
+            background: #ef4444;
+        }
+        .lightbox-counter {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.05);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         footer {
@@ -679,19 +793,17 @@
         </button>
 
         <div class="auth-container">
-            <button class="google-btn" id="loginBtn" onclick="handleGoogleLogin()">
+            <button class="custom-auth-btn" id="authBtn" onclick="openAuthModal()">
                 <svg viewBox="0 0 24 24">
-                    <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3A11.945 11.945 0 0 0 12 0C7.27 0 3.16 2.697 1.105 6.654l4.16 3.11z"/>
-                    <path fill="#4285F4" d="M23.49 12.275c0-.796-.073-1.564-.199-2.304H12v4.51h6.46a5.523 5.523 0 0 1-2.395 3.621l3.722 2.883c2.177-2.005 3.703-4.957 3.703-8.71z"/>
-                    <path fill="#FBBC05" d="M5.266 14.235l-4.16 3.11A11.95 11.95 0 0 0 12 24c3.047 0 5.828-1.01 7.964-2.716l-3.722-2.883a7.126 7.126 0 0 1-4.242 1.19c-3.007 0-5.617-1.89-6.734-4.52l-.001.002z"/>
-                    <path fill="#34A853" d="M1.105 6.654A11.91 11.91 0 0 0 0 12c0 1.93.456 3.754 1.266 5.378l4.16-3.11c-.266-.628-.426-1.314-.426-2.032 0-.853.186-1.662.516-2.398L1.105 6.654z"/>
+                    <path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>تسجيل الدخول بجوجل</span>
+                <span>تسجيل الدخول / الاشتراك</span>
             </button>
             
             <div class="user-profile" id="userProfile">
-                <img src="" alt="صورة المستخدم" class="user-avatar" id="userAvatar">
+                <div class="user-avatar-initials" id="userInitials">U</div>
                 <span class="user-name" id="userName">مرحباً بك</span>
+                <button class="logout-btn" onclick="handleLogout()" title="تسجيل الخروج">✕</button>
             </div>
         </div>
     </div>
@@ -721,13 +833,6 @@
             </p>
         </section>
 
-        <div class="analytics-bar">
-            <div class="counter-card">
-                <div class="counter-number" id="totalVisits">0</div>
-                <div class="counter-label">إجمالي زيارات المنصة الحقيقية</div>
-            </div>
-        </div>
-
         <h2 class="section-title" id="skills">مهاراتي</h2>
         <p class="section-subtitle">القدرات والخبرات الهندسية والأكاديمية</p>
         <section class="skills-grid">
@@ -739,57 +844,23 @@
         </section>
 
         <h2 class="section-title" id="gallery">معرض المشاريع المنفذة</h2>
-        <p class="section-subtitle">اضغط على أي مشروع لاستعراض كافة الصور والمخططات الهندسية مباشرة</p>
+        <p class="section-subtitle">تتكون المنصة من مشروعين رئيسيين، اضغط لتصفح الـ 5 صور الخاصة بكل مشروع بالكامل</p>
         
         <main class="photo-gallery">
-            <div class="circle-project" title="مشروع معماري 1" onclick="openProjectLightbox(1)">
+            <div class="circle-project" title="مشروع معماري 1" onclick="openGalleryLightbox(1)">
                 <img src="https://b.top4top.io/p_3828lnjav1.jpg" alt="مشروع معماري 1">
-                <div class="circle-overlay">elharoun</div>
+                <div class="circle-overlay">
+                    المشروع الأول
+                    <span>elharoun (يحتوي على 5 صور)</span>
+                </div>
             </div>
 
-            <div class="circle-project" title="مشروع معماري 2" onclick="openProjectLightbox(2)">
-                <img src="https://k.top4top.io/p_3828jbw581.jpg" alt="مشروع معماري 2">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 3" onclick="openProjectLightbox(3)">
-                <img src="https://d.top4top.io/p_38285y97w1.jpg" alt="مشروع معماري 3">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 4" onclick="openProjectLightbox(4)">
-                <img src="https://g.top4top.io/p_38288wnor1.jpg" alt="مشروع معماري 4">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 5" onclick="openProjectLightbox(5)">
-                <img src="https://g.top4top.io/p_3828f4bqz1.jpg" alt="مشروع معماري 5">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 6" onclick="openProjectLightbox(6)">
-                <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="مشروع معماري 6">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 7" onclick="openProjectLightbox(7)">
-                <img src="https://k.top4top.io/p_3828clele1.jpg" alt="مشروع معماري 7">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 8" onclick="openProjectLightbox(8)">
-                <img src="https://c.top4top.io/p_3828gvugl1.jpg" alt="مشروع معماري 8">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 9" onclick="openProjectLightbox(9)">
-                <img src="https://k.top4top.io/p_3828qrim11.jpg" alt="مشروع معماري 9">
-                <div class="circle-overlay">elharoun</div>
-            </div>
-
-            <div class="circle-project" title="مشروع معماري 10" onclick="openProjectLightbox(10)">
-                <img src="https://b.top4top.io/p_3828lgvbq1.jpg" alt="مشروع معماري 10">
-                <div class="circle-overlay">elharoun</div>
+            <div class="circle-project" title="مشروع معماري 2" onclick="openGalleryLightbox(2)">
+                <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="مشروع معماري 2">
+                <div class="circle-overlay">
+                    المشروع الثاني
+                    <span>elharoun (يحتوي على 5 صور)</span>
+                </div>
             </div>
         </main>
 
@@ -821,6 +892,44 @@
         </div>
     </div>
 
+    <div id="authModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <h3 id="authTitle" style="margin-top: 0; font-size: 1.4rem; color: #ffffff;">تسجيل الدخول للموقع</h3>
+            <form id="customAuthForm" onsubmit="handleCustomAuth(event)">
+                <div class="input-group" id="nameGroup" style="display: none;">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="authName" placeholder="أدخل اسمك الكريم">
+                </div>
+                <div class="input-group">
+                    <label>البريد الإلكتروني أو اسم المستخدم</label>
+                    <input type="text" id="authEmail" required placeholder="username / email">
+                </div>
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="authPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="submit-auth-btn" id="authSubmitBtn">تسجيل الدخول</button>
+            </form>
+            <p class="toggle-auth-text">
+                <span id="authToggleMsg">ليس لديك حساب؟</span> 
+                <a href="javascript:void(0)" onclick="toggleAuthMode()" id="authToggleLink">إنشاء حساب جديد</a>
+            </p>
+            <button class="close-btn" onclick="closeAuthModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="galleryLightbox" class="modal">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
+            <div class="lightbox-image-container">
+                <button class="nav-arrow prev-arrow" onclick="changeLightboxImage(1)">❯</button>
+                <img id="lightboxImg" src="" alt="صورة المشروع المعماري">
+                <button class="nav-arrow next-arrow" onclick="changeLightboxImage(-1)">❮</button>
+            </div>
+            <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
+        </div>
+    </div>
+
     <footer>
         <p>جميع الحقوق محفوظة © المهندس محمد الحارون 2026</p>
     </footer>
@@ -839,69 +948,121 @@
             }
         }
 
-        // --- نظام تسجيل الدخول الحقيقي والآمن عبر جوجل (Google OAuth2) ---
-        function handleGoogleLogin() {
-            // ⚠️ استبدل هذا المعرف بالمعرف الخاص بمشروعك في Google Cloud Console لكي تعمل النافذة الحقيقية
-            const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com'; 
+        // --- نظام لوحة التسجيل الخاصة بالموقع والتحكم بأنماطها ---
+        let isSignUpMode = false;
 
-            if (CLIENT_ID.startsWith('YOUR_GOOGLE_CLIENT_ID')) {
-                alert('تنبيه للمطور: يرجى استبدال "YOUR_GOOGLE_CLIENT_ID" بمعرّف مشروعك الحقيقي في الكود لتفعيل اتصال جوجل المباشر من خوادم Google الرسمية.');
-                return;
-            }
+        function openAuthModal() {
+            document.getElementById('authModal').style.display = 'flex';
+        }
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
 
-            try {
-                const client = google.accounts.oauth2.initTokenClient({
-                    client_id: CLIENT_ID,
-                    scope: 'https://www.googleapis.com/auth/userinfo.profile',
-                    callback: (tokenResponse) => {
-                        if (tokenResponse && tokenResponse.access_token) {
-                            // جلب بيانات المستخدم الحقيقية من خوادم جوجل عبر الـ Access Token
-                            fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                                headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
-                            })
-                            .then(res => res.json())
-                            .then(user => {
-                                // تحديث الواجهة ببيانات الزائر الحقيقية
-                                document.getElementById('loginBtn').style.display = 'none';
-                                document.getElementById('userAvatar').src = user.picture;
-                                document.getElementById('userName').innerText = 'مرحباً، ' + user.name;
-                                document.getElementById('userProfile').style.display = 'flex';
-                            })
-                            .catch(err => console.error('حدث خطأ أثناء جلب بيانات الحساب:', err));
-                        }
-                    }
-                });
-                client.requestAccessToken(); // فتح نافذة تسجيل دخول جوجل المنبثقة الحقيقية فوراً
-            } catch (error) {
-                console.error('فشل بدء مكتبة تسجيل دخول جوجل:', error);
+        function toggleAuthMode() {
+            isSignUpMode = !isSignUpMode;
+            const authTitle = document.getElementById('authTitle');
+            const nameGroup = document.getElementById('nameGroup');
+            const authSubmitBtn = document.getElementById('authSubmitBtn');
+            const authToggleMsg = document.getElementById('authToggleMsg');
+            const authToggleLink = document.getElementById('authToggleLink');
+            const authNameInput = document.getElementById('authName');
+
+            if (isSignUpMode) {
+                authTitle.innerText = "إنشاء حساب جديد بالمنصة";
+                nameGroup.style.display = "block";
+                authNameInput.setAttribute('required', 'required');
+                authSubmitBtn.innerText = "إنشاء الحساب";
+                authToggleMsg.innerText = "لديك حساب بالفعل؟";
+                authToggleLink.innerText = "تسجيل الدخول";
+            } else {
+                authTitle.innerText = "تسجيل الدخول للموقع";
+                nameGroup.style.display = "none";
+                authNameInput.removeAttribute('required');
+                authSubmitBtn.innerText = "تسجيل الدخول";
+                authToggleMsg.innerText = "ليس لديك حساب؟";
+                authToggleLink.innerText = "إنشاء حساب جديد";
             }
         }
 
-        // التحكم في النوافذ المنبثقة (Modals)
+        // معالجة تسجيل الحساب والدخول داخلياً وحفظه بالذاكرة
+        function handleCustomAuth(event) {
+            event.preventDefault();
+            const email = document.getElementById('authEmail').value;
+            const name = isSignUpMode ? document.getElementById('authName').value : email.split('@')[0];
+
+            // إخفاء زر الدخول الأولي وإظهار بروفايل المستخدم بالاسم المدخل
+            document.getElementById('authBtn').style.display = 'none';
+            document.getElementById('userProfile').style.display = 'flex';
+            document.getElementById('userName').innerText = 'مرحباً، ' + name;
+            document.getElementById('userInitials').innerText = name.charAt(0).toUpperCase();
+            
+            closeAuthModal();
+        }
+
+        function handleLogout() {
+            document.getElementById('userProfile').style.display = 'none';
+            document.getElementById('authBtn').style.display = 'flex';
+            document.getElementById('customAuthForm').reset();
+        }
+
+        // --- نظام تصفح وألبوم الـ 10 صور المقسمة على مشروعين بدقة ---
+        const projectGalleries = {
+            1: [
+                "https://b.top4top.io/p_3828lnjav1.jpg",
+                "https://k.top4top.io/p_3828jbw581.jpg",
+                "https://d.top4top.io/p_38285y97w1.jpg",
+                "https://g.top4top.io/p_38288wnor1.jpg",
+                "https://g.top4top.io/p_3828f4bqz1.jpg"
+            ],
+            2: [
+                "https://h.top4top.io/p_3828kfxcl1.jpg",
+                "https://k.top4top.io/p_3828clele1.jpg",
+                "https://c.top4top.io/p_3828gvugl1.jpg",
+                "https://k.top4top.io/p_3828qrim11.jpg",
+                "https://b.top4top.io/p_3828lgvbq1.jpg"
+            ]
+        };
+
+        let activeProjectId = 1;
+        let activeImageIndex = 0;
+
+        function openGalleryLightbox(projectId) {
+            activeProjectId = projectId;
+            activeImageIndex = 0;
+            updateLightboxUI();
+            document.getElementById('galleryLightbox').style.display = 'flex';
+        }
+
+        function closeGalleryLightbox() {
+            document.getElementById('galleryLightbox').style.display = 'none';
+        }
+
+        function changeLightboxImage(direction) {
+            const imagesList = projectGalleries[activeProjectId];
+            activeImageIndex += direction;
+            
+            // الدوران اللانهائي للصور عند الوصول للنهاية أو البداية
+            if (activeImageIndex >= imagesList.length) {
+                activeImageIndex = 0;
+            } else if (activeImageIndex < 0) {
+                activeImageIndex = imagesList.length - 1;
+            }
+            updateLightboxUI();
+        }
+
+        function updateLightboxUI() {
+            const imagesList = projectGalleries[activeProjectId];
+            document.getElementById('lightboxImg').src = imagesList[activeImageIndex];
+            document.getElementById('lightboxCounter').innerText = `${activeImageIndex + 1} / ${imagesList.length}`;
+        }
+
+        // تحكم مودال الدفع
         function openPaymentModal() {
             document.getElementById('paymentModal').style.display = 'flex';
         }
         function closePaymentModal() {
             document.getElementById('paymentModal').style.display = 'none';
         }
-        function openProjectLightbox(id) {
-            alert('سيتم فتح ألبوم صور المشروع المعماري رقم: ' + id);
-        }
-
-        // --- نظام العداد الحقيقي التراكمي للزيارات (localStorage) ---
-        const BASE_VISITS = 1482; 
-
-        if (localStorage.getItem("total_platform_visits")) {
-            let currentVisits = parseInt(localStorage.getItem("total_platform_visits"));
-            localStorage.setItem("total_platform_visits", currentVisits + 1);
-        } else {
-            localStorage.setItem("total_platform_visits", BASE_VISITS + 1);
-        }
-
-        let finalVisitsCount = parseInt(localStorage.getItem("total_platform_visits"));
-        document.getElementById("totalVisits").innerText = finalVisitsCount.toLocaleString('ar-EG');
     </script>
 </body>
 </html>
-
-```
