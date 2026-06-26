@@ -175,7 +175,7 @@
         .circle-project { position: relative; width: 270px; height: 270px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255, 255, 255, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); cursor: pointer; }
         .circle-project img { width: 100%; height: 100%; object-fit: cover; }
         .circle-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 7, 18, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; color: #34d399; font-weight: 700; font-size: 1.3rem; border-radius: 50%; padding: 20px; text-align: center; }
-        .circle-overlay span { font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; }
+        .circle-overlay span { display: block; width: 100%; text-align: center; direction: ltr; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; }
         .circle-project:hover { transform: scale(1.05) translateY(-8px); border-color: var(--accent-color); box-shadow: 0 0 40px var(--accent-glow); }
         .circle-project:hover .circle-overlay { opacity: 1; }
 
@@ -434,8 +434,8 @@
         <section class="about-section" id="about">
             <h2>نبذة عني</h2>
             <p>
-                معماري لديّ شغف قوي بالتصميم المعماري، التخطيط العمراني، والتنمية المستدامة. أسعى دائماً لابتكار حلول مستدامة ومبتكرة تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع. 
-                خلال مسيرتي الأكاديمية والعملية، قمت بإعداد وتطوير مشاريع متنوعة تشمل التخطيط البيئي المعماري، وتصميم لاندسكيب متكامل، بالإضافة إلى دعم ومساعدة طلاب كليات الهندسة والعمارة في إنهاء مشاريع فصولهم الدراسية وتخرجهم بأفضل إخراج ممكن.
+                طالب بالهندسة المعمارية في جامعة سيناء، وباقي لي سنتان للتخرج. أمتلك خبرة في التصميم المعماري، التخطيط العمراني، والتنمية المستدامة، وأسعى دائماً لتقديم حلول عملية تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع.
+                خلال مسيرتي الأكاديمية، أعمل على تطوير مشاريع معمارية متنوعة تشمل التخطيط البيئي وتصميم لاندسكيب متكامل، كما أساعد زملائي الطلاب في إنهاء مشاريعهم الدراسية بأفضل إخراج ممكن.
             </p>
         </section>
 
@@ -632,8 +632,18 @@
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;">تفاصيل الدفع عبر فودافون كاش</div>
-            <p style="color: var(--text-secondary);">يمكنك تحويل الرسوم المتفق عليها إلى الرقم التالي:</p>
-            <div style="font-size: 1.8rem; font-weight: 700; color: var(--vodafone-color); margin: 15px 0; letter-spacing: 2px;">01050758773</div>
+            <p style="color: var(--text-secondary);">لإتمام الدفع بسهولة، اتبع الخطوات التالية:</p>
+            <ol style="text-align: right; color: var(--text-secondary); padding-left: 18px; margin: 12px 0 0 0;">
+                <li style="margin-bottom: 10px;">افتح تطبيق فودافون كاش على هاتفك.</li>
+                <li style="margin-bottom: 10px;">اختر خيار "تحويل" ثم أدخل الرقم التالي:</li>
+            </ol>
+            <div style="font-size: 1.8rem; font-weight: 700; color: var(--vodafone-color); margin: 10px 0 15px 0; letter-spacing: 2px;">01050758773</div>
+            <ol start="3" style="text-align: right; color: var(--text-secondary); padding-left: 18px; margin: 0 0 15px 0;">
+                <li style="margin-bottom: 10px;">أدخل المبلغ المتفق عليه ثم أكد التحويل.</li>
+                <li style="margin-bottom: 10px;">احتفظ بدليل التحويل (صورة شاشة أو رقم عملية التحويل).</li>
+                <li style="margin-bottom: 10px;">أرسل صورة الشاشة أو رقم العملية عبر واتساب إلى الرقم التالي، مع ذكر اسم المشروع:</li>
+            </ol>
+            <div style="font-size: 1rem; font-weight: 700; color: #ffffff; background: rgba(16,185,129,0.1); padding: 10px 14px; border-radius: 12px;">https://wa.me/201050758773</div>
             <button class="close-btn" onclick="closePaymentModal()">إغلاق</button>
         </div>
     </div>
