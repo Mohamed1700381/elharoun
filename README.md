@@ -93,6 +93,24 @@
             font-weight: 300;
             max-width: 700px;
         }
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: #020712;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.25);
+        }
 
         .top-nav-bar {
             position: absolute;
@@ -426,21 +444,12 @@
             </div>
         </div>
         <h1>المهندس المعماري / محمد الحارون</h1>
-        <p>معماري | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية ومشاريع التخرج الطلابية</p>
+        <p>طالب في جامعة سيناء يقدم خدمات تصميم معماري ودعم مشاريع تخرج بأسلوب عملي ومنظم.</p>
+        <a href="#contact" class="hero-btn">اطلب عرض سعر الآن</a>
     </header>
 
-    <div class="container">
-        
-        <section class="about-section" id="about">
-            <h2>نبذة عني</h2>
-            <p>
-                طالب بالهندسة المعمارية في جامعة سيناء، وباقي لي سنتان للتخرج. أمتلك خبرة في التصميم المعماري، التخطيط العمراني، والتنمية المستدامة، وأسعى دائماً لتقديم حلول عملية تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع.
-                خلال مسيرتي الأكاديمية، أعمل على تطوير مشاريع معمارية متنوعة تشمل التخطيط البيئي وتصميم لاندسكيب متكامل، كما أساعد زملائي الطلاب في إنهاء مشاريعهم الدراسية بأفضل إخراج ممكن.
-            </p>
-        </section>
-
-        <!-- قسم مساعدة الطلاب والأكاديميين المطور حديثاً -->
-        <h2 class="section-title" id="students">مساعدات ومشاريع الطلاب</h2>
+    <!-- قسم مساعدة الطلاب والأكاديميين المطور حديثاً -->
+    <h2 class="section-title" id="students">مساعدات ومشاريع الطلاب</h2>
         <p class="section-subtitle">مزنوق في الفاينل؟ شايل هم الإخراج والرصة؟ إحنا هنا علشان نشيل عنك الضغط ونطلع مشروعك بأعلى جودة تضمن لك التقدير!</p>
         <section class="students-section">
             <div class="students-grid">
