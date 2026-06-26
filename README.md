@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=300;400;600;700&display=swap" rel="stylesheet">
     
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-788477631033426" crossorigin="anonymous"></script>
+    
     <style>
         :root {
             --main-dark: #030712; 
@@ -362,12 +364,10 @@
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer(false)"></div>
     <div class="drawer-overlay" id="commentsOverlay" onclick="toggleCommentsDrawer(false)"></div>
 
-    <!-- الأيقونة المتحركة العائمة للتعليقات الحقيقية المتراكمة -->
     <div class="comments-fab" onclick="toggleCommentsDrawer(true)" title="شاهد تعليقات وآراء العملاء والطلاب">
         <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
     </div>
 
-    <!-- لوحة التعليقات المتراكمة الجانبية من المستخدمين فقط -->
     <div class="comments-drawer" id="commentsDrawer">
         <div class="comments-header">
             <div class="comments-title">
@@ -377,12 +377,9 @@
             <button class="close-comments-btn" onclick="toggleCommentsDrawer(false)">✕</button>
         </div>
 
-        <!-- قائمة عرض التعليقات -->
         <div class="comments-list-box" id="commentsListBox">
-            <!-- فارغ افتراضياً ولا يمتلئ إلا عبر إدخال المستخدمين -->
-        </div>
+            </div>
 
-        <!-- نموذج إضافة تعليق جديد -->
         <div class="comment-form">
             <input type="text" id="commenterName" class="comment-input" placeholder="الاسم الكريم...">
             <textarea id="commenterText" class="comment-textarea" placeholder="اكتب تعليقك أو رأيك هنا..."></textarea>
@@ -439,7 +436,6 @@
             </p>
         </section>
 
-        <!-- قسم مساعدة الطلاب والأكاديميين المطور حديثاً -->
         <h2 class="section-title" id="students">مساعدات ومشاريع الطلاب</h2>
         <p class="section-subtitle">مزنوق في الفاينل؟ شايل هم الإخراج والرصة؟ إحنا هنا علشان نشيل عنك الضغط ونطلع مشروعك بأعلى جودة تضمن لك التقدير!</p>
         <section class="students-section">
@@ -485,7 +481,6 @@
             <div class="skill-card">تنسيق المواقع (Landscape)</div>
         </section>
 
-        <!-- خطة ومراحل سير العمل الهندسية -->
         <h2 class="section-title" id="lifecycle">مراحل سير العمل الهندسي</h2>
         <p class="section-subtitle">خطوات منهجية واضحة ومدروسة نتبعها لتحويل رؤيتك المعمارية إلى واقع ملموس</p>
         <section class="timeline-container">
@@ -533,7 +528,6 @@
             </div>
         </main>
 
-        <!-- حاسبة التكلفة -->
         <h2 class="section-title" id="calculator">حاسبة التكلفة المبدئية والباقات الهندسية</h2>
         <p class="section-subtitle">اختر باقة التصميم والمخرجات المطلوبة مع إدخال المساحة للحصول على تقرير دقيق حياً</p>
         <section class="calculator-section">
@@ -582,7 +576,6 @@
             </div>
         </section>
 
-        <!-- الأسئلة الشائعة الأكورديون -->
         <h2 class="section-title" id="faq">الأسئلة الشائعة (FAQ)</h2>
         <p class="section-subtitle">إجابات سريعة وواضحة على أكثر الأسئلة المعمارية والفنية تداولاً</p>
         <section class="faq-wrapper">
@@ -628,7 +621,6 @@
 
     </div>
 
-    <!-- فودافون كاش -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;">تفاصيل الدفع عبر فودافون كاش</div>
@@ -638,7 +630,6 @@
         </div>
     </div>
 
-    <!-- سلايدر استعراض المشاريع -->
     <div id="galleryLightbox" class="modal">
         <div class="lightbox-content">
             <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
