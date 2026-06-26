@@ -156,7 +156,7 @@
         .circle-project:hover { transform: scale(1.05) translateY(-8px); border-color: var(--accent-color); box-shadow: 0 0 40px var(--accent-glow); }
         .circle-project:hover .circle-overlay { opacity: 1; }
 
-        /* حاسبة التكلفة المتقدمة المتكاملة الباقات */
+        /* حاسبة التكلفة */
         .calculator-section {
             background: var(--card-glass); border: 1px solid var(--border-glass);
             border-radius: 24px; padding: 40px; max-width: 800px; margin: 40px auto;
@@ -177,47 +177,28 @@
         .calc-field select:focus, .calc-field input:focus { border-color: var(--accent-color); outline: none; }
         .calc-full-width { grid-column: span 2; }
         
-        /* محول العملات */
-        .currency-switch-wrapper {
-            display: flex; justify-content: flex-end; gap: 10px; margin-bottom: -10px;
-        }
+        .currency-switch-wrapper { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: -10px; }
         .currency-btn {
             background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); color: var(--text-secondary);
             padding: 5px 15px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; font-family: 'Cairo';
         }
-        .currency-btn.active {
-            background: var(--accent-color); color: #000000; font-weight: 700; box-shadow: 0 0 10px var(--accent-glow);
-        }
+        .currency-btn.active { background: var(--accent-color); color: #000000; font-weight: 700; box-shadow: 0 0 10px var(--accent-glow); }
 
-        /* لوحة المخرجات الذكية المقدرة حركياً */
-        .live-stats-panel {
-            grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px;
-        }
-        .stat-box {
-            background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); padding: 15px; border-radius: 14px; text-align: center;
-        }
+        .live-stats-panel { grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .stat-box { background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); padding: 15px; border-radius: 14px; text-align: center; }
         .stat-value { font-size: 1.4rem; font-weight: 700; color: #ffffff; }
         .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; }
 
-        .calc-result-box {
-            background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.15);
-            padding: 25px; border-radius: 16px; text-align: center; margin-top: 30px;
-        }
+        .calc-result-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.15); padding: 25px; border-radius: 16px; text-align: center; margin-top: 30px; }
         .calc-price { font-size: 2.3rem; font-weight: 700; color: var(--accent-color); margin: 10px 0; }
         .submit-auth-btn { width: 100%; max-width: 320px; padding: 14px; border-radius: 12px; font-family: 'Cairo'; font-size: 1rem; font-weight: 600; cursor: pointer; }
 
-        /* خطة ومراحل سير العمل الهندسي */
+        /* مراحل سير العمل الهندسي */
         .timeline-container { max-width: 900px; margin: 40px auto 80px auto; position: relative; padding-right: 30px; }
-        .timeline-container::before {
-            content: ''; position: absolute; right: 8px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--accent-color), rgba(16, 185, 129, 0.1)); border-radius: 2px;
-        }
+        .timeline-container::before { content: ''; position: absolute; right: 8px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--accent-color), rgba(16, 185, 129, 0.1)); border-radius: 2px; }
         .timeline-step { position: relative; margin-bottom: 40px; }
-        .timeline-step::before {
-            content: ''; position: absolute; right: -29px; top: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--main-dark); border: 3px solid var(--accent-color); box-shadow: 0 0 10px var(--accent-color); z-index: 10;
-        }
-        .timeline-content {
-            background: var(--card-glass); border: 1px solid var(--border-glass); padding: 25px; border-radius: 16px; backdrop-filter: blur(10px);
-        }
+        .timeline-step::before { content: ''; position: absolute; right: -29px; top: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--main-dark); border: 3px solid var(--accent-color); box-shadow: 0 0 10px var(--accent-color); z-index: 10; }
+        .timeline-content { background: var(--card-glass); border: 1px solid var(--border-glass); padding: 25px; border-radius: 16px; backdrop-filter: blur(10px); }
         .timeline-step:hover .timeline-content { border-color: var(--accent-color); transform: translateX(-5px); }
         .timeline-num { font-size: 0.85rem; font-weight: 700; color: var(--accent-color); text-transform: uppercase; margin-bottom: 5px; display: block;}
         .timeline-title { font-size: 1.2rem; font-weight: 700; color: #ffffff; margin: 0 0 10px 0; }
@@ -233,14 +214,74 @@
         .faq-item.active .faq-question svg { transform: rotate(180deg); stroke: var(--accent-color); }
         .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
 
-        /* فودافون كاش */
+        /* بوابة الدفع الإلكتروني */
         .payment-status-container { text-align: center; margin: 60px auto; max-width: 340px; }
         .payment-card { background: rgba(230, 0, 0, 0.03); border: 1px solid rgba(230, 0, 0, 0.15); padding: 30px 20px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; cursor: pointer; }
         .payment-card:hover { transform: translateY(-5px); border-color: var(--vodafone-color); background: rgba(230, 0, 0, 0.06); box-shadow: 0 20px 40px rgba(230, 0, 0, 0.15); }
         .wallet-icon-glow { width: 65px; height: 65px; background: var(--vodafone-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(230, 0, 0, 0.4); }
         .wallet-icon-glow svg { width: 32px; height: 32px; fill: none; stroke: #ffffff; stroke-width: 2; }
 
-        /* التواصل */
+        /* قسم التعليقات المطور - الأيقونة العائمة المتحركة بنبضات هادئة */
+        .comments-fab {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: var(--accent-color); border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; cursor: pointer; z-index: 1500;
+            box-shadow: 0 10px 30px var(--accent-glow); animation: fabPulse 2s infinite;
+        }
+        .comments-fab:hover { transform: scale(1.1); background: #34d399; }
+        .comments-fab svg { width: 26px; height: 26px; fill: #000000; }
+        
+        @keyframes fabPulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* الدرج أو اللوحة الجانبية للتعليقات المتراكمة */
+        .comments-drawer {
+            position: fixed; top: 0; right: -380px; width: 360px; height: 100%;
+            background: rgba(7, 11, 22, 0.98); backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border-glass); z-index: 2500; padding: 30px 20px;
+            display: flex; flex-direction: column; gap: 20px; box-shadow: -20px 0 50px rgba(0,0,0,0.7);
+        }
+        .comments-drawer.open { right: 0; }
+        @media (max-width: 400px) { .comments-drawer { width: 100%; right: -100%; } .comments-drawer.open { right: 0; } }
+
+        .comments-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 15px; }
+        .comments-title { font-size: 1.2rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+        .comments-count-badge { background: rgba(16, 185, 129, 0.15); color: var(--accent-color); font-size: 0.85rem; padding: 2px 10px; border-radius: 20px; font-weight: 700; }
+        .close-comments-btn { background: transparent; border: none; cursor: pointer; color: var(--text-secondary); font-size: 1.3rem; }
+        .close-comments-btn:hover { color: white; }
+
+        /* نموذج إرسال الآراء والتعليقات */
+        .comment-form { display: flex; flex-direction: column; gap: 12px; }
+        .comment-input, .comment-textarea {
+            width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass);
+            border-radius: 10px; padding: 12px; color: white; font-family: 'Cairo'; font-size: 0.9rem;
+        }
+        .comment-textarea { resize: none; height: 80px; }
+        .comment-input:focus, .comment-textarea:focus { border-color: var(--accent-color); outline: none; background: rgba(255,255,255,0.05); }
+        .comment-submit-btn {
+            background: var(--accent-color); color: #000000; font-family: 'Cairo'; font-weight: 700;
+            padding: 10px; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem;
+        }
+        .comment-submit-btn:hover { background: #34d399; transform: translateY(-2px); }
+
+        /* حاوية التعليقات المتراكمة المحدثة لدنيا */
+        .comments-list-box { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; padding-right: 5px; }
+        .comments-list-box::-webkit-scrollbar { width: 4px; }
+        .comments-list-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        
+        .single-comment-card {
+            background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass);
+            padding: 15px; border-radius: 12px; position: relative;
+        }
+        .comment-user-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .comment-username { font-weight: 700; color: var(--accent-color); font-size: 0.95rem; }
+        .comment-date { font-size: 0.75rem; color: var(--text-secondary); }
+        .comment-text-content { color: #e5e7eb; font-size: 0.9rem; margin: 0; word-break: break-word; }
+
+        /* قسم التواصل التفاعلي */
         .contact-section { background: radial-gradient(ellipse at bottom, #111827 0%, var(--main-dark) 100%); border: 1px solid rgba(255, 255, 255, 0.03); padding: 80px 20px; text-align: center; border-radius: 32px; margin-top: 40px; }
         .whatsapp-link { display: inline-flex; align-items: center; justify-content: center; background-color: #25d366; color: white; padding: 16px 45px; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); }
         .whatsapp-link:hover { transform: scale(1.05) translateY(-3px); background-color: #20ba5a; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
@@ -294,6 +335,30 @@
 
     <div class="custom-cursor" id="customCursor"></div>
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer(false)"></div>
+    <div class="drawer-overlay" id="commentsOverlay" onclick="toggleCommentsDrawer(false)"></div>
+
+    <div class="comments-fab" onclick="toggleCommentsDrawer(true)" title="شاهد تعليقات وآراء العملاء">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+    </div>
+
+    <div class="comments-drawer" id="commentsDrawer">
+        <div class="comments-header">
+            <div class="comments-title">
+                <span>آراء وتعليقات الزوار</span>
+                <span class="comments-count-badge" id="commentCount">0</span>
+            </div>
+            <button class="close-comments-btn" onclick="toggleCommentsDrawer(false)">✕</button>
+        </div>
+
+        <div class="comments-list-box" id="commentsListBox">
+            </div>
+
+        <div class="comment-form">
+            <input type="text" id="commenterName" class="comment-input" placeholder="الاسم الكريم...">
+            <textarea id="commenterText" class="comment-textarea" placeholder="اكتب تعليقك أو استفسارك هنا المعماري..."></textarea>
+            <button class="comment-submit-btn" onclick="addNewComment()">إرسال التعليق وثباته</button>
+        </div>
+    </div>
 
     <nav class="side-drawer" id="sideDrawer">
         <div class="drawer-header">
@@ -527,7 +592,64 @@
             cursor.style.top = e.clientY + 'px';
         });
 
-        // نظام تحويل العملات
+        // نظام التخزين المتراكم للتعليقات (LocalStorage) الشغال بدون مسح
+        let commentsArray = JSON.parse(localStorage.getItem('haroun_comments')) || [
+            { name: "م. أحمد رأفت", text: "ما شاء الله، توزيع المساقط ممتاز ومستغل الفراغات بالكامل.", date: "2026-06-20" },
+            { name: "العميل كريم الجابري", text: "سعدت جداً بالتعامل معك في تصميم واجهة الفيلا، الالتزام بالوقت ممتاز.", date: "2026-06-24" }
+        ];
+
+        function toggleCommentsDrawer(open) {
+            const drawer = document.getElementById('commentsDrawer');
+            const overlay = document.getElementById('commentsOverlay');
+            if (open) { drawer.classList.add('open'); overlay.classList.add('show'); renderComments(); }
+            else { drawer.classList.remove('open'); overlay.classList.remove('show'); }
+        }
+
+        function renderComments() {
+            const box = document.getElementById('commentsListBox');
+            box.innerHTML = '';
+            document.getElementById('commentCount').innerText = commentsArray.length;
+
+            commentsArray.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'single-comment-card';
+                card.innerHTML = `
+                    <div class="comment-user-meta">
+                        <span class="comment-username">${item.name}</span>
+                        <span class="comment-date">${item.date}</span>
+                    </div>
+                    <p class="comment-text-content">${item.text}</p>
+                `;
+                box.appendChild(card);
+            });
+            box.scrollTop = box.scrollHeight; // التمرير التلقائي لآخر تعليق تحت
+        }
+
+        function addNewComment() {
+            const nameInput = document.getElementById('commenterName');
+            const textInput = document.getElementById('commenterText');
+
+            if (!nameInput.value.trim() || !textInput.value.trim()) {
+                alert('فضلاً، املأ حقل الاسم والتعليق أولاً!');
+                return;
+            }
+
+            const today = new Date().toISOString().split('T')[0];
+            const newComment = {
+                name: nameInput.value.trim(),
+                text: textInput.value.trim(),
+                date: today
+            };
+
+            commentsArray.push(newComment);
+            localStorage.setItem('haroun_comments', JSON.stringify(commentsArray)); // الحفظ الدائم بدون مسح
+
+            nameInput.value = '';
+            textInput.value = '';
+            renderComments();
+        }
+
+        // نظام تحويل العملات وحساب التكلفة للباقات
         let currentCurrency = 'EGP';
         const exchangeRate = 0.021; 
 
@@ -538,7 +660,6 @@
             calculateProjectCost();
         }
 
-        // دالة حاسبة التكاليف الذكية المعتمدة بالكامل على الباقات الهندسية والمساحة
         function calculateProjectCost() {
             const selectElement = document.getElementById('calcPackage');
             const selectedOption = selectElement.options[selectElement.selectedIndex];
@@ -546,26 +667,21 @@
             const costPerMeter = parseFloat(selectedOption.value);
             const area = parseFloat(document.getElementById('calcArea').value) || 0;
             
-            // حساب السعر الأساسي بالجنيه
             let finalCostEGP = Math.round(costPerMeter * area);
 
-            // استخراج العوامل الحركية من الـ data attributes للباقة المحددة وحسابها نسبياً مع المساحة
             const baseSheets = parseInt(selectedOption.getAttribute('data-sheets'));
             const baseHours = parseInt(selectedOption.getAttribute('data-hours'));
             const baseDays = parseInt(selectedOption.getAttribute('data-days'));
 
-            // موازنة المتغيرات هندسياً طردياً مع حجم الفراغ والمساحة
             const scaleFactor = Math.max(0.6, area / 150); 
             const calculatedSheets = Math.max(3, Math.round(baseSheets * Math.sqrt(scaleFactor)));
             const calculatedHours = Math.max(10, Math.round(baseHours * scaleFactor));
             const calculatedDays = Math.max(2, Math.round(baseDays * Math.sqrt(scaleFactor)));
 
-            // تحديث لوحة الإحصائيات الحية في الصفحة
             document.getElementById('statSheets').innerText = `${calculatedSheets} لوحات`;
             document.getElementById('statHours').innerText = `${calculatedHours} ساعة`;
             document.getElementById('statDays').innerText = `${calculatedDays} يوم`;
             
-            // عرض السعر بالعملة المختارة حالياً
             if (currentCurrency === 'EGP') {
                 document.getElementById('calcPriceDisplay').innerText = finalCostEGP.toLocaleString('ar-EG') + " ج.م";
             } else {
@@ -585,18 +701,15 @@
             window.open(`https://wa.me/201050758773?text=${message}`, '_blank');
         }
 
-        // تحريك الأكورديون للأسئلة الشائعة
         function toggleFaq(element) {
             const isActive = element.classList.contains('active');
             document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-            if (!isActive) {
-                element.classList.add('active');
-            }
+            if (!isActive) { element.classList.add('active'); }
         }
 
-        // الحساب المبدئي الفوري فور تحميل الصفحة
         document.addEventListener("DOMContentLoaded", () => {
             calculateProjectCost();
+            document.getElementById('commentCount').innerText = commentsArray.length;
         });
 
         function toggleDrawer(open) {
