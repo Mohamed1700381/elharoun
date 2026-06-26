@@ -4,7 +4,7 @@
     <title>معرض أعمال المهندس محمد الحارون | معماري تفاعلي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -191,47 +191,6 @@
         }
         .logout-btn:hover { background: #ef4444; color: white; }
 
-        /* الأداة التفاعلية: شريط مقارنة قبل وبعد */
-        .comparison-slider-container {
-            max-width: 700px;
-            margin: 40px auto 70px auto;
-            position: relative;
-            height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-        }
-        .slider-img {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-        }
-        .slider-img.before {
-            background-image: url('https://d.top4top.io/p_38285y97w1.jpg');
-        }
-        .slider-img.after {
-            background-image: url('https://b.top4top.io/p_3828lnjav1.jpg');
-            width: 50%;
-        }
-        .slider-resize-handle {
-            position: absolute;
-            top: 0; bottom: 0; left: 50%;
-            width: 4px; background: var(--accent-color);
-            cursor: ew-resize;
-            z-index: 10;
-            box-shadow: 0 0 15px var(--accent-color);
-        }
-        .slider-resize-handle::after {
-            content: '↔';
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px; height: 40px; background: #0d1324;
-            border: 2px solid var(--accent-color); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-weight: 700;
-        }
-
         /* حاسبة التكلفة الذكية التفاعلية */
         .calculator-section {
             background: var(--card-glass);
@@ -253,6 +212,18 @@
         }
         .calc-field select:focus, .calc-field input:focus {
             border-color: var(--accent-color); outline: none;
+        }
+        .calc-full-width {
+            grid-column: span 2; margin-top: 10px;
+        }
+        .outputs-checkbox-group {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px; background: rgba(5,8,17,0.4); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .output-item {
+            display: flex; align-items: center; gap: 10px; cursor: pointer; color: var(--text-primary); font-size: 0.9rem;
+        }
+        .output-item input {
+            width: auto; accent-color: var(--accent-color); cursor: pointer;
         }
         .calc-result-box {
             background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.15);
@@ -418,21 +389,14 @@
             </p>
         </section>
 
-        <h2 class="section-title">التخطيط البصري التفاعلي</h2>
-        <p class="section-subtitle">اسحب الشريط في المنتصف لرؤية دمج الفكرة التصميمية من المخطط (اليسار) إلى الواقع المعماري (اليمين)</p>
-        <div class="comparison-slider-container" id="sliderContainer">
-            <div class="slider-img before"></div>
-            <div class="slider-img after" id="afterImage"></div>
-            <div class="slider-resize-handle" id="sliderHandle"></div>
-        </div>
-
-        <h2 class="section-title" id="skills">مهاراتي</h2>
+        <h2 class="section-title" id="skills">مهاراتي ومخرجات العمل</h2>
         <section class="skills-grid">
+            <div class="skill-card">مساقط أفقية دقيقة (Floor Plans)</div>
+            <div class="skill-card">قطاعات رأسية وسكاشن (Sections)</div>
+            <div class="skill-card">واجهات معمارية حديثة (Elevations)</div>
+            <div class="skill-card">المخطط العام واللاي أوت (Layout)</div>
             <div class="skill-card">التصميم المعماري المستدام</div>
-            <div class="skill-card">التخطيط والتصميم العمراني</div>
             <div class="skill-card">تنسيق المواقع (Landscape)</div>
-            <div class="skill-card">تطوير شبكات الطرق والمباني</div>
-            <div class="skill-card">دمج أدوات الذكاء الاصطناعي (AI)</div>
         </section>
 
         <h2 class="section-title" id="gallery">معرض المشاريع المنفذة</h2>
@@ -449,12 +413,12 @@
             </div>
         </main>
 
-        <h2 class="section-title" id="calculator">حاسبة التكلفة التقديرية</h2>
-        <p class="section-subtitle">احصل على تقدير فوري لمشروعك الهندسي بناءً على المعايير والمساحة</p>
+        <h2 class="section-title" id="calculator">حاسبة التكلفة المبدئية والطلبات</h2>
+        <p class="section-subtitle">حدد نوع التصميم، المساحة، والمخرجات الهندسية المطلوبة للحصول على تقدير فوري</p>
         <section class="calculator-section">
             <div class="calc-grid">
                 <div class="calc-field">
-                    <label>نوع التصميم المطلوب</label>
+                    <label>نوع التصميم الرئيسي</label>
                     <select id="calcType" onchange="calculateProjectCost()">
                         <option value="50">تصميم معماري خارجي (واجهات)</option>
                         <option value="80">تصميم داخلي متكامل (Interior)</option>
@@ -466,11 +430,33 @@
                     <label>المساحة الإجمالية (متر مربع)</label>
                     <input type="number" id="calcArea" value="150" min="10" oninput="calculateProjectCost()">
                 </div>
+                
+                <div class="calc-field calc-full-width">
+                    <label>المخرجات والمخططات الهندسية المطلوبة (الطلبات):</label>
+                    <div class="outputs-checkbox-group">
+                        <label class="output-item">
+                            <input type="checkbox" id="outPlan" checked onchange="calculateProjectCost()">
+                            <span>مساقط أفقية (Floor Plans)</span>
+                        </label>
+                        <label class="output-item">
+                            <input type="checkbox" id="outSection" checked onchange="calculateProjectCost()">
+                            <span>قطاعات رأسية (سكاشن)</span>
+                        </label>
+                        <label class="output-item">
+                            <input type="checkbox" id="outElevation" checked onchange="calculateProjectCost()">
+                            <span>واجهات معمارية (Elevations)</span>
+                        </label>
+                        <label class="output-item">
+                            <input type="checkbox" id="outLayout" checked onchange="calculateProjectCost()">
+                            <span>المخطط العام (لاي أوت)</span>
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="calc-result-box">
-                <div style="font-weight: 600; color: var(--text-secondary);">التكلفة التقديرية المبدئية للتصميم:</div>
+                <div style="font-weight: 600; color: var(--text-secondary);">التكلفة التقديرية المبدئية للعمل:</div>
                 <div class="calc-price" id="calcPriceDisplay">12,000 ج.م</div>
-                <button class="submit-auth-btn" style="background: rgba(255,255,255,0.05); color: #ffffff; border: 1px solid var(--accent-color); margin-top: 15px;" onclick="sendEstimateToWhatsapp()">مناقشة التقرير عبر واتساب</button>
+                <button class="submit-auth-btn" style="background: rgba(255,255,255,0.05); color: #ffffff; border: 1px solid var(--accent-color); margin-top: 15px;" onclick="sendEstimateToWhatsapp()">مناقشة التقرير والطلبات عبر واتساب</button>
             </div>
         </section>
 
@@ -553,32 +539,21 @@
             cursor.style.top = e.clientY + 'px';
         });
 
-        // تشغيل نظام مقارنة الصور التفاعلي (Before/After) بالسحب
-        const sliderContainer = document.getElementById('sliderContainer');
-        const afterImage = document.getElementById('afterImage');
-        const sliderHandle = document.getElementById('sliderHandle');
-
-        function moveSlider(x) {
-            const rect = sliderContainer.getBoundingClientRect();
-            let position = ((x - rect.left) / rect.width) * 100;
-            if (position < 0) position = 0;
-            if (position > 100) position = 100;
-            afterImage.style.width = position + '%';
-            sliderHandle.style.left = position + '%';
-        }
-
-        sliderContainer.addEventListener('mousemove', (e) => {
-            if(e.buttons === 1 || e.which === 1) { moveSlider(e.clientX); }
-        });
-        sliderContainer.addEventListener('touchmove', (e) => {
-            moveSlider(e.touches[0].clientX);
-        });
-
-        // دالة حاسبة تكاليف المشاريع
+        // دالة حاسبة تكاليف المشاريع المحدثة بضرب وحساب الطلبات والمخططات المعمارية
         function calculateProjectCost() {
             const costPerMeter = parseFloat(document.getElementById('calcType').value);
             const area = parseFloat(document.getElementById('calcArea').value) || 0;
-            const totalCost = costPerMeter * area;
+            
+            let baseCost = costPerMeter * area;
+            
+            // إضافة وزن نسبي بناءً على المخططات المختارة من العميل
+            let multiplier = 0.6; // التكلفة الأساسية للفكرة ثلاثية الأبعاد بدون مخططات تفصيلية
+            if (document.getElementById('outPlan').checked) multiplier += 0.15;
+            if (document.getElementById('outSection').checked) multiplier += 0.10;
+            if (document.getElementById('outElevation').checked) multiplier += 0.10;
+            if (document.getElementById('outLayout').checked) multiplier += 0.05;
+            
+            const totalCost = Math.round(baseCost * multiplier);
             document.getElementById('calcPriceDisplay').innerText = totalCost.toLocaleString('ar-EG') + " ج.م";
         }
 
@@ -586,7 +561,17 @@
             const typeText = document.getElementById('calcType').options[document.getElementById('calcType').selectedIndex].text;
             const area = document.getElementById('calcArea').value;
             const price = document.getElementById('calcPriceDisplay').innerText;
-            const message = encodeURIComponent(`مرحباً مهندس محمد، قمت باستخدام حاسبة موقعك وحصلت على تقدير لمشروعي:\n- نوع التصميم: ${typeText}\n- المساحة: ${area} متر مربع\n- التكلفة التقديرية: ${price}\nأود مناقشة تفاصيل العمل معك.`);
+            
+            // تجميع المخرجات الهندسية المختارة لإرسالها في رسالة الواتساب للطلب المباشر
+            let selectedOutputs = [];
+            if (document.getElementById('outPlan').checked) selectedOutputs.push("مساقط أفقية");
+            if (document.getElementById('outSection').checked) selectedOutputs.push("سكاشن / قطاعات");
+            if (document.getElementById('outElevation').checked) selectedOutputs.push("واجهات معمارية");
+            if (document.getElementById('outLayout').checked) selectedOutputs.push("المخطط العام (لاي أوت)");
+            
+            const outputsText = selectedOutputs.length > 0 ? selectedOutputs.join(" + ") : "تصميم بدون مخططات تفصيلية";
+
+            const message = encodeURIComponent(`مرحباً مهندس محمد، أود طلب تصميم معماري عبر موقعك بالبيانات التالية:\n- نوع التصميم: ${typeText}\n- المساحة: ${area} متر مربع\n- الطلبات والمخرجات المطلوبة: [ ${outputsText} ]\n- التكلفة التقديرية المحسوبة: ${price}\nبرجاء مراجعة الطلب لبدء العمل المباشر.`);
             window.open(`https://wa.me/201050758773?text=${message}`, '_blank');
         }
 
