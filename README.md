@@ -8,13 +8,14 @@
     
     <style>
         :root {
-            --main-dark: #050811; /* لون أسود عميق وفخم */
-            --card-glass: rgba(13, 20, 38, 0.65); /* تأثير زجاجي داكن */
-            --accent-color: #10b981; /* أخضر زمردي يرمز للاستدامة المعمارية */
+            --main-dark: #050811; 
+            --card-glass: rgba(13, 20, 38, 0.65); 
+            --accent-color: #10b981; 
             --accent-glow: rgba(16, 185, 129, 0.3);
             --vodafone-color: #e60000;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
+            --error-color: #ef4444;
         }
         
         * {
@@ -27,7 +28,6 @@
             margin: 0;
             padding: 0;
             background-color: var(--main-dark);
-            /* خلفية شبكية هندسية تشبه لوحات الأوتوكاد والريفت */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
@@ -86,7 +86,6 @@
             z-index: 100;
         }
 
-        /* أيقونة القائمة المنسحبة من اليسار */
         .menu-toggle-btn {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -112,7 +111,7 @@
             stroke-width: 2;
         }
 
-        /* زر تسجيل الدخول الخاص بالمنصة */
+        /* زر تسجيل الدخول الاحترافي للمنصة */
         .auth-container {
             display: flex;
             align-items: center;
@@ -121,9 +120,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 8px 18px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 9px 20px;
             border-radius: 50px;
             cursor: pointer;
             backdrop-filter: blur(10px);
@@ -133,7 +132,7 @@
             font-weight: 600;
         }
         .custom-auth-btn:hover {
-            background: rgba(16, 185, 129, 0.25);
+            background: rgba(16, 185, 129, 0.2);
             border-color: var(--accent-color);
             box-shadow: 0 0 15px var(--accent-glow);
             transform: translateY(-2px);
@@ -146,21 +145,22 @@
             stroke-width: 2;
         }
         
-        /* حالة المستخدم بعد تسجيل الدخول للموقع */
+        /* حالة البروفايل بعد التسجيل الآمن */
         .user-profile {
             display: none;
             align-items: center;
             gap: 12px;
-            background: var(--card-glass);
+            background: rgba(13, 20, 38, 0.8);
             padding: 6px 16px;
             border-radius: 50px;
             border: 1px solid rgba(16, 185, 129, 0.4);
+            backdrop-filter: blur(10px);
         }
         .user-avatar-initials {
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--accent-color), #059669);
             color: white;
             display: flex;
             align-items: center;
@@ -175,16 +175,25 @@
             color: #ffffff;
         }
         .logout-btn {
-            background: none;
-            border: none;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
             color: #ef4444;
             cursor: pointer;
             font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0 4px;
+            font-size: 0.8rem;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logout-btn:hover {
+            background: #ef4444;
+            color: white;
         }
 
-        /* حقول إدخال لوحة التسجيل والاشتراك المخصصة */
+        /* لوحة التسجيل والاشتراك المتقدمة */
         .input-group {
             text-align: right;
             margin-bottom: 18px;
@@ -193,15 +202,15 @@
             display: block;
             color: var(--text-secondary);
             font-size: 0.9rem;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
         .input-group input {
             width: 100%;
-            padding: 12px;
-            background: rgba(5, 8, 17, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            padding: 14px;
+            background: rgba(5, 8, 17, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
             color: white;
             font-family: 'Cairo', sans-serif;
             font-size: 0.95rem;
@@ -209,27 +218,53 @@
         .input-group input:focus {
             border-color: var(--accent-color);
             outline: none;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+            background: rgba(5, 8, 17, 0.95);
         }
+        
+        /* نظام التنبيهات الداخلي الاحترافي */
+        .auth-alert {
+            display: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-align: right;
+            font-weight: 600;
+        }
+        .auth-alert.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+        .auth-alert.success {
+            display: block;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+
         .submit-auth-btn {
             width: 100%;
-            padding: 12px;
-            background: var(--accent-color);
+            padding: 14px;
+            background: linear-gradient(135deg, var(--accent-color), #059669);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
-            margin-top: 10px;
+            margin-top: 5px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
         }
         .submit-auth-btn:hover {
-            background: #059669;
-            box-shadow: 0 5px 15px var(--accent-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-glow);
         }
         .toggle-auth-text {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
@@ -237,9 +272,13 @@
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
+            margin-right: 5px;
+        }
+        .toggle-auth-text a:hover {
+            text-decoration: underline;
         }
 
-        /* القائمة الجانبية المنسحبة من اليسار */
+        /* القائمة الجانبية */
         .side-drawer {
             position: fixed;
             top: 0;
@@ -287,7 +326,6 @@
             stroke-width: 2;
         }
 
-        /* مسارات وروابط القائمة */
         .drawer-menu {
             list-style: none;
             padding: 0;
@@ -323,7 +361,6 @@
             fill: none;
         }
 
-        /* غطاء خلفي عند فتح القائمة */
         .drawer-overlay {
             display: none;
             position: fixed;
@@ -339,7 +376,7 @@
             display: block;
         }
 
-        /* مشهد ومجسم المكعب 3D */
+        /* مجسم المكعب 3D */
         .cube-scene {
             width: 100px;
             height: 100px;
@@ -379,7 +416,6 @@
             padding: 40px 20px;
         }
         
-        /* قسم نبذة عني */
         .about-section {
             background: var(--card-glass);
             backdrop-filter: blur(12px);
@@ -403,7 +439,6 @@
             margin: 0;
         }
 
-        /* العناوين الرئيسية للأقسام */
         .section-title {
             text-align: center;
             margin-top: 60px;
@@ -430,7 +465,6 @@
             box-shadow: 0 0 10px var(--accent-color);
         }
 
-        /* قسم مهاراتي */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -453,7 +487,7 @@
             box-shadow: 0 10px 25px var(--accent-glow);
         }
 
-        /* معرض صور المشاريع المنفذة (مشروعين متباعدين بشكل ممتاز ومتناسق) */
+        /* معرض صور المشاريع */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -515,7 +549,6 @@
             opacity: 1;
         }
 
-        /* حاوية بطاقة فودافون كاش */
         .payment-status-container {
             text-align: center; 
             margin: 60px auto; 
@@ -566,7 +599,6 @@
             margin: 0;
         }
 
-        /* قسم التواصل عبر واتساب */
         .contact-section {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.4) 0%, rgba(5, 8, 17, 0.6) 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -609,7 +641,7 @@
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
         }
 
-        /* النوافذ المنبثقة العامة (Modals) */
+        /* النوافذ المنبثقة المحسنة */
         .modal {
             display: none;
             position: fixed;
@@ -618,40 +650,40 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(4, 6, 11, 0.88);
+            background-color: rgba(4, 6, 11, 0.9);
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .modal-content {
-            background-color: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #0d1324;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 35px;
             border-radius: 24px;
             width: 90%;
-            max-width: 450px;
+            max-width: 440px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 30px 65px rgba(0,0,0,0.7);
         }
         .close-btn {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             color: #94a3b8;
             border: 1px solid rgba(255, 255, 255, 0.05);
             width: 100%;
-            padding: 12px;
-            border-radius: 10px;
+            padding: 13px;
+            border-radius: 12px;
             cursor: pointer;
             font-weight: 600;
             margin-top: 15px;
             font-family: 'Cairo', sans-serif;
         }
         .close-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.09);
             color: #ffffff;
         }
 
-        /* تصميم الألبوم والـ Slider للمشاريع */
+        /* ألبوم الـ Slider للمشاريع */
         .lightbox-content {
             position: relative;
             max-width: 850px;
@@ -752,52 +784,23 @@
             </button>
         </div>
         <ul class="drawer-menu">
-            <li class="drawer-item">
-                <a href="#" onclick="toggleDrawer(false)">
-                    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>الرئيسية</span>
-                </a>
-            </li>
-            <li class="drawer-item">
-                <a href="#about" onclick="toggleDrawer(false)">
-                    <svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>نبذة عني</span>
-                </a>
-            </li>
-            <li class="drawer-item">
-                <a href="#skills" onclick="toggleDrawer(false)">
-                    <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>المهارات الهندسية</span>
-                </a>
-            </li>
-            <li class="drawer-item">
-                <a href="#gallery" onclick="toggleDrawer(false)">
-                    <svg viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>معرض المشاريع</span>
-                </a>
-            </li>
-            <li class="drawer-item">
-                <a href="#contact" onclick="toggleDrawer(false)">
-                    <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>تواصل معي</span>
-                </a>
-            </li>
+            <li class="drawer-item"><a href="#" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>الرئيسية</span></a></li>
+            <li class="drawer-item"><a href="#about" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>نبذة عني</span></a></li>
+            <li class="drawer-item"><a href="#skills" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>المهارات الهندسية</span></a></li>
+            <li class="drawer-item"><a href="#gallery" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>معرض المشاريع</span></a></li>
+            <li class="drawer-item"><a href="#contact" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>تواصل معي</span></a></li>
         </ul>
     </nav>
 
     <div class="top-nav-bar">
         <button class="menu-toggle-btn" onclick="toggleDrawer(true)" title="افتح القائمة">
-            <svg viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
 
         <div class="auth-container">
             <button class="custom-auth-btn" id="authBtn" onclick="openAuthModal()">
-                <svg viewBox="0 0 24 24">
-                    <path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>تسجيل الدخول / الاشتراك</span>
+                <svg viewBox="0 0 24 24"><path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>حسابي المحتفظ به</span>
             </button>
             
             <div class="user-profile" id="userProfile">
@@ -849,18 +852,12 @@
         <main class="photo-gallery">
             <div class="circle-project" title="مشروع معماري 1" onclick="openGalleryLightbox(1)">
                 <img src="https://b.top4top.io/p_3828lnjav1.jpg" alt="مشروع معماري 1">
-                <div class="circle-overlay">
-                    المشروع الأول
-                    <span>elharoun (يحتوي على 5 صور)</span>
-                </div>
+                <div class="circle-overlay">المشروع الأول<span>elharoun (يحتوي على 5 صور)</span></div>
             </div>
 
             <div class="circle-project" title="مشروع معماري 2" onclick="openGalleryLightbox(2)">
                 <img src="https://h.top4top.io/p_3828kfxcl1.jpg" alt="مشروع معماري 2">
-                <div class="circle-overlay">
-                    المشروع الثاني
-                    <span>elharoun (يحتوي على 5 صور)</span>
-                </div>
+                <div class="circle-overlay">المشروع الثاني<span>elharoun (يحتوي على 5 صور)</span></div>
             </div>
         </main>
 
@@ -877,7 +874,7 @@
             <div class="contact-container">
                 <h2 class="contact-title">هل لديك مشروع ترغب في تطويره?</h2>
                 <p class="contact-desc">يسعدني دائماً تواصلك لمناقشة الأفكار المعمارية وتحويلها إلى واقع مستدام.</p>
-                <a href="https://wa.me/201000000000" class="whatsapp-link" target="_blank">تواصل عبر واتساب</a>
+                <a href="https://wa.me/201050758773" class="whatsapp-link" target="_blank">تواصل عبر واتساب</a>
             </div>
         </section>
 
@@ -887,34 +884,37 @@
         <div class="modal-content">
             <div class="modal-header" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;">تفاصيل الدفع عبر فودافون كاش</div>
             <p style="color: var(--text-secondary);">يمكنك تحويل الرسوم المتفق عليها إلى الرقم التالي:</p>
-            <div class="wallet-number" style="font-size: 1.8rem; font-weight: 700; color: var(--vodafone-color); margin: 15px 0; letter-spacing: 2px;">010XXXXXXXX</div>
+            <div class="wallet-number" style="font-size: 1.8rem; font-weight: 700; color: var(--vodafone-color); margin: 15px 0; letter-spacing: 2px;">01050758773</div>
             <button class="close-btn" onclick="closePaymentModal()">إغلاق</button>
         </div>
     </div>
 
     <div id="authModal" class="modal">
-        <div class="modal-content" style="max-width: 400px;">
-            <h3 id="authTitle" style="margin-top: 0; font-size: 1.4rem; color: #ffffff;">تسجيل الدخول للموقع</h3>
+        <div class="modal-content">
+            <h3 id="authTitle" style="margin-top: 0; font-size: 1.4rem; color: #ffffff; margin-bottom: 15px;">تسجيل الدخول للموقع</h3>
+            
+            <div id="authAlert" class="auth-alert"></div>
+
             <form id="customAuthForm" onsubmit="handleCustomAuth(event)">
                 <div class="input-group" id="nameGroup" style="display: none;">
                     <label>الاسم الكامل</label>
-                    <input type="text" id="authName" placeholder="أدخل اسمك الكريم">
+                    <input type="text" id="authName" placeholder="أدخل اسمك الكامل ليعرض بالمنصة">
                 </div>
                 <div class="input-group">
-                    <label>البريد الإلكتروني أو اسم المستخدم</label>
-                    <input type="text" id="authEmail" required placeholder="username / email">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="authEmail" required placeholder="name@example.com">
                 </div>
                 <div class="input-group">
-                    <label>كلمة المرور</label>
+                    <label>كلمة المرور الخاصة بك</label>
                     <input type="password" id="authPassword" required placeholder="••••••••">
                 </div>
                 <button type="submit" class="submit-auth-btn" id="authSubmitBtn">تسجيل الدخول</button>
             </form>
             <p class="toggle-auth-text">
                 <span id="authToggleMsg">ليس لديك حساب؟</span> 
-                <a href="javascript:void(0)" onclick="toggleAuthMode()" id="authToggleLink">إنشاء حساب جديد</a>
+                <a href="javascript:void(0)" onclick="toggleAuthMode()" id="authToggleLink">إنشاء حساب جديد آمن</a>
             </p>
-            <button class="close-btn" onclick="closeAuthModal()">إغلاق</button>
+            <button class="close-btn" onclick="closeAuthModal()">إغلاق اللوحة</button>
         </div>
     </div>
 
@@ -935,7 +935,15 @@
     </footer>
 
     <script>
-        // إدارة فتح وإغلاق القائمة الجانبية
+        // تحقق من حالة الدخول التلقائي عند تشغيل الصفحة فوراً
+        document.addEventListener("DOMContentLoaded", () => {
+            const cachedUser = localStorage.getItem('haroun_current_user');
+            if (cachedUser) {
+                const user = JSON.parse(cachedUser);
+                applyUserLoggedInUI(user.name);
+            }
+        });
+
         function toggleDrawer(open) {
             const drawer = document.getElementById('sideDrawer');
             const overlay = document.getElementById('drawerOverlay');
@@ -948,18 +956,33 @@
             }
         }
 
-        // --- نظام لوحة التسجيل الخاصة بالموقع والتحكم بأنماطها ---
+        // --- نظام لوحة التسجيل والاشتراك المحلية المشفرة للمتصفح فقط ---
         let isSignUpMode = false;
 
         function openAuthModal() {
+            clearAlert();
             document.getElementById('authModal').style.display = 'flex';
         }
+        
         function closeAuthModal() {
             document.getElementById('authModal').style.display = 'none';
         }
 
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('authAlert');
+            alertBox.innerText = message;
+            alertBox.className = 'auth-alert ' + type;
+        }
+
+        function clearAlert() {
+            const alertBox = document.getElementById('authAlert');
+            alertBox.innerText = '';
+            alertBox.className = 'auth-alert';
+        }
+
         function toggleAuthMode() {
             isSignUpMode = !isSignUpMode;
+            clearAlert();
             const authTitle = document.getElementById('authTitle');
             const nameGroup = document.getElementById('nameGroup');
             const authSubmitBtn = document.getElementById('authSubmitBtn');
@@ -968,44 +991,88 @@
             const authNameInput = document.getElementById('authName');
 
             if (isSignUpMode) {
-                authTitle.innerText = "إنشاء حساب جديد بالمنصة";
+                authTitle.innerText = "إنشاء حساب محلي آمن";
                 nameGroup.style.display = "block";
                 authNameInput.setAttribute('required', 'required');
-                authSubmitBtn.innerText = "إنشاء الحساب";
-                authToggleMsg.innerText = "لديك حساب بالفعل؟";
+                authSubmitBtn.innerText = "تفعيل وإنشاء الحساب في جهازي";
+                authToggleMsg.innerText = "لديك حساب محلي؟";
                 authToggleLink.innerText = "تسجيل الدخول";
             } else {
                 authTitle.innerText = "تسجيل الدخول للموقع";
                 nameGroup.style.display = "none";
                 authNameInput.removeAttribute('required');
                 authSubmitBtn.innerText = "تسجيل الدخول";
-                authToggleMsg.innerText = "ليس لديك حساب؟";
-                authToggleLink.innerText = "إنشاء حساب جديد";
+                authToggleMsg.innerText = "ليس لديك حساب？";
+                authToggleLink.innerText = "إنشاء حساب جديد آمن";
             }
         }
 
-        // معالجة تسجيل الحساب والدخول داخلياً وحفظه بالذاكرة
+        // معالجة وحفظ البيانات بخصوصية كاملة داخل LocalStorage للمستخدم
         function handleCustomAuth(event) {
             event.preventDefault();
-            const email = document.getElementById('authEmail').value;
-            const name = isSignUpMode ? document.getElementById('authName').value : email.split('@')[0];
+            clearAlert();
 
-            // إخفاء زر الدخول الأولي وإظهار بروفايل المستخدم بالاسم المدخل
+            const email = document.getElementById('authEmail').value.trim().toLowerCase();
+            const password = document.getElementById('authPassword').value;
+            
+            // جلب قاعدة البيانات المحلية المشفرة بجهاز المستخدم فقط
+            let localDB = JSON.parse(localStorage.getItem('haroun_local_db')) || [];
+
+            if (isSignUpMode) {
+                const name = document.getElementById('authName').value.trim();
+                
+                // التأكد من عدم تكرار البريد بنفس المتصفح
+                const userExists = localDB.some(user => user.email === email);
+                if (userExists) {
+                    showAlert("هذا الحساب تم إنشاؤه مسبقاً في جهازك!", "error");
+                    return;
+                }
+
+                // حفظ الحساب الجديد بالمتصفح بشكل آمن
+                const newUser = { name, email, password };
+                localDB.push(newUser);
+                localStorage.setItem('haroun_local_db', JSON.stringify(localDB));
+                localStorage.setItem('haroun_current_user', JSON.stringify(newUser));
+                
+                showAlert("تم إنشاء حسابك وحفظه بخصوصية في جهازك بنجاح!", "success");
+                setTimeout(() => {
+                    applyUserLoggedInUI(name);
+                    closeAuthModal();
+                }, 1000);
+
+            } else {
+                // عملية تسجيل دخول والتحقق محلياً
+                const matchedUser = localDB.find(user => user.email === email && user.password === password);
+                
+                if (matchedUser) {
+                    localStorage.setItem('haroun_current_user', JSON.stringify(matchedUser));
+                    showAlert("مرحباً بعودتك! جاري الدخول...", "success");
+                    setTimeout(() => {
+                        applyUserLoggedInUI(matchedUser.name);
+                        closeAuthModal();
+                    }, 1000);
+                } else {
+                    showAlert("عذراً، البريد الإلكتروني أو كلمة المرور غير صحيحة بجهازك.", "error");
+                }
+            }
+        }
+
+        function applyUserLoggedInUI(name) {
             document.getElementById('authBtn').style.display = 'none';
             document.getElementById('userProfile').style.display = 'flex';
             document.getElementById('userName').innerText = 'مرحباً، ' + name;
             document.getElementById('userInitials').innerText = name.charAt(0).toUpperCase();
-            
-            closeAuthModal();
         }
 
         function handleLogout() {
+            localStorage.removeItem('haroun_current_user');
             document.getElementById('userProfile').style.display = 'none';
             document.getElementById('authBtn').style.display = 'flex';
             document.getElementById('customAuthForm').reset();
+            if(isSignUpMode) toggleAuthMode();
         }
 
-        // --- نظام تصفح وألبوم الـ 10 صور المقسمة على مشروعين بدقة ---
+        // --- ألبوم الـ 10 صور المقسمة على مشروعين بدقة متناهية ---
         const projectGalleries = {
             1: [
                 "https://b.top4top.io/p_3828lnjav1.jpg",
@@ -1041,7 +1108,6 @@
             const imagesList = projectGalleries[activeProjectId];
             activeImageIndex += direction;
             
-            // الدوران اللانهائي للصور عند الوصول للنهاية أو البداية
             if (activeImageIndex >= imagesList.length) {
                 activeImageIndex = 0;
             } else if (activeImageIndex < 0) {
@@ -1056,7 +1122,6 @@
             document.getElementById('lightboxCounter').innerText = `${activeImageIndex + 1} / ${imagesList.length}`;
         }
 
-        // تحكم مودال الدفع
         function openPaymentModal() {
             document.getElementById('paymentModal').style.display = 'flex';
         }
