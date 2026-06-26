@@ -147,6 +147,29 @@
         .skill-card { background: rgba(31, 41, 55, 0.4); color: #e5e7eb; padding: 22px; border-radius: 16px; text-align: center; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.02); }
         .skill-card:hover { transform: translateY(-5px); border-color: var(--accent-color); background: rgba(16, 185, 129, 0.08); box-shadow: 0 15px 30px var(--accent-glow); }
 
+        /* قسم مشاريع الطلاب الجديد */
+        .students-section {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, rgba(17, 24, 39, 0.8) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 24px; padding: 40px; margin-bottom: 60px;
+            backdrop-filter: blur(12px);
+        }
+        .students-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .student-service-card {
+            background: rgba(5, 8, 17, 0.6); border: 1px solid var(--border-glass); 
+            padding: 25px; border-radius: 16px;
+        }
+        .student-service-card:hover { border-color: var(--accent-color); transform: translateY(-4px); }
+        .student-service-card h3 { color: #ffffff; font-size: 1.25rem; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .student-service-card h3 svg { width: 22px; height: 22px; fill: var(--accent-color); }
+        .student-service-card p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
+        
+        .programs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 35px; }
+        .program-badge {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass);
+            padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 0.95rem; color: #e5e7eb;
+        }
+        .program-badge span { color: var(--accent-color); font-weight: 700; margin-left: 4px; }
+
         /* معرض الصور الدائري */
         .photo-gallery { display: flex; flex-wrap: wrap; gap: 60px; justify-content: center; margin-bottom: 60px; }
         .circle-project { position: relative; width: 270px; height: 270px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(255, 255, 255, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); cursor: pointer; }
@@ -280,6 +303,8 @@
         .comment-username { font-weight: 700; color: var(--accent-color); font-size: 0.95rem; }
         .comment-date { font-size: 0.75rem; color: var(--text-secondary); }
         .comment-text-content { color: #e5e7eb; font-size: 0.9rem; margin: 0; word-break: break-word; }
+        
+        .empty-comments-notice { text-align: center; color: var(--text-secondary); font-size: 0.95rem; padding: 30px 10px; }
 
         /* قسم التواصل التفاعلي */
         .contact-section { background: radial-gradient(ellipse at bottom, #111827 0%, var(--main-dark) 100%); border: 1px solid rgba(255, 255, 255, 0.03); padding: 80px 20px; text-align: center; border-radius: 32px; margin-top: 40px; }
@@ -337,10 +362,12 @@
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer(false)"></div>
     <div class="drawer-overlay" id="commentsOverlay" onclick="toggleCommentsDrawer(false)"></div>
 
-    <div class="comments-fab" onclick="toggleCommentsDrawer(true)" title="شاهد تعليقات وآراء العملاء">
+    <!-- الأيقونة المتحركة العائمة للتعليقات الحقيقية المتراكمة -->
+    <div class="comments-fab" onclick="toggleCommentsDrawer(true)" title="شاهد تعليقات وآراء العملاء والطلاب">
         <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
     </div>
 
+    <!-- لوحة التعليقات المتراكمة الجانبية من المستخدمين فقط -->
     <div class="comments-drawer" id="commentsDrawer">
         <div class="comments-header">
             <div class="comments-title">
@@ -350,12 +377,15 @@
             <button class="close-comments-btn" onclick="toggleCommentsDrawer(false)">✕</button>
         </div>
 
+        <!-- قائمة عرض التعليقات -->
         <div class="comments-list-box" id="commentsListBox">
-            </div>
+            <!-- فارغ افتراضياً ولا يمتلئ إلا عبر إدخال المستخدمين -->
+        </div>
 
+        <!-- نموذج إضافة تعليق جديد -->
         <div class="comment-form">
             <input type="text" id="commenterName" class="comment-input" placeholder="الاسم الكريم...">
-            <textarea id="commenterText" class="comment-textarea" placeholder="اكتب تعليقك أو استفسارك هنا المعماري..."></textarea>
+            <textarea id="commenterText" class="comment-textarea" placeholder="اكتب تعليقك أو رأيك هنا..."></textarea>
             <button class="comment-submit-btn" onclick="addNewComment()">إرسال التعليق وثباته</button>
         </div>
     </div>
@@ -370,11 +400,11 @@
         <ul class="drawer-menu">
             <li class="drawer-item"><a href="#" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>الرئيسية</span></a></li>
             <li class="drawer-item"><a href="#about" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>نبذة عني</span></a></li>
+            <li class="drawer-item"><a href="#students" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 14zm-6 1.341c0-1.802.434-3.5 1.196-5L2 13l7 4 1-.57V19a2 2 0 002 2h2a2 2 0 002-2v-2.57l1 .57 1.196-1c.762 1.5 1.196 3.198 1.196 5H6v-3.659z" /></svg><span>مشاريع الطلاب</span></a></li>
             <li class="drawer-item"><a href="#lifecycle" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>مراحل العمل</span></a></li>
             <li class="drawer-item"><a href="#gallery" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>معرض المشاريع</span></a></li>
             <li class="drawer-item"><a href="#calculator" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>حاسبة التكلفة</span></a></li>
             <li class="drawer-item"><a href="#faq" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>الأسئلة الشائعة</span></a></li>
-            <li class="drawer-item"><a href="#contact" onclick="toggleDrawer(false)"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>تواصل معي</span></a></li>
         </ul>
     </nav>
 
@@ -396,7 +426,7 @@
             </div>
         </div>
         <h1>المهندس المعماري / محمد الحارون</h1>
-        <p>معماري | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية</p>
+        <p>معماري | شغوف بالتخطيط العمراني، الاستدامة، وتطوير البيئة المبنية ومشاريع التخرج الطلابية</p>
     </header>
 
     <div class="container">
@@ -405,8 +435,44 @@
             <h2>نبذة عني</h2>
             <p>
                 معماري لديّ شغف قوي بالتصميم المعماري، التخطيط العمراني، والتنمية المستدامة. أسعى دائماً لابتكار حلول مستدامة ومبتكرة تعزز كفاءة البيئة المبنية وتلبي احتياجات المجتمع. 
-                خلال مسيرتي الأكاديمية، قمت بإعداد وتطوير مشاريع متنوعة تشمل التخطيط البيئي المعماري، وتصميم لاندسكيب متكامل، بالإضافة إلى مشاريع تطوير وتحديث شبكات الطرق والمباني السكنية والإدارية والتعليمية لرفع جودة الحياة العمرانية.
+                خلال مسيرتي الأكاديمية والعملية، قمت بإعداد وتطوير مشاريع متنوعة تشمل التخطيط البيئي المعماري، وتصميم لاندسكيب متكامل، بالإضافة إلى دعم ومساعدة طلاب كليات الهندسة والعمارة في إنهاء مشاريع فصولهم الدراسية وتخرجهم بأفضل إخراج ممكن.
             </p>
+        </section>
+
+        <!-- قسم مساعدة الطلاب والأكاديميين المطور حديثاً -->
+        <h2 class="section-title" id="students">مساعدات ومشاريع الطلاب</h2>
+        <p class="section-subtitle">مزنوق في الفاينل؟ شايل هم الإخراج والرصة؟ إحنا هنا علشان نشيل عنك الضغط ونطلع مشروعك بأعلى جودة تضمن لك التقدير!</p>
+        <section class="students-section">
+            <div class="students-grid">
+                <div class="student-service-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        تطوير ومساعدة المشاريع
+                    </h3>
+                    <p>مساعدتك خطوة بخطوة في بلورة فكرة المشروع (الـ Concept) وتطوير الرسومات التنفيذية والمعمارية وتعديلها بمرونة أكاديمية كاملة تتماشى مع طلبات الدكاترة والمناقشين.</p>
+                </div>
+                <div class="student-service-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        الإخراج المعماري المتكامل
+                    </h3>
+                    <p>توليد وإنتاج كافة الإخراجات واللقطات المعمارية الفاخرة، مناظير داخلية وخارجية ببيئة ضوئية متكاملة لاندسكيب ومواد واقعية تبرز جمال وقوة تصميمك.</p>
+                </div>
+                <div class="student-service-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                        تنسيق ورصة البانر النهائي
+                    </h3>
+                    <p>نقوم بتجميع ورص شاسيهات التسليم النهائي للفاينل وبنرات التخرج (Final Layout/Postering) وفق تكوين بصري (Composition) مريح ومقروء يبرز تسلسل المشروع بشكل علمي واحترافي أمام لجنة التحكيم.</p>
+                </div>
+            </div>
+
+            <div class="programs-container">
+                <div class="program-badge"><span>AutoCAD</span> للرسومات الثنائية والمساقط 2D</div>
+                <div class="program-badge"><span>Revit</span> للنمذجة ثلاثية الأبعاد الـ 3D BIM</div>
+                <div class="program-badge"><span>D5 Render</span> لإخراج الريندرات والمناظير الفائقة الواقعية</div>
+                <div class="program-badge"><span>Photoshop</span> للبوست برودكشن وتنسيق البانر النهائي</div>
+            </div>
         </section>
 
         <h2 class="section-title" id="skills">مهاراتي ومخرجات العمل</h2>
@@ -419,6 +485,7 @@
             <div class="skill-card">تنسيق المواقع (Landscape)</div>
         </section>
 
+        <!-- خطة ومراحل سير العمل الهندسية -->
         <h2 class="section-title" id="lifecycle">مراحل سير العمل الهندسي</h2>
         <p class="section-subtitle">خطوات منهجية واضحة ومدروسة نتبعها لتحويل رؤيتك المعمارية إلى واقع ملموس</p>
         <section class="timeline-container">
@@ -466,6 +533,7 @@
             </div>
         </main>
 
+        <!-- حاسبة التكلفة -->
         <h2 class="section-title" id="calculator">حاسبة التكلفة المبدئية والباقات الهندسية</h2>
         <p class="section-subtitle">اختر باقة التصميم والمخرجات المطلوبة مع إدخال المساحة للحصول على تقرير دقيق حياً</p>
         <section class="calculator-section">
@@ -514,6 +582,7 @@
             </div>
         </section>
 
+        <!-- الأسئلة الشائعة الأكورديون -->
         <h2 class="section-title" id="faq">الأسئلة الشائعة (FAQ)</h2>
         <p class="section-subtitle">إجابات سريعة وواضحة على أكثر الأسئلة المعمارية والفنية تداولاً</p>
         <section class="faq-wrapper">
@@ -559,6 +628,7 @@
 
     </div>
 
+    <!-- فودافون كاش -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 10px;">تفاصيل الدفع عبر فودافون كاش</div>
@@ -568,6 +638,7 @@
         </div>
     </div>
 
+    <!-- سلايدر استعراض المشاريع -->
     <div id="galleryLightbox" class="modal">
         <div class="lightbox-content">
             <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
@@ -585,18 +656,15 @@
     </footer>
 
     <script>
-        // تتبع حركة الماوس
+        // تتبع حركة الماوس المعماري
         const cursor = document.getElementById('customCursor');
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // نظام التخزين المتراكم للتعليقات (LocalStorage) الشغال بدون مسح
-        let commentsArray = JSON.parse(localStorage.getItem('haroun_comments')) || [
-            { name: "م. أحمد رأفت", text: "ما شاء الله، توزيع المساقط ممتاز ومستغل الفراغات بالكامل.", date: "2026-06-20" },
-            { name: "العميل كريم الجابري", text: "سعدت جداً بالتعامل معك في تصميم واجهة الفيلا، الالتزام بالوقت ممتاز.", date: "2026-06-24" }
-        ];
+        // نظام التخزين المتراكم للتعليقات الحقيقية (LocalStorage) بدون تعليقات افتراضية
+        let commentsArray = JSON.parse(localStorage.getItem('haroun_comments')) || [];
 
         function toggleCommentsDrawer(open) {
             const drawer = document.getElementById('commentsDrawer');
@@ -610,6 +678,11 @@
             box.innerHTML = '';
             document.getElementById('commentCount').innerText = commentsArray.length;
 
+            if (commentsArray.length === 0) {
+                box.innerHTML = '<div class="empty-comments-notice">لا توجد تعليقات بعد. كن أول من يترك تعليقه المعماري أو رأيه هنا!</div>';
+                return;
+            }
+
             commentsArray.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'single-comment-card';
@@ -622,7 +695,7 @@
                 `;
                 box.appendChild(card);
             });
-            box.scrollTop = box.scrollHeight; // التمرير التلقائي لآخر تعليق تحت
+            box.scrollTop = box.scrollHeight; // التمرير التلقائي لآخر تعليق مضاف بالأسفل
         }
 
         function addNewComment() {
@@ -642,14 +715,14 @@
             };
 
             commentsArray.push(newComment);
-            localStorage.setItem('haroun_comments', JSON.stringify(commentsArray)); // الحفظ الدائم بدون مسح
+            localStorage.setItem('haroun_comments', JSON.stringify(commentsArray)); // تخزين دائم ومتراكم
 
             nameInput.value = '';
             textInput.value = '';
             renderComments();
         }
 
-        // نظام تحويل العملات وحساب التكلفة للباقات
+        // نظام حساب التكلفة والباقات
         let currentCurrency = 'EGP';
         const exchangeRate = 0.021; 
 
@@ -719,7 +792,7 @@
             else { drawer.classList.remove('open'); overlay.classList.remove('show'); }
         }
 
-        // سلايدر الصور للمشاريع
+        // سلايدر صور المشاريع
         const projectGalleries = {
             1: ["https://b.top4top.io/p_3828lnjav1.jpg", "https://k.top4top.io/p_3828jbw581.jpg", "https://d.top4top.io/p_38285y97w1.jpg", "https://g.top4top.io/p_38288wnor1.jpg", "https://g.top4top.io/p_3828f4bqz1.jpg"],
             2: ["https://h.top4top.io/p_3828kfxcl1.jpg", "https://k.top4top.io/p_3828clele1.jpg", "https://c.top4top.io/p_3828gvugl1.jpg", "https://k.top4top.io/p_3828qrim11.jpg", "https://b.top4top.io/p_3828lgvbq1.jpg"]
