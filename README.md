@@ -533,7 +533,7 @@
         
         <main class="photo-gallery">
             <div class="circle-project" title="مشروع معماري 1" onclick="openGalleryLightbox(1)">
-                <img src="https://j.top4top.io/p_38308chgg1.png" alt="مشروع معماري 1">
+                <img src="https://g.top4top.io/p_3832htslh1.png" alt="مشروع معماري 1">
                 <div class="circle-overlay">المشروع الأول<span>elharoun (يحتوي على 5 صور)</span></div>
             </div>
             <div class="circle-project" title="مشروع معماري 2" onclick="openGalleryLightbox(2)">
@@ -813,7 +813,7 @@
 
         // سلايدر صور المشاريع
         const projectGalleries = {
-            1: ["https://i.top4top.io/p_38305izm31.png", "https://k.top4top.io/p_38300jmcs1.png", "https://a.top4top.io/p_38302aq1x1.png", "https://c.top4top.io/p_3830ynyau1.png", "https://g.top4top.io/p_3830zkl961.png"],
+            1: ["https://g.top4top.io/p_3832htslh1.png", "https://j.top4top.io/p_3832qw5sd1.png", "https://l.top4top.io/p_3832rt2ly1.png", "https://e.top4top.io/p_38326j4dg1.png", "https://g.top4top.io/p_38322gf5y1.png"],
             2: ["https://h.top4top.io/p_3828kfxcl1.jpg", "https://k.top4top.io/p_3828clele1.jpg", "https://c.top4top.io/p_3828gvugl1.jpg", "https://k.top4top.io/p_3828qrim11.jpg", "https://b.top4top.io/p_3828lgvbq1.jpg"]
         };
         let activeProjectId = 1, activeImageIndex = 0;
